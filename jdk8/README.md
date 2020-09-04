@@ -801,7 +801,7 @@ class TypeDefine2<U> {
 
 
 
-## 10. java8接口的改进
+## 10. 接口改进
 从java8开始，接口可以添加默认方法、静态方法
 ### 默认方法
 
@@ -809,8 +809,6 @@ class TypeDefine2<U> {
 不管写不写public修饰，都是public，修饰的
 我们在已有的接口中提供新方法的同时，还保持了与旧版本代码的兼容性。
 比如java 8 API中对Collection、List、Comparator等接口提供了丰富的默认方法
-
-
 
 ### 静态方法
 
@@ -821,31 +819,27 @@ class TypeDefine2<U> {
 
 **注意**
 
-```text
 @interface 修饰的接口，不是声明了一个interface，它是注解，继承了java.lang.annotation.Annotation 接口
-
 interface 修改的接口才是声明了一个interface
 
-```
 
-**接口默认方法与静态方法示例**
-
-[MyInterface](./src/com/java/interfaceFeatures/MyInterface.java)
-[MyInterfaceTest](./src/com/java/interfaceFeatures/MyInterfaceTest.java)
 
 ### 接口中默认方法的"类优先"原则
 若一个接口中定义了一个默认方法，而另外一个父类或接口中又定义了一个同名的方法时
 
 1. 选择父类中的方法
-```text
-果一个父类提供了具体的实现，那么接口中具有相同名称和参数的默认方法会被忽略
-```
+
+   如果一个父类提供了具体的实现，那么接口中具有相同名称和参数的默认方法会被忽略
+
+
+
 2. 接口冲突
-```text
-如果一个父接口提供一个默认方法，
-而另一个接口也提供了一个具有相同名称和参数列表的方法（不管方法是否是默认方法），
-那么必须覆盖该方法来解决冲突
-```
+
+   如果一个父接口提供一个默认方法，
+   而另一个接口也提供了一个具有相同名称和参数列表的方法（不管方法是否是默认方法），
+   那么必须覆盖该方法来解决冲突
+
+
 
 
 
@@ -857,179 +851,142 @@ java 8之前的日期时间API存在的问题：
 * 可变性：像日期和时间这样的类应该是不可变的。即已经示例化的时间日期对象还能被更改
 * 偏移性：Date中的年份是从1900开始的，而月份都从0开始
 * 格式化：格式化只对Date有用，Calendar则不行
-* 它们也不是线程安全的；不能处理闰秒等
+* 并发：它们也不是线程安全的；不能处理闰秒等
 
-## 新的时间类包结构
-* java.time
->包含值对象的基础包
-* java.time.chrono
->提供对不同的日历系统的访问
-* java.time.format
->格式化和解析时间、日期
-* java.time.temporal
->包括底层框架和扩展特性
-* java.time.zone
->包含时区支持的类
 
-* LocalDate
-* LocalTime
-* LocalDateTime
-* Instant
-* DateTimeFormatter
-* 其他类
 
-## LocalDate、LocalTime、LocalDateTime
-* 这几个类是其中较重要的几个类，它们的实例是不可变的对象，  
+### 包结构
+
+java.time: 包含值对象的基础包
+
+java.time.chrono: 提供对不同的日历系统的访问
+
+java.time.format: 格式化和解析时间、日期
+
+java.time.temporal: 包括底层框架和扩展特性
+
+java.time.zone: 包含时区支持的类
+
+
+
+### LocalDate, LocalTime, LocalDateTime
+这几个类是其中较重要的几个类，它们的实例是不可变的对象，  
 它们提供了简单的本地日期或时间，并不包含当前的时间信息，也不包含与时区相关的信息
-    * LocalDate：使用ISO-8601日历系统的日期
-      
-        >代表IOS格式（yyyy-MM-dd）的日期,可以存储生日、纪念日等日期
-    * LocalTime：公历的时间
-      
-        >表示一个时间，而不是日期
-    * LocalDateTime：公历的日期和时间
-      
-        >是用来表示日期和时间的，这是一个最常用的类之一
-* 注：ISO-8601日历系统是国际标准化组织制定的现代公民的日期和时间的表示法，也就是公历。
 
-## LocalDateTime类
-
-[LocalDateTime类详细介绍](./LocalDateTime类.md)  
-
-### LocalDateTime方法使用示例
-[LocalDateTimeTest、时间格式化与解析](./src/com/java/time/LocalDateTimeTest.java)
-
-## DateTimeFormatter格式化或解析日期、日间
-[DateTimeFormatterTest](./src/com/java/time/DateTimeFormatterTest.java)
-
-## Date与LocalDateTime互转
-Date为：java.util.Date  
-
-* Date转LocalDateTime
-    ```java
-    Date todayDate = new Date();
+  * LocalDate：使用ISO-8601日历系统的日期
     
-    LocalDateTime ldt = todayDate.toInstant()
-            .atZone( ZoneId.systemDefault() )
-            .toLocalDateTime();
+      >代表IOS格式（yyyy-MM-dd）的日期,可以存储生日、纪念日等日期
+  * LocalTime：公历的时间
     
-    System.out.println(ldt);
-    //2020-03-16T21:20:12.773
-    ```
-* LocalDateTime转Date
-    ```java
-    LocalDateTime localDateTime = LocalDateTime.now();
+      >表示一个时间，而不是日期
+  * LocalDateTime：公历的日期和时间
     
-    Date date = Date.from( localDateTime.atZone(ZoneId.systemDefault()).toInstant() );
-    
-    System.out.println(date);
-    //Thu May 16 19:22:37 CST 2019
-    ```
-* DateUtils
-    ```java
-    import java.time.Instant;
-    import java.time.LocalDate;
-    import java.time.LocalDateTime;
-    import java.time.ZoneId;
-    import java.util.Date;
-     
-    public class DateUtils {
-     
-        public static Date asDate(LocalDate localDate) {
-            return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
-        }
-     
-        public static Date asDate(LocalDateTime localDateTime) {
-            return Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
-        }
-     
-        public static LocalDate asLocalDate(Date date) {
-            return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
-        }
-     
-        public static LocalDateTime asLocalDateTime(Date date) {
-            return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDateTime();
-        }
-    }
-    ```
+      >是用来表示日期和时间的，这是一个最常用的类之一
 
-## Instant瞬时
-时间线上的一个瞬时点。  
-这可被用来记录应用程序中的事件时间戳
+注：ISO-8601日历系统是国际标准化组织制定的现代公民的日期和时间的表示法，也就是公历。
 
-* 时间戳 
-    ```text
-    在处理时间和日期的时候，我们通常会想到年,月,日,时,分,秒。
-    然而，这只是时间的一个模型，是面向人类的。
-    
-    第二种通用模型是面向机器的，或者说是连 续的。
-    在此模型中，时间线中的一个点表示为一个很大的数，这有利于计算机处理。
-    
-    在UNIX中，这个数从1970年开始，以秒为的单位；
-    同样的，在Java中，也是从1970年开始，但以毫秒为单位。
-    ```
 
-    ```text
-    java.time包通过值类型Instant提供机器视图，不提供处理人类意义上的时间单位。
-    Instant表示时间线上的一点，而不需要任何上下文信息，例如，时区。
-    概念上讲，它只是简单的表示自1970年1月1日0时0分0秒（UTC）开始的秒数。
-    因为java.time包是基于纳秒计算的，所以Instant的精度可以达到纳秒级
-    ```
-  
-* 1ns = 10<sup>-9</sup>s
-* 1秒 = 1000毫秒 = 10^6微秒 = 10^9纳秒
->1s = 1000ms = 10^6μs = 10^9ns
 
-### Instant方法
-* now(): 获取0时区的瞬时点(时间戳)
-* atOffset(ZoneOffset offset)：添加时间偏移量
-* toEpochMilli(long epochMilli)：获取纪元秒，即自1970-1-1 00:00:00 UTC开始的毫秒
-* ofEpochSecond(long epochSecond)：根据指定纪元秒创建Instant实例
-**Instant方法使用示例**  
-[InstantTest](./src/com/java/time/InstantTest.java)
+### Date与LocalDateTime互转
 
-### Instant与LocalDateTime互转
-```text
-    public void test2() {
-        // Instant 转 LocalDateTime
-        Instant instant = Instant.now();
-        LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.of("UTC+8"));
+```java
+Date todayDate = new Date();
+LocalDateTime ldt = todayDate.toInstant().atZone( ZoneId.systemDefault() ).toLocalDateTime();
 
-        System.out.println(instant);
-        System.out.println(localDateTime);
-        System.out.println();
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // LocalDateTime 转 Instant
-        LocalDateTime localDateTime1 = LocalDateTime.now();
-        Instant instant1 = localDateTime1.toInstant(ZoneOffset.ofHours(+8));
-        System.out.println("localDateTime1: " + localDateTime1);
-        System.out.println("instant1: " + instant1);
-    }
+LocalDateTime localDateTime = LocalDateTime.now();
+Date date = Date.from( localDateTime.atZone(ZoneId.systemDefault()).toInstant() );
 ```
 
-## 其他时间API
+DateUtils
+
+```java
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+ 
+public class DateUtils {
+ 
+    public static Date asDate(LocalDate localDate) {
+        return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+    }
+ 
+    public static Date asDate(LocalDateTime localDateTime) {
+        return Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
+    }
+ 
+    public static LocalDate asLocalDate(Date date) {
+        return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
+    }
+ 
+    public static LocalDateTime asLocalDateTime(Date date) {
+        return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDateTime();
+    }
+}
+```
+
+
+
+### Instant
+
+时间线上的一个瞬时点。  这可被用来记录应用程序中的事件**时间戳**
+
+面向人类模型：在处理时间和日期的时候，我们通常会想到年,月,日,时,分,秒，是面向人类的。
+
+面向机器模型：或者说是连 续的。在此模型中，时间线中的一个点表示为一个很大的数，这有利于计算机处理。
+
+在UNIX中，这个数从1970年开始，以秒为的单位；同样的，在Java中，也是从1970年开始，但以毫秒为单位。
+
+java.time包通过值类型Instant提供机器视图，不提供处理人类意义上的时间单位。Instant表示时间线上的一点，而不需要任何上下文信息，例如，时区。概念上讲，它只是简单的表示自1970年1月1日0时0分0秒（UTC）开始的秒数。因为java.time包是基于纳秒计算的，所以Instant的精度可以达到纳秒级
+
+> 1ns = 10<sup>-9</sup>s, 1秒 = 1000毫秒 = 10^6微秒 = 10^9纳秒
+
+
+
+#### Instant方法
+
+* now(): 获取0时区的瞬时点(时间戳)
+
+* atOffset(ZoneOffset offset)：添加时间偏移量
+
+* toEpochMilli(long epochMilli)：获取纪元秒，即自1970-1-1 00:00:00 UTC开始的毫秒
+
+* ofEpochSecond(long epochSecond)：根据指定纪元秒创建Instant实例
+
+  
+
+#### Instant与LocalDateTime互转
+```java
+        // Instant 转 LocalDateTime
+Instant instant = Instant.now();
+LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.of("UTC+8"));
+
+try {
+	Thread.sleep(2000);
+} catch (InterruptedException e) {
+	e.printStackTrace();
+}
+
+// LocalDateTime 转 Instant
+LocalDateTime localDateTime1 = LocalDateTime.now();
+Instant instant1 = localDateTime1.toInstant(ZoneOffset.ofHours(+8));
+```
+
+
+
+### 其他时间API
+
 * ZoneId
 * ZoneDateTime
 * Clock
-* ChronoUnit计算两LocalDateTime、LocalDate、LocalTime差值(时分秒日月年等任选)
-* Duration计算两LocalDateTime、LocalTime的差值(秒、纳秒)
-    ```text
-    用于计算两个"时间"间隔
-    ```
-* Period计算两LocalDate的差值(年月日)
-    ```text
-    用于计算两个"日期"间隔
-    ```
+* ChronoUnit计算两LocalDateTime， LocalDate， LocalTime差值(时分秒日月年等任选)
+* Duration计算两LocalDateTime， LocalTime的差值(秒、纳秒)， 用于计算两个"时间"间隔
+* Period计算两LocalDate的差值(年月日)， 用于计算两个"日期"间隔
 * TemporalAdjuster
 * TemporalAdjusters
 
-[OtherTimeApiTest](./src/com/java/time/OtherTimeApiTest.java)  
+
 
 
 

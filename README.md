@@ -637,86 +637,50 @@ JAVA Study
 
 * [Java8新特性简介](./jdk8/README.md#0-Java8新特性简介)
 * [Stream的并行流与串行流](./jdk8/README.md#1-Stream的并行流与串行流)
-* [Lambda表达式](./jdk8/README.md#Lambda表达式)
-    * [Lambda表达式格式](./jdk8/README.md#Lambda表达式格式)
-    * [Lambda表达式的本质](./jdk8/README.md#Lambda表达式的本质)
-    * [Lambda表达式的6种语法格式](./jdk8/README.md#Lambda表达式的6种语法格式)
-* [函数式(Functional)接口](./jdk8/README.md#函数式Functional接口)
-    * [java内置的函数式接口](./jdk8/README.md#java内置的函数式接口)
-* [方法引用](./jdk8/README.md#方法引用)
-    * [方法引用的本质](./jdk8/README.md#方法引用的本质)
-    * [方法引用三中使用情况](./jdk8/README.md#方法引用三中使用情况)
-    * [方法引用示例](./jdk8/README.md#方法引用示例)
-* [构造器引用](./jdk8/README.md#构造器引用)
-    * [数组引用](./jdk8/README.md#数组引用)
-    * [构造器引用示例](./jdk8/README.md#构造器引用示例)
-* [Stream API](./jdk8/README.md#Stream-API)
-    * [Stream与Collection集合区别](./jdk8/README.md#Stream与Collection集合区别)
-    * [Stream特点](./jdk8/README.md#Stream特点)
-    * [Stream执行流程](./jdk8/README.md#Stream执行流程)
-    * [Stream实例化的几种方式](./jdk8/README.md#Stream实例化的几种方式)
-    * [顺序流与并行流的互转](./jdk8/README.md#顺序流与并行流的互转)
-    * [Stream实例化示例](./jdk8/README.md#Stream实例化示例)
-    * [Stream接口的中间操作](./jdk8/README.md#Stream接口的中间操作)
-    * [Stream接口的终止操作](./jdk8/README.md#Stream接口的终止操作)
-    * [Collectors类](./jdk8/README.md#Collectors类)
-* [Optional类](./jdk8/README.md#Optional类)
-    * [Optional方法](./jdk8/README.md#Optional方法)
-    * [Optional示例](./jdk8/README.md#Optional示例)
-* [java8注解新特性](./jdk8/README.md#java8注解新特性)
-    * [java8注解新特性示例](./jdk8/README.md#java8注解新特性示例)
-* [java8接口的改进，新增默认方法、静态方法](./jdk8/README.md#java8接口的改进)
-    * [接口中默认方法的"类优先"原则](./jdk8/README.md#接口中默认方法的类优先原则)
-* [新的时间API](./jdk8/README.md#新的时间API)
-    * [新的时间类包结构](./jdk8/README.md#新的时间类包结构)
-    * [LocalDate、LocalTime、LocalDateTime](./jdk8/README.md#LocalDateLocalTimeLocalDateTime)
-    * [LocalDateTime类](./jdk8/README.md#LocalDateTime类)
-        * [LocalDateTime方法使用示例、时间格式化与解析](./jdk8/README.md#LocalDateTime方法使用示例)
-    * [DateTimeFormatter格式化或解析日期、日间](./jdk8/README.md#DateTimeFormatter格式化或解析日期日间)
-    * [java.util.Date与LocalDateTime,LocalDate互转](./jdk8/README.md#Date与LocalDateTime互转)
-    * [java.sql.Date、java.sql.Time、java.sql.Timestamp与LocalDate、LocalTime、LocalDateTime互转](./jdk8/src/com/java/time/timeConvert.java)
-    * [Instant瞬时](./jdk8/README.md#Instant瞬时)
-        * [Instant与LocalDateTime互转](./jdk8/README.md#Instant与LocalDateTime互转)
-    * [其他时间API](./jdk8/README.md#其他时间API)
-        * ChronoUnit计算两LocalDateTime、LocalDate、LocalTime差值(时分秒日月年等任选)
-        * Duration计算两LocalDateTime、LocalTime的差值(秒、纳秒)
-        * ...
-* [ArrayList在java7和java8上的异同](./jdk8/README.md#ArrayList在java7和java8上的异同)
-* [HashMap在java7和java8的实现原理](./jdk8/README.md#HashMap在java7和java8的实现原理)
-* [Set结构](./jdk8/README.md#Set结构)
-</details>
+* [Lambda表达式](./jdk8/README.md#2-Lambda表达式)
+* [函数式(Functional)接口](./jdk8/README.md#3-函数式Functional接口)
+* [方法引用](./jdk8/README.md#4-方法引用)
+* [构造器引用](./jdk8/README.md#5-构造器引用)
+* [数组引用](./jdk8/README.md#6-数组引用)
+* [Stream API](./jdk8/README.md#7-Stream-API)
+* [Optional类](./jdk8/README.md#8-Optional类)
+* [注解新特性](./jdk8/README.md#9-注解新特性)
+* [接口的改进](./jdk8/README.md#10-接口改进)
+* [新的时间API](./jdk8/README.md#11-新的时间API)
+* [ArrayList在java7和java8上的异同](./jdk8/README.md#12-ArrayList在java7和java8上的异同)
+* [HashMap在java7和java8的实现原理](./jdk8/README.md#13-HashMap在java7和java8的实现原理)
 
-<details>
-<summary>java 9新特性</summary>
 
-* [java 9新特性](./java9_features/README.md)
-    * [本章内容](./java9_features/README.md#本章内容)
-    * [新特性概览](./java9_features/README.md#本章内容)
-    * [JDK和JRE的改变](./java9_features/README.md#JDK和JRE的改变)
-    * [模块化系统](./java9_features/README.md#模块化系统)
-        * [模块使用示例](./java9_features/README.md#模块使用示例)
-    * [REPL工具:jShell](./java9_features/README.md#REPL工具jShell)
-        * [jShell使用示例](./java9_features/README.md#jShell使用示例)
-    * [多版本兼容jar包](./java9_features/README.md#多版本兼容jar包)
-    * [接口的改进，新增私有方法](./java9_features/README.md#接口的改进)
-    * [抽象类、接口异同](./java9_features/README.md#抽象类接口异同)
-    * [钻石操作符升级](./java9_features/README.md#钻石操作符升级)
-    * [try语句的改进](./java9_features/README.md#try语句的改进)
-    * [下划线变量使用限制](./java9_features/README.md#下划线变量使用限制)
-    * [String,StringBuffer,StringBuild存储结构变化](./java9_features/README.md#StringStringBufferStringBuild存储结构变化)
-    * [集合工厂方法:快速创建只读集合](./java9_features/README.md#集合工厂方法:快速创建只读集合)
-    * [增强的Stream API](./java9_features/README.md#增强的StreamAPI)
-    * [增强Optaional类](./java9_features/README.md#增强Optaional类)
-    * [多分辨率图像API](./java9_features/README.md#多分辨率图像API)
-    * [全新的Http客户端接口HttpClient](./java9_features/README.md#全新的Http客户端接口HttpClient)
-    * [其他特性](./java9_features/README.md#)
-        * Deprecated的相关API
-        * 智能Java编译工具
-        * 统一的JVM日志系统
-        * javadoc的HTML 5支持
-        * Javascript引擎升级为Nashorn
-        * java的动态编译器
-        * java的动态编译器
+
+## [java 9新特性](./java9_features/README.md)
+
+* [本章内容](./java9_features/README.md#本章内容)
+* [新特性概览](./java9_features/README.md#本章内容)
+* [JDK和JRE的改变](./java9_features/README.md#JDK和JRE的改变)
+* [模块化系统](./java9_features/README.md#模块化系统)
+    * [模块使用示例](./java9_features/README.md#模块使用示例)
+* [REPL工具:jShell](./java9_features/README.md#REPL工具jShell)
+    * [jShell使用示例](./java9_features/README.md#jShell使用示例)
+* [多版本兼容jar包](./java9_features/README.md#多版本兼容jar包)
+* [接口的改进，新增私有方法](./java9_features/README.md#接口的改进)
+* [抽象类、接口异同](./java9_features/README.md#抽象类接口异同)
+* [钻石操作符升级](./java9_features/README.md#钻石操作符升级)
+* [try语句的改进](./java9_features/README.md#try语句的改进)
+* [下划线变量使用限制](./java9_features/README.md#下划线变量使用限制)
+* [String,StringBuffer,StringBuild存储结构变化](./java9_features/README.md#StringStringBufferStringBuild存储结构变化)
+* [集合工厂方法:快速创建只读集合](./java9_features/README.md#集合工厂方法:快速创建只读集合)
+* [增强的Stream API](./java9_features/README.md#增强的StreamAPI)
+* [增强Optaional类](./java9_features/README.md#增强Optaional类)
+* [多分辨率图像API](./java9_features/README.md#多分辨率图像API)
+* [全新的Http客户端接口HttpClient](./java9_features/README.md#全新的Http客户端接口HttpClient)
+* [其他特性](./java9_features/README.md#)
+    * Deprecated的相关API
+    * 智能Java编译工具
+    * 统一的JVM日志系统
+    * javadoc的HTML 5支持
+    * Javascript引擎升级为Nashorn
+    * java的动态编译器
+    * java的动态编译器
 
 </details>
     
