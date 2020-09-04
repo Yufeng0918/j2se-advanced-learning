@@ -632,63 +632,59 @@ JAVA Study
 </details>
 
 
-<details>
-<summary>新版本java新特性</summary>
 
-<details>
-<summary>java 8新特性</summary>
+## [java 8新特性](./jdk8/README.md)
 
-* [java 8新特性](./jdk8/README.md)
-    * [本章内容](./jdk8/README.md#本章内容)
-    * [Java8新特性简介](./jdk8/README.md#Java8新特性简介)
-    * [Stream的并行流与串行流](./jdk8/README.md#Stream的并行流与串行流)
-    * [Lambda表达式](./jdk8/README.md#Lambda表达式)
-        * [Lambda表达式格式](./jdk8/README.md#Lambda表达式格式)
-        * [Lambda表达式的本质](./jdk8/README.md#Lambda表达式的本质)
-        * [Lambda表达式的6种语法格式](./jdk8/README.md#Lambda表达式的6种语法格式)
-    * [函数式(Functional)接口](./jdk8/README.md#函数式Functional接口)
-        * [java内置的函数式接口](./jdk8/README.md#java内置的函数式接口)
-    * [方法引用](./jdk8/README.md#方法引用)
-        * [方法引用的本质](./jdk8/README.md#方法引用的本质)
-        * [方法引用三中使用情况](./jdk8/README.md#方法引用三中使用情况)
-        * [方法引用示例](./jdk8/README.md#方法引用示例)
-    * [构造器引用](./jdk8/README.md#构造器引用)
-        * [数组引用](./jdk8/README.md#数组引用)
-        * [构造器引用示例](./jdk8/README.md#构造器引用示例)
-    * [Stream API](./jdk8/README.md#Stream-API)
-        * [Stream与Collection集合区别](./jdk8/README.md#Stream与Collection集合区别)
-        * [Stream特点](./jdk8/README.md#Stream特点)
-        * [Stream执行流程](./jdk8/README.md#Stream执行流程)
-        * [Stream实例化的几种方式](./jdk8/README.md#Stream实例化的几种方式)
-        * [顺序流与并行流的互转](./jdk8/README.md#顺序流与并行流的互转)
-        * [Stream实例化示例](./jdk8/README.md#Stream实例化示例)
-        * [Stream接口的中间操作](./jdk8/README.md#Stream接口的中间操作)
-        * [Stream接口的终止操作](./jdk8/README.md#Stream接口的终止操作)
-        * [Collectors类](./jdk8/README.md#Collectors类)
-    * [Optional类](./jdk8/README.md#Optional类)
-        * [Optional方法](./jdk8/README.md#Optional方法)
-        * [Optional示例](./jdk8/README.md#Optional示例)
-    * [java8注解新特性](./jdk8/README.md#java8注解新特性)
-        * [java8注解新特性示例](./jdk8/README.md#java8注解新特性示例)
-    * [java8接口的改进，新增默认方法、静态方法](./jdk8/README.md#java8接口的改进)
-        * [接口中默认方法的"类优先"原则](./jdk8/README.md#接口中默认方法的类优先原则)
-    * [新的时间API](./jdk8/README.md#新的时间API)
-        * [新的时间类包结构](./jdk8/README.md#新的时间类包结构)
-        * [LocalDate、LocalTime、LocalDateTime](./jdk8/README.md#LocalDateLocalTimeLocalDateTime)
-        * [LocalDateTime类](./jdk8/README.md#LocalDateTime类)
-            * [LocalDateTime方法使用示例、时间格式化与解析](./jdk8/README.md#LocalDateTime方法使用示例)
-        * [DateTimeFormatter格式化或解析日期、日间](./jdk8/README.md#DateTimeFormatter格式化或解析日期日间)
-        * [java.util.Date与LocalDateTime,LocalDate互转](./jdk8/README.md#Date与LocalDateTime互转)
-        * [java.sql.Date、java.sql.Time、java.sql.Timestamp与LocalDate、LocalTime、LocalDateTime互转](./jdk8/src/com/java/time/timeConvert.java)
-        * [Instant瞬时](./jdk8/README.md#Instant瞬时)
-            * [Instant与LocalDateTime互转](./jdk8/README.md#Instant与LocalDateTime互转)
-        * [其他时间API](./jdk8/README.md#其他时间API)
-            * ChronoUnit计算两LocalDateTime、LocalDate、LocalTime差值(时分秒日月年等任选)
-            * Duration计算两LocalDateTime、LocalTime的差值(秒、纳秒)
-            * ...
-    * [ArrayList在java7和java8上的异同](./jdk8/README.md#ArrayList在java7和java8上的异同)
-    * [HashMap在java7和java8的实现原理](./jdk8/README.md#HashMap在java7和java8的实现原理)
-    * [Set结构](./jdk8/README.md#Set结构)
+* [本章内容](./jdk8/README.md#本章内容)
+* [Java8新特性简介](./jdk8/README.md#Java8新特性简介)
+* [Stream的并行流与串行流](./jdk8/README.md#Stream的并行流与串行流)
+* [Lambda表达式](./jdk8/README.md#Lambda表达式)
+    * [Lambda表达式格式](./jdk8/README.md#Lambda表达式格式)
+    * [Lambda表达式的本质](./jdk8/README.md#Lambda表达式的本质)
+    * [Lambda表达式的6种语法格式](./jdk8/README.md#Lambda表达式的6种语法格式)
+* [函数式(Functional)接口](./jdk8/README.md#函数式Functional接口)
+    * [java内置的函数式接口](./jdk8/README.md#java内置的函数式接口)
+* [方法引用](./jdk8/README.md#方法引用)
+    * [方法引用的本质](./jdk8/README.md#方法引用的本质)
+    * [方法引用三中使用情况](./jdk8/README.md#方法引用三中使用情况)
+    * [方法引用示例](./jdk8/README.md#方法引用示例)
+* [构造器引用](./jdk8/README.md#构造器引用)
+    * [数组引用](./jdk8/README.md#数组引用)
+    * [构造器引用示例](./jdk8/README.md#构造器引用示例)
+* [Stream API](./jdk8/README.md#Stream-API)
+    * [Stream与Collection集合区别](./jdk8/README.md#Stream与Collection集合区别)
+    * [Stream特点](./jdk8/README.md#Stream特点)
+    * [Stream执行流程](./jdk8/README.md#Stream执行流程)
+    * [Stream实例化的几种方式](./jdk8/README.md#Stream实例化的几种方式)
+    * [顺序流与并行流的互转](./jdk8/README.md#顺序流与并行流的互转)
+    * [Stream实例化示例](./jdk8/README.md#Stream实例化示例)
+    * [Stream接口的中间操作](./jdk8/README.md#Stream接口的中间操作)
+    * [Stream接口的终止操作](./jdk8/README.md#Stream接口的终止操作)
+    * [Collectors类](./jdk8/README.md#Collectors类)
+* [Optional类](./jdk8/README.md#Optional类)
+    * [Optional方法](./jdk8/README.md#Optional方法)
+    * [Optional示例](./jdk8/README.md#Optional示例)
+* [java8注解新特性](./jdk8/README.md#java8注解新特性)
+    * [java8注解新特性示例](./jdk8/README.md#java8注解新特性示例)
+* [java8接口的改进，新增默认方法、静态方法](./jdk8/README.md#java8接口的改进)
+    * [接口中默认方法的"类优先"原则](./jdk8/README.md#接口中默认方法的类优先原则)
+* [新的时间API](./jdk8/README.md#新的时间API)
+    * [新的时间类包结构](./jdk8/README.md#新的时间类包结构)
+    * [LocalDate、LocalTime、LocalDateTime](./jdk8/README.md#LocalDateLocalTimeLocalDateTime)
+    * [LocalDateTime类](./jdk8/README.md#LocalDateTime类)
+        * [LocalDateTime方法使用示例、时间格式化与解析](./jdk8/README.md#LocalDateTime方法使用示例)
+    * [DateTimeFormatter格式化或解析日期、日间](./jdk8/README.md#DateTimeFormatter格式化或解析日期日间)
+    * [java.util.Date与LocalDateTime,LocalDate互转](./jdk8/README.md#Date与LocalDateTime互转)
+    * [java.sql.Date、java.sql.Time、java.sql.Timestamp与LocalDate、LocalTime、LocalDateTime互转](./jdk8/src/com/java/time/timeConvert.java)
+    * [Instant瞬时](./jdk8/README.md#Instant瞬时)
+        * [Instant与LocalDateTime互转](./jdk8/README.md#Instant与LocalDateTime互转)
+    * [其他时间API](./jdk8/README.md#其他时间API)
+        * ChronoUnit计算两LocalDateTime、LocalDate、LocalTime差值(时分秒日月年等任选)
+        * Duration计算两LocalDateTime、LocalTime的差值(秒、纳秒)
+        * ...
+* [ArrayList在java7和java8上的异同](./jdk8/README.md#ArrayList在java7和java8上的异同)
+* [HashMap在java7和java8的实现原理](./jdk8/README.md#HashMap在java7和java8的实现原理)
+* [Set结构](./jdk8/README.md#Set结构)
 </details>
 
 <details>
@@ -792,28 +788,6 @@ JAVA Study
 </details> 
 </details>
 
-
-<details>
-<summary>经典项目</summary>
-
-* 经典项目
-    * [家庭记账软件](./project01/README.md)
-    * [客户信息管理系统](./project02/README.md)
-    * Bank管理系统
-        * [Bank01](./Bank01/README.md)
-        * [Bank02](./Bank02/README.md)
-        * [Bank03](./Bank03/README.md)
-        * [Bank04](./Bank04/README.md)
-        * [Bank05](./Bank05/README.md)
-        * [Bank06](./Bank06/README.md)
-        * [Bank07](./Bank07/README.md)
-        * [Bank08](./Bank08/README.md)
-      
-    * 开发团队调度软件
-        * [开发团队调度软件_参考版](./project03_sample/README.md)
-        * [开发团队调度软件_改进版](./project03/README.md)
-    * [考试管理系统软件](./project04/README.md)
-</details>
 
 * other
     * [Java学习线路](./README/java学习线路_ok.md)
