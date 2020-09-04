@@ -610,81 +610,83 @@ Optional<T> reduce(BinaryOperator<T> accumulator);
 
 
 
-## 8. Collectors类
+### Collectors类
 
 Collectors实用类提供了很多静态方法，可以方便地创建常见收集器实例
 
-### 常用方法
-
-* static <T> Collector<T,​?,​List<T>> toList() 
->把流中的元素收集到List中，返回一个Collector
-
-* static <T> Collector<T,​?,​Set<T>> toSet() 
->把流中的元素收集到Set中，返回一个Collector
-
-* static <T,​K,​U> Collector<T,​?,​Map<K,​U>> toMap​(  
-                                                Function<? super T,​? extends K> keyMapper,   
-                                                Function<? super T,​? extends U> valueMapper  
-                                                ) 
->把流中的元素收集到Map中，返回一个Collector
+```java
+static <T> Collector<T, ?, List<T>> toList() 
+static <T> Collector<T, ?, Set<T>> toSet() 
+static <T, K, U> Collector<T, ?, Map<K, U>> toMap(  
+    Function<? super T, ? extends K> keyMapper,   
+    Function<? super T, ? extends U> valueMapper  
+) 
+```
 
 
 
-## 9. Optional类
+## 8. Optional类
 
 只能存放一个元素的容器
 
 使用场景：在程序中避免空指针异常
 
 ### Optional方法
-```text
 
-* 创建Optional类对象
+#### 创建对象
+
+```java
 public static<T> Optional<T> empty()
-    创建一个空value值的Optional对象
+//    创建一个空value值的Optional对象
 
 public static <T> Optional<T> of(T value)
-    创建指定值为value的Optional类对象
-    value不能为null，为空时报空指针异常java.lang.NullPointerException
+//    创建指定值为value的Optional类对象
+//    value不能为null，为空时报空指针异常java.lang.NullPointerException
 
 public static <T> Optional<T> ofNullable(T value)
-创建指定值为value的Optional类对象
-    value可以为null，此时Optional对象为空的Optional，不能使用get()取里面的值
-
-
-* 获取Optional容器中的对象
-public T orElse(T other)
-    获取此Optional容器获取value值。如果此Optional容器的value属性(元素)不为null，则直接返回value，否则返回指定的对象other
-    与ofNullable(T value)配合使用
-
-public T get()
-    获取此Optional容器获取value值。如果此Optional容器的value属性值不为null，则直接返回value，否则抛出异常NoSuchElementException
-    与of(T value)方法配合使用。
-    必须确保value属性值不为空才能取到值。可以调用isPresent()或isEmpty()来判断value属性值是否为空
-
-public T orElseGet(Supplier<? extends T> supplier)
-    获取此Optional容器获取value值。如果此Optional容器的value属性值不为null，则直接返回value，否则执行已实现Supplier接口实例supplier的supplier.get()
-
-public T orElseThrow()
-    获取此Optional容器获取value值。如果此Optional容器的value属性值不为null，则直接返回value，否则抛出异常NoSuchElementException
-    与 get()等价
-
-
-* 判断Optional容器中是否包含对象
-public boolean isPresent()
-    判断此Optional容器的value值是否存在，存在返回true，否则false。即判断value是否为null
-
-public void ifPresent(Consumer<? super T> action)
-    此Optional容器的value值存在，则执行实现Consumer接口实例action的action.accept(value)方法，否则不做任何处理
-
-public boolean isEmpty()
-    判断此Optional容器的value值是否为null。是返回true，否则false。
-    与isPresent()方法取相反的值
-
+// 创建指定值为value的Optional类对象, value可以为null，此时Optional对象为空的Optional，不能使用get()取里面的值
 ```
 
+#### 获取对象
+
+```JAVA
+public T orElse(T other)
+//获取此Optional容器获取value值。如果此Optional容器的value属性(元素)不为null，则直接返回value，否则返回指定的对象other
+//与ofNullable(T value)配合使用
+
+public T get()
+//  获取此Optional容器获取value值。如果此Optional容器的value属性值不为null，则直接返回value，
+//  否则抛出异常NoSuchElementException
+//    与of(T value)方法配合使用。
+//    必须确保value属性值不为空才能取到值。可以调用isPresent()或isEmpty()来判断value属性值是否为空
+
+public T orElseGet(Supplier<? extends T> supplier)
+//    获取此Optional容器获取value值。如果此Optional容器的value属性值不为null，则直接返回value，否则执行已实现Supplier接口实例supplier的supplier.get()
+
+public T orElseThrow()
+//    获取此Optional容器获取value值。如果此Optional容器的value属性值不为null，则直接返回value，否则抛出异常NoSuchElementException
+//    与 get()等价
+```
+
+#### 判断空值
+
+```JAVA
+public boolean isPresent()
+//     判断此Optional容器的value值是否存在，存在返回true，否则false。即判断value是否为null
+
+public void ifPresent(Consumer<? super T> action)
+//     此Optional容器的value值存在，则执行实现Consumer接口实例action的action.accept(value)方法，否则不做任何处理
+
+public boolean isEmpty()
+//     判断此Optional容器的value值是否为null。是返回true，否则false。
+//     与isPresent()方法取相反的值
+```
+
+
+
 ### Optional示例
-```text
+
+```java
     /**
      * Optional防止空指针的应用
      * @param employee
@@ -699,27 +701,11 @@ public boolean isEmpty()
 
 
 
-## 10. java8注解新特性
+## 9. 注解新特性
 
-* 可重复的注解
-* 可用于类型的注解
-* 元注解@Target的参数类型ElementType枚举值多了两个：TYPE_PARAMETER,TYPE_USE
-    * ElementType.TYPE_PARAMETER
-      
-        >表示该注解能写在类型变量的声明语句中（如：泛型声明）
-    * ElementType.TYPE_USE
-      
-        >表示该注解能写在使用类型的任何语句中
-* 在java 8之前，注解只能是在声明的地方使用，java 8 开始，@Target为ElementType.TYPE_USE注解可以用在任何地方
+### 可重复的注解
 
-**可重复的注解**  
-```text
-@Target({TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, MODULE})
-@Retention(RetentionPolicy.RUNTIME)
-@interface Annotations {
-    MyAnnotation[] value();
-}
-
+```java
 /**
  * 可重复的注解
  */
@@ -727,9 +713,6 @@ public boolean isEmpty()
 @Target({TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, MODULE, TYPE_PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MyAnnotation {
-//    String[] value();
-
-    // 也可以定义带默认值的
     String[] value() default {"hehe"};
 }
 
@@ -745,8 +728,19 @@ class AnnotationTest {
 }
 ```
 
-** 可以用于注解类型 **
-```text
+### 类型注解
+
+元注解@Target的参数类型ElementType枚举值多了两个：TYPE_PARAMETER, TYPE_USE。在java 8之前，注解只能是在声明的地方使用，java 8 开始，@Target为ElementType.TYPE_USE注解可以用在任何地方
+
+* ElementType.TYPE_PARAMETER
+
+  >表示该注解能写在类型变量的声明语句中（如：泛型声明）
+
+* ElementType.TYPE_USE
+
+  >表示该注解能写在使用类型的任何语句中
+
+```java
 @Target(ElementType.TYPE_PARAMETER)
 public @interface MyAnnotation2 {
 
@@ -767,7 +761,7 @@ class TypeDefine<@MyAnnotation2() U> {
 ```
 
 **  **
-```text
+```java
 @Target(ElementType.TYPE_USE)
 public @interface MyAnnotation3 {
 
@@ -807,24 +801,26 @@ class TypeDefine2<U> {
 
 
 
-## 11. java8接口的改进
+## 10. java8接口的改进
 从java8开始，接口可以添加默认方法、静态方法
-* 默认方法
-```text
+### 默认方法
+
 默认方法使用default关键字修饰。可以通过实现类对象来调用。
 不管写不写public修饰，都是public，修饰的
 我们在已有的接口中提供新方法的同时，还保持了与旧版本代码的兼容性。
 比如java 8 API中对Collection、List、Comparator等接口提供了丰富的默认方法
-```
 
-* 静态方法
-```text
+
+
+### 静态方法
+
 使用static关键字修饰。可以通过接口直接调用静态方法。
 不管写不写public修饰，都是public，修饰的
 我们经常在相互一起使用的类中使用静态方法。
 你可以在标准库中找到像Collection、Collections、Path、Paths这样成对的接口和类
-```
-* 注意
+
+**注意**
+
 ```text
 @interface 修饰的接口，不是声明了一个interface，它是注解，继承了java.lang.annotation.Annotation 接口
 
@@ -851,11 +847,10 @@ interface 修改的接口才是声明了一个interface
 那么必须覆盖该方法来解决冲突
 ```
 
-** 示例 **
-[接口冲突示例](./src/com/java/interfaceFeatures/MyClass.java)
 
 
-# 12. 新的时间API
+
+## 11. 新的时间API
 java 8 吸收了Joda-Time的精华，引入了java.time接口。java 8之前可以用第三方的Joda-Time。
 
 java 8之前的日期时间API存在的问题：

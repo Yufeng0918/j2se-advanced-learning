@@ -183,13 +183,8 @@ public class StreamApiTest3 {
         System.out.println();
 
         // 把list中的员工信息转换成以id为key，Employee对象为值的Map中
-        Function<Employee, Integer> keyMapper = Employee::getId;
-        Function<Employee, Employee> valueMapper = e -> e;
-        Map<Integer, Employee> employeeMap = employeeList.stream().collect(Collectors.toMap(keyMapper, valueMapper));
+        Map<Integer, Employee> employeeMap = employeeList.stream().collect(Collectors.toMap(Employee::getId, e -> e));
         employeeMap.forEach((k, v) -> System.out.println(String.format("key:%s, value:%s", k, v)));
-        System.out.println();
-        for (Map.Entry entry : employeeMap.entrySet()) {
-            System.out.println(entry);
-        }
+        employeeMap.entrySet().stream().forEach(System.out::println);
     }
 }

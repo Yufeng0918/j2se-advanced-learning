@@ -36,12 +36,12 @@ class AnnotationTest {
 }
 
 // 注解类型
-class TypeDefine<@MyAnnotation2() U> {
+class TypeDefine<@MyAnnotation2 U> {
     // 字段属性
     private U u;
 
     // 方法
-    public <@MyAnnotation2() T> void test(T t) {
+    public <@MyAnnotation2 T> void test(T t) {
         System.out.println("test method..." + u);
         System.out.println(t);
     }

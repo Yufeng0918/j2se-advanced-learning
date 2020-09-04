@@ -66,7 +66,6 @@ public class StreamApiTest2 {
 
         System.out.println(list);
         list.stream().distinct().forEach(System.out::println);
-
     }
 
     /**
