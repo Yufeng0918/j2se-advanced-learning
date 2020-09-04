@@ -635,9 +635,8 @@ JAVA Study
 
 ## [java 8新特性](./jdk8/README.md)
 
-* [本章内容](./jdk8/README.md#本章内容)
-* [Java8新特性简介](./jdk8/README.md#Java8新特性简介)
-* [Stream的并行流与串行流](./jdk8/README.md#Stream的并行流与串行流)
+* [Java8新特性简介](./jdk8/README.md#0-Java8新特性简介)
+* [Stream的并行流与串行流](./jdk8/README.md#1-Stream的并行流与串行流)
 * [Lambda表达式](./jdk8/README.md#Lambda表达式)
     * [Lambda表达式格式](./jdk8/README.md#Lambda表达式格式)
     * [Lambda表达式的本质](./jdk8/README.md#Lambda表达式的本质)
