@@ -76,50 +76,48 @@ J2SE
 
 
 
-## [day07_高级类特性1](./day07/README.md "day07")
+## [day07_高级类特性](./day07/README.md "day07")
 
-* [关键字--this](./day07/README.md#关键字--this)
-    * [this作用](./day07/README.md#this作用)
-    * [this关键字使用注意事项](./day07/README.md#this关键字使用注意事项)
-* [JavaBean](./day07/README.md#JavaBean)
-* [UML图表示类方法](./day07/README.md#UML图表示类方法)
-* [关键字--package](./day07/README.md#关键字--package)
-    * [package的使用](./day07/README.md#package的使用)
-* [关键字--import](./day07/README.md#关键字--import)
-    * [import语句使用注意事项](./day07/README.md#import语句使用注意事项)
-* [JDK主要的包介绍](./day07/README.md#JDK主要的包介绍)
-* [面向对象特征之二：继承](./day07/README.md#面向对象特征之二继承)
-    * [继承基本概念](./day07/README.md#继承基本概念)
-    * [继承的作用](./day07/README.md#继承的作用)
-    * [继承的规则](./day07/README.md#继承的规则)
-* [方法的重写(overrides)](./day07/README.md#方法的重写overrides)
-    * [定义](./day07/README.md#定义)
-    * [方法重写规则](./day07/README.md#方法重写规则)
-* [方法重写与方法重载的区别](./day07/README.md#方法重写与方法重载的区别)
-</details>
+* [this](./day07/README.md#1-this)
+
+* [JavaBean](./day07/README.md#2-JavaBean)
+
+* [UML图表示类方法](./day07/README.md#3-UML图表示类方法)
+
+* [关键字-package](./day07/README.md#3-关键字-package)
+
+* [关键字-import](./day07/README.md#4-关键字-import)
+
+* [JDK主要的包介绍](./day07/README.md#5-JDK主要的包介绍)
+
+* [面向对象特征之二：继承](./day07/README.md#6-面向对象特征之二继承)
+
+* [方法的重写(overrides)](./day07/README.md#7-重写)
+
+* [重写与重载的区别](./day07/README.md#8-方法重写与方法重载的区别)
+
+  
+
+## [day08_高级类特性](./day08/README.md "day08")
+
+* [四种访问权限修饰符](./day08/README.md#四种访问权限修饰符)
+* [super关键字](./day08/README.md#super关键字)
+    * [调用父类的构造器](./day08/README.md#调用父类的构造器)
+* [this和super的区别](./day08/README.md#this和super的区别)
+    * [super父类与子类的内存结构](./day08/README.md#super父类与子类的内存结构)
+    * [子类对象实例化的过程及内存结构](./day08/README.md#子类对象实例化的过程及内存结构)
+* [面向对象特征之三：多态性](./day08/README.md#面向对象特征之三多态性)
+    * [虚拟方法调用(Virtual method invocation)](./day08/README.md#虚拟方法调用Virtual-method-invocation)
+    * [子类继承父类](./day08/README.md#子类继承父类)
+* [instanceof操作符](./day08/README.md#instanceof操作符)
+* [对象类型转换(Casting)](./day08/README.md#对象类型转换Casting)
+* [Object类](./day08/README.md#Object类)
+    * [Object类中的主要方法](./day08/README.md#Object类中的主要方法)
+* [==操作符与equals方法](./day08/README.md#操作符与equals方法)
 
 
-<details>
-<summary>day08_高级类特性1：多态特性、4中访问权限修饰符、this与super区别、==与equals方法区别、instanceof操作符</summary>
 
-* [day08_高级类特性1](./day08/README.md "day08")
-    * [四种访问权限修饰符](./day08/README.md#四种访问权限修饰符)
-    * [super关键字](./day08/README.md#super关键字)
-        * [调用父类的构造器](./day08/README.md#调用父类的构造器)
-    * [this和super的区别](./day08/README.md#this和super的区别)
-        * [super父类与子类的内存结构](./day08/README.md#super父类与子类的内存结构)
-        * [子类对象实例化的过程及内存结构](./day08/README.md#子类对象实例化的过程及内存结构)
-    * [面向对象特征之三：多态性](./day08/README.md#面向对象特征之三多态性)
-        * [虚拟方法调用(Virtual method invocation)](./day08/README.md#虚拟方法调用Virtual-method-invocation)
-        * [子类继承父类](./day08/README.md#子类继承父类)
-    * [instanceof操作符](./day08/README.md#instanceof操作符)
-    * [对象类型转换(Casting)](./day08/README.md#对象类型转换Casting)
-    * [Object类](./day08/README.md#Object类)
-        * [Object类中的主要方法](./day08/README.md#Object类中的主要方法)
-    * [==操作符与equals方法](./day08/README.md#操作符与equals方法)
-    
 
-</details>
 
 
 <details>
