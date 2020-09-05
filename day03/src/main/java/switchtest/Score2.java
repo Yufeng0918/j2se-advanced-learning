@@ -1,4 +1,4 @@
-/*
+package switchtest;/*
 
 switch编写程序：从键盘上读入一个学生成绩，存放在变量score中，根据score的值输出其对应的成绩等级：
 

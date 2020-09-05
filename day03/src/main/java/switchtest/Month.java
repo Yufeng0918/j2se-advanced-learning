@@ -1,4 +1,4 @@
-/*
+package switchtest;/*
 switch通过月份判断季节
 
 运行：javac -encoding utf8 Month.java && java Month.java

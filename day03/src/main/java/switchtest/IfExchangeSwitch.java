@@ -1,4 +1,4 @@
-/*
+package switchtest;/*
 特定情况下，if-else与switch-case互换
 
 运行：javac -encoding utf8 IfExchangeSwitch.java && java IfExchangeSwitch

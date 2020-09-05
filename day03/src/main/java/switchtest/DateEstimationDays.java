@@ -1,4 +1,4 @@
-/*
+package switchtest;/*
 编写程序：从键盘上输入2019年的“month”和“day”，要求通过程序输出输入的日期为2019年的第几天。
 运行：javac -encoding utf8 DateEstimationDays.java && java DateEstimationDays
 * */

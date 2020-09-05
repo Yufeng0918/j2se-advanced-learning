@@ -1,4 +1,4 @@
-/*
+package iftest;/*
 if-else分支语句
 
 执行：javac -encoding utf8 IfTest1.java && java IfTest1

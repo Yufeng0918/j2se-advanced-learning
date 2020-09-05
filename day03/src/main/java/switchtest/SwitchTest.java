@@ -1,4 +1,4 @@
-/*
+package switchtest;/*
 switch-case分支语句
 
 运行：javac -encoding utf8 SwitchTest.java &&java  SwitchTest

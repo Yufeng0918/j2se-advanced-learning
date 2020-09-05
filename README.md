@@ -31,44 +31,26 @@ JAVA Study
 
 
 
-### [day03 程序流程控制.循环结构](./day03/README.md "day03")
+## [day03 程序流程控制](./day03/README.md "day03")
 
-* [程序流程控制](./day03/README.md#程序流程控制)
-    * [结构类型](./day03/README.md#结构类型)
-        * 顺序结构
-        * 分支结构
-        * 循环结构
-* [分支结构](./day03/README.md#分支结构)
-    * [if-else](./day03/README.md#if-else)
-    * [switch-case](./day03/README.md#switch-case)
-        * [switch-case规则](./day03/README.md#switch-case规则)
-    * [自动判断是否为闰年 示例](./day03/DateEstimationDays2.java)
-* [循环结构](./day03/README.md#循环结构)
-    * [for循环](./day03/README.md#for循环)
-    * [while](./day03/README.md#while)
-    * [do-while](./day03/README.md#do-while)
-    * [特殊流程控制break](./day03/README.md#特殊流程控制break)
-        * break语句用于终止某个语句块的执行
-        * [break语句出现在多层，嵌套的语句块中时，可以通过标签指明要终止的是哪一层语句块](./day03/README.md#break语句出现在多层嵌套的语句块中时可以通过标签指明要终止的是哪一层语句块)
-    * [continue特殊控制](./day03/README.md#continue特殊控制)
-    * [return](./day03/README.md#return)
-    * [break, continue, return特殊流程控制说明](./day03/README.md#break-continue-return特殊流程控制说明)
-</details>
+[结构类型](./day03/README.md#1-结构类型)
+
+[分支结构](./day03/README.md#2-分支结构)
+
+[循环结构](./day03/README.md#2-循环结构)
 
 
-<details>
-<summary>day04_基本语法.数组</summary>
 
-* [day04_基本语法.数组](./day04/README.md "day04")
-    * [数组](./day04/README.md#数组)
-    * [数组声明与初始化](./day04/README.md#数组声明与初始化)
-    * [数组元素的默认值](./day04/README.md#数组元素的默认值)
-    * [java数据的内存基本结构](./day04/README.md#java数据的内存基本结构)
-    * [多维数组](./day04/README.md#多维数组)
-        * [数组的不同书写格式](./day04/README.md#数组的不同书写格式)
-        * [混合数据类型数组](./day04/README.md#混合数据类型数组)
-    * [Arrays数组操作类](./day04/README.md#Arrays数组操作类)
-    
+## [day04_基本语法.数组](./day04/README.md "day04")
+
+* [数组](./day04/README.md#数组)
+* [数组声明与初始化](./day04/README.md#数组声明与初始化)
+* [数组元素的默认值](./day04/README.md#数组元素的默认值)
+* [java数据的内存基本结构](./day04/README.md#java数据的内存基本结构)
+* [多维数组](./day04/README.md#多维数组)
+    * [数组的不同书写格式](./day04/README.md#数组的不同书写格式)
+    * [混合数据类型数组](./day04/README.md#混合数据类型数组)
+* [Arrays数组操作类](./day04/README.md#Arrays数组操作类)
 
 </details>
 
