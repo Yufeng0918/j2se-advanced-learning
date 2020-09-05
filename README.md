@@ -41,7 +41,7 @@ J2SE
 
 
 
-## [day04_数组](./day04/README.md "day04")
+## [day04 数组](./day04/README.md "day04")
 
 * [数组](./day04/README.md#数组)
 * [数组声明与初始化](./day04/README.md#数组声明与初始化)
