@@ -48,8 +48,6 @@ J2SE
 * [数组元素的默认值](./day04/README.md#数组元素的默认值)
 * [java数据的内存基本结构](./day04/README.md#java数据的内存基本结构)
 * [多维数组](./day04/README.md#多维数组)
-    * [数组的不同书写格式](./day04/README.md#数组的不同书写格式)
-    * [混合数据类型数组](./day04/README.md#混合数据类型数组)
 * [Arrays数组操作类](./day04/README.md#Arrays数组操作类)
 
 
@@ -67,41 +65,37 @@ J2SE
 
     
 
-<details>
-<summary>day06_面向对象编程：构造器</summary>
+## [day06_构造器](./day06/README.md "day06")
 
-* [day06_面向对象编程.构造器](./day06/README.md "day06")
-    * [类的成员之三：构造器(构造方法)](./day06/README.md#类的成员之三构造器构造方法)
-        * [构造器的特征](./day06/README.md#构造器的特征)
-        * [构造器的作用](./day06/README.md#构造器的作用)
-        * [构造器语法格式](./day06/README.md#构造器语法格式)
-        * [构造器规则](./day06/README.md#构造器规则)
-    * [构造器重载](./day06/README.md#构造器重载)
+* [特征](./day06/README.md#1-特征)
+* [作用](./day06/README.md#2-作用)
+* [语法格式](./day06/README.md#3-语法格式)
+* [规则](./day06/README.md#4-规则)
 
-</details>
+* [重载](./day06/README.md#5-重载)
 
-<details>
-<summary>day07_高级类特性1：封装、继承特性、方法重写与方法重载区别、this关键字</summary>
 
-* [day07_高级类特性1](./day07/README.md "day07")
-    * [关键字--this](./day07/README.md#关键字--this)
-        * [this作用](./day07/README.md#this作用)
-        * [this关键字使用注意事项](./day07/README.md#this关键字使用注意事项)
-    * [JavaBean](./day07/README.md#JavaBean)
-    * [UML图表示类方法](./day07/README.md#UML图表示类方法)
-    * [关键字--package](./day07/README.md#关键字--package)
-        * [package的使用](./day07/README.md#package的使用)
-    * [关键字--import](./day07/README.md#关键字--import)
-        * [import语句使用注意事项](./day07/README.md#import语句使用注意事项)
-    * [JDK主要的包介绍](./day07/README.md#JDK主要的包介绍)
-    * [面向对象特征之二：继承](./day07/README.md#面向对象特征之二继承)
-        * [继承基本概念](./day07/README.md#继承基本概念)
-        * [继承的作用](./day07/README.md#继承的作用)
-        * [继承的规则](./day07/README.md#继承的规则)
-    * [方法的重写(overrides)](./day07/README.md#方法的重写overrides)
-        * [定义](./day07/README.md#定义)
-        * [方法重写规则](./day07/README.md#方法重写规则)
-    * [方法重写与方法重载的区别](./day07/README.md#方法重写与方法重载的区别)
+
+## [day07_高级类特性1](./day07/README.md "day07")
+
+* [关键字--this](./day07/README.md#关键字--this)
+    * [this作用](./day07/README.md#this作用)
+    * [this关键字使用注意事项](./day07/README.md#this关键字使用注意事项)
+* [JavaBean](./day07/README.md#JavaBean)
+* [UML图表示类方法](./day07/README.md#UML图表示类方法)
+* [关键字--package](./day07/README.md#关键字--package)
+    * [package的使用](./day07/README.md#package的使用)
+* [关键字--import](./day07/README.md#关键字--import)
+    * [import语句使用注意事项](./day07/README.md#import语句使用注意事项)
+* [JDK主要的包介绍](./day07/README.md#JDK主要的包介绍)
+* [面向对象特征之二：继承](./day07/README.md#面向对象特征之二继承)
+    * [继承基本概念](./day07/README.md#继承基本概念)
+    * [继承的作用](./day07/README.md#继承的作用)
+    * [继承的规则](./day07/README.md#继承的规则)
+* [方法的重写(overrides)](./day07/README.md#方法的重写overrides)
+    * [定义](./day07/README.md#定义)
+    * [方法重写规则](./day07/README.md#方法重写规则)
+* [方法重写与方法重载的区别](./day07/README.md#方法重写与方法重载的区别)
 </details>
 
 
