@@ -1,7 +1,7 @@
-JAVA Study
+J2SE
 ==
 
-# Table Of Contents
+
 
 ## [day01 语言概述与基本语法](./day01/README.md "day01")
 
@@ -33,15 +33,15 @@ JAVA Study
 
 ## [day03 程序流程控制](./day03/README.md "day03")
 
-[结构类型](./day03/README.md#1-结构类型)
++ [结构类型](./day03/README.md#1-结构类型)
 
-[分支结构](./day03/README.md#2-分支结构)
++ [分支结构](./day03/README.md#2-分支结构)
 
-[循环结构](./day03/README.md#2-循环结构)
++ [循环结构](./day03/README.md#2-循环结构)
 
 
 
-## [day04_基本语法.数组](./day04/README.md "day04")
+## [day04_数组](./day04/README.md "day04")
 
 * [数组](./day04/README.md#数组)
 * [数组声明与初始化](./day04/README.md#数组声明与初始化)
@@ -52,35 +52,32 @@ JAVA Study
     * [混合数据类型数组](./day04/README.md#混合数据类型数组)
 * [Arrays数组操作类](./day04/README.md#Arrays数组操作类)
 
-</details>
 
 
-<details>
-<summary>day05_面向对象编程：类结构、属性、方法</summary>
+## [day05 面向对象编程](./day05/README.md "day05")
 
-* [day05_面向对象编程](./day05/README.md "day05")
-    * [学习面向对象内容的三条主线](./day05/README.md#学习面向对象内容的三条主线)
-    * [面向对象与面向过程](./day05/README.md#面向对象与面向过程)
-    * [面向对象的思想概述](./day05/README.md#面向对象的思想概述)
-    * [class类结构](./day05/README.md#class类结构)
-        * [类的成员构成示例1](./day05/README.md#类的成员构成示例1)
-        * [类的成员构成示例2](./day05/README.md#类的成员构成示例2)
-    * [创建java自定义类](./day05/README.md#创建java自定义类)
-        * [类的成员之一：属性](./day05/README.md#类的成员之一：属性)
-        * [类中变量分类：成员变量与局部变量](./day05/README.md#类中变量分类成员变量与局部变量)
-            * [成员变量的默认值(类变量、实例变量)](./day05/README.md#成员变量的默认值类变量实例变量)
-        * [类的成员之二：方法](./day05/README.md#类的成员之二方法)
-        * [对象的创建和使用](./day05/README.md#对象的创建和使用)
-        * [类的访问机制](./day05/README.md#类的访问机制)
-        * [方法(method)](./day05/README.md#方法method)
-            * 方法的调用
-        * [方法的重载](./day05/README.md#方法的重载)
-        * [可变个数的形参](./day05/README.md#可变个数的形参)
-    * [内存划分的结构](./day05/README.md#内存划分的结构)
-    * [方法的参数传递](./day05/README.md#方法的参数传递)
-    * [面向对象特征之一：封装和隐藏](./day05/README.md#面向对象特征之一封装和隐藏)
-        * [信息的封装和隐藏](./day05/README.md#信息的封装和隐藏)
-        
+* [学习面向对象内容的三条主线](./day05/README.md#学习面向对象内容的三条主线)
+* [面向对象与面向过程](./day05/README.md#面向对象与面向过程)
+* [面向对象的思想概述](./day05/README.md#面向对象的思想概述)
+* [class类结构](./day05/README.md#class类结构)
+    * [类的成员构成示例1](./day05/README.md#类的成员构成示例1)
+    * [类的成员构成示例2](./day05/README.md#类的成员构成示例2)
+* [创建java自定义类](./day05/README.md#创建java自定义类)
+    * [类的成员之一：属性](./day05/README.md#类的成员之一：属性)
+    * [类中变量分类：成员变量与局部变量](./day05/README.md#类中变量分类成员变量与局部变量)
+        * [成员变量的默认值(类变量、实例变量)](./day05/README.md#成员变量的默认值类变量实例变量)
+    * [类的成员之二：方法](./day05/README.md#类的成员之二方法)
+    * [对象的创建和使用](./day05/README.md#对象的创建和使用)
+    * [类的访问机制](./day05/README.md#类的访问机制)
+    * [方法(method)](./day05/README.md#方法method)
+        * 方法的调用
+    * [方法的重载](./day05/README.md#方法的重载)
+    * [可变个数的形参](./day05/README.md#可变个数的形参)
+* [内存划分的结构](./day05/README.md#内存划分的结构)
+* [方法的参数传递](./day05/README.md#方法的参数传递)
+* [面向对象特征之一：封装和隐藏](./day05/README.md#面向对象特征之一封装和隐藏)
+    * [信息的封装和隐藏](./day05/README.md#信息的封装和隐藏)
+    
 
 </details>
 
