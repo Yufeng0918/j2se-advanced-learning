@@ -107,19 +107,14 @@ J2SE
 * [instanceof操作符](./day08/README.md#5-instanceof操作符)
 * [对象类型转换(Casting)](./day08/README.md#6-对象类型转换Casting)
 * [Object类](./day08/README.md#7-Object类)
-    * [Object类中的主要方法](./day08/README.md#Object类中的主要方法)
-    * [==操作符与equals方法](./day08/README.md#操作符与equals方法)
 
 
 
 ## [day09 高级类特性](./day09/README.md "day09")
 
-* [toString()方法](./day09/README.md#toString方法)
-* [包装类(Wrapper)](./day09/README.md#包装类Wrapper)
-    * [基本数据类型、包装类、String类三者之间的互转](./day09/README.md#基本数据类型包装类String类三者之间的互转)
-* [static关键字](./day09/README.md#static关键字)
-    * [类属性、类方法的设计思想](./day09/README.md#类属性类方法的设计思想)
-    
+* [toString()方法](./day09/README.md#1-toString方法)
+* [包装类(Wrapper)](./day09/README.md#2-包装类Wrapper)
+* [static关键字](./day09/README.md#3-static关键字)
 
 
 
