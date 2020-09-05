@@ -40,11 +40,11 @@ class Scoretor {
         System.out.println("请输入学生成绩（输入姓名、成绩），输入q退出：");
         String line = "";
         LinkedList aStudent = new LinkedList();
-        while (!line.strip().equals("q")) { // 判断输入的字符是否为 q
+        while (!line.trim().equals("q")) { // 判断输入的字符是否为 q
             if (aStudent.size() % 2 == 0) {
                 System.out.printf("第%d个学生姓名：", tmap.size() + 1);
                 line = sc.nextLine();
-                if (line.strip().isEmpty()) {
+                if (line.trim().isEmpty()) {
                     continue;
                 }
                 aStudent.add(line);

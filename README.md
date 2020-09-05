@@ -132,115 +132,46 @@ J2SE
 
 
 
-### [day11_高级类特性](./day11/README.md "day11")
+## [day11 高级类特性](./day11/README.md "day11")
 
-* [工厂方法设计模式(factory method)](./day11/README.md#工厂方法设计模式factory-method)
-    * 概述
-    * [应用场景](./day11/README.md#应用场景)
-    * [示例](./day11/README.md#工厂方法设计模式示例)
-    * [工厂方法设计总结](./day11/README.md#工厂方法设计总结)
-* [代理模式(proxy)](./day11/README.md#代理模式(proxy))
-    * 概述(./day11/README.md#)
-    * [示例](./day11/README.md#示例)
-* [接口和抽象类的关系](./day11/README.md#)
-* [类的成员之五：内部类](./day11/README.md#类的成员之五内部类)
-    * [内部类示例](./day11/README.md#内部类示例)
-* [匿名内部类](./day11/README.md#匿名内部类)
-    * [匿名内部示例](./day11/README.md#匿名内部示例)
+* [工厂方法设计模式](./day11/README.md#1-工厂方法)
+* [代理模式](./day11/README.md#2-代理模式)
+* [接口和抽象类的关系](./day11/README.md#3-接口和抽象类的关系)
+* [类的成员之五：内部类](./day11/README.md#4-类的成员之五内部类)
+* [匿名内部类](./day11/README.md#5-匿名内部类)
 
-</details>
+    
 
 
-<details>
-<summary>day12_异常处理</summary>
 
-* [day12_异常处理](./day12/README.md "day12")
-    * [异常的定义](./day12/README.md#异常的定义)
-        * [分类](./day12/README.md#分类)
-        * Exception
-        * 异常解决方法
-        * [异常特点](./day12/README.md#异常特点)
-        * [java异常类层次](./day12/README.md#java异常类层次)
-        * [异常、错误 示例](./day12/README.md#示例)
-    * [异常处理机制](./day12/README.md#异常处理机制)
-        * [如何处理异常](./day12/README.md#如何处理异常)
-    * [异常处理方式一：抓取异常](./day12/README.md#异常处理方式一抓取异常)
-        * [注意](./day12/README.md#注意)
-    * [异常处理方式二：声明抛出异常](./day12/README.md#异常处理方式二声明抛出异常)
-        * [重写方法声明抛出异常的原则](./day12/README.md#重写方法声明抛出异常的原则)
-    * [手动抛出异常](./day12/README.md#手动抛出异常)
-    * [自定义异常类](./day12/README.md#自定义异常类)
-    * [异常处理小结](./day12/README.md#异常处理小结)
-        * [java异常处理模型：抓抛模型](./day12/README.md#java异常处理模型抓抛模型)
-        * [异常处理5个关键字](./day12/README.md#异常处理5个关键字)
-    * 其他
-        * [java对象在内存中的结构](./day12/README.md#java对象在内存中的结构)
-</details>
+## [day12 异常处理](./day12/README.md "day12")
+
+* [异常的定义](./day12/README.md#1-异常的定义)
+* [异常处理机制](./day12/README.md#2-异常处理机制)
+* [异常处理方式一：抓取异常](./day12/README.md#3-异常处理方式一抓取异常)
+* [异常处理方式二：声明抛出异常](./day12/README.md#4-异常处理方式二声明抛出异常)
+* [手动抛出异常](./day12/README.md#5-手动抛出异常)
+* [自定义异常类](./day12/README.md#6-自定义异常类)
 
 
-<details>
-<summary>day13_java 集合：List、Set、Map接口、队列、Stack栈</summary>
 
-* [day13_java 集合](./day13/README.md "day13")
-    * [java集合概述](./day13/README.md#java集合概述)
-        * [Collection接口继承树](./day13/README.md#Collection接口继承树)
-        * [Map接口继承树](./day13/README.md#Map接口继承树)
-    * [Collection接口](./day13/README.md#Collection接口)
-        * [Collection接口方法](./day13/README.md#Collection接口方法)
-        * [使用Iterator接口遍历集合元素](./day13/README.md#使用Iterator接口遍历集合元素)
-        * [for增强版遍历集合元素--foreach](./day13/README.md#for增强版遍历集合元素--foreach)
-    * [List接口](./day13/README.md#List接口)
-        * [List接口实现类之一：ArrayList](./day13/README.md#List接口实现类之一ArrayList)
-        * [List实现类之二：LinkedList](./day13/README.md#List实现类之二LinkedList)
-        * [List实现类之三：Vector](./day13/README.md#List实现类之三Vector)
-        * [ListIterator接口](./day13/README.md#ListIterator接口)
-        * [Iterator与ListIterator主要区别](./day13/README.md#Iterator与ListIterator主要区别)
-    * [Set接口](./day13/README.md#Set接口)
-        * [Set要求](./day13/README.md#Set要求)
-        * [Set实现类之一：HashSet](./day13/README.md#Set实现类之一HashSet)
-        * [hashCode()方法](./day13/README.md#hashCode方法)
-        * [Set实现类之二：LinkedHashSet](./day13/README.md#Set实现类之二LinkedHashSet)
-        * [Set实现类之三：TreeSet](./day13/README.md#Set实现类之三TreeSet)
-        * [Set交集、并集、差集运算](./day13/README.md#Set交集并集差集运算)
-    * [Map接口](./day13/README.md#Map接口)
-        * [Map常用方法](./day13/README.md#Map常用方法)
-        * [Map特点](./day13/README.md#Map特点)
-        * [Map接口实现类之一：HashMap](./day13/README.md#Map接口实现类之一HashMap)
-            * HashMap特点
-            * [Map创建对象时指定初始值](./day13/README.md#Map创建对象时指定初始值)
-        * [Map接口实现类之二：LinkedHashMap](./day13/README.md#Map接口实现类之二LinkedHashMap)
-        * [Map接口实现类之三：TreeMap](./day13/README.md#Map接口实现类之三TreeMap)
-        * [Map接口实现类之四：Hashtable](./day13/README.md#Map接口实现类之四Hashtable)
-        * [Map接口实现类之五：Properties](./day13/README.md#Map接口实现类之五Properties)
-    * [操作集合的工具类：Collections, 可控制List,Set,Map等的线程安全](./day13/README.md#操作集合的工具类Collections)
-    * Enumeration迭代器
-    * [其他](./day13/README.md#其他)
-        * [Scanner异常处理](./day13/README.md#Scanner异常处理)
-        * [List中元素为对象，通过对象中的指定属性进行排序](./day13/README.md#list中元素为对象通过对象中的指定属性进行排序)
-        * [List、Set、Map在创建对象时指定初始值](./day13/README.md#ListSetMap在创建对象时指定初始值)
-        * [List与Set互转](./day13/README.md#List与Set互转)
-        * [Array与Set互转](./day13/README.md#Array与Set互转)
-    * [Queue队列](./day13/queue.md)
-        * [Queue概念](./day13/queue.md#Queue概念)
-        * [Queue特点](./day13/queue.md#Queue特点)
-        * [Queue方法](./day13/queue.md#Queue方法)
-        * [Queue示例](./day13/queue.md#Queue示例)
-    * [PriorityQueue优先权队列](./day13/priority_queue.md)
-        * [PriorityQueue概念](./day13/priority_queue.md#PriorityQueue概念)
-        * [PriorityQueue特点](./day13/priority_queue.md#PriorityQueue特点)
-        * [PriorityQueue示例](./day13/priority_queue.md#PriorityQueue示例)
-    * [Deque双端队列](./day13/deque.md)
-        * [Deque概念](./day13/deque.md#Deque概念)
-        * [Deque特点](#Deque特点)
-        * [Queue和Deque出队和入队方法比较](#Queue和Deque出队和入队方法比较)
-        * [Deque示例](#Deque示例)
-    * [Stack栈](./day13/stack.md)
-        * [Stack概念](./day13/stack.md#Stack概念)
-        * [Stack类方法](./day13/stack.md#Stack类方法)
-        * [Deque代替Stack方法](./day13/stack.md#Deque代替Stack方法)
-        * [Stack示例](./day13/stack.md#Stack示例)
-    * [Stack、Queue遍历](./day13/src/com/java/queue/StackQueueBianli.java)
-</details>
+
+
+## [day13 java 集合](./day13/README.md "day13")
+
+* [java集合概述](./day13/README.md#1-java集合概述)
+* [Collection接口](./day13/README.md#2-Collection接口)
+* [List接口](./day13/README.md#3-List接口)
+* [Set接口](./day13/README.md#4-Set接口)
+* [Map接口](./day13/README.md#5-Map接口)
+* [操作集合的工具类：Collections](./day13/README.md#6-操作集合的工具类Collections)
+* [Enumeration迭代器](./day13/README.md#7-Enumeration迭代器)
+* [其他](./day13/README.md#其他)
+* [Queue队列](./day13/queue.md)
+* [PriorityQueue优先权队列](./day13/priority_queue.md)
+* [Deque双端队列](./day13/deque.md)
+* [Stack栈](./day13/stack.md)
+
 
 
 <details>
