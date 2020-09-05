@@ -1,4 +1,5 @@
 rootProject.name = 'j2se-advanced-learning'
 include 'jdk8'
-include 'day1'
+include 'day01'
+include 'day02'
 
