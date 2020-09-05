@@ -65,7 +65,7 @@ J2SE
 
     
 
-## [day06_构造器](./day06/README.md "day06")
+## [day06 构造器](./day06/README.md "day06")
 
 * [特征](./day06/README.md#1-特征)
 * [作用](./day06/README.md#2-作用)
@@ -76,7 +76,7 @@ J2SE
 
 
 
-## [day07_高级类特性](./day07/README.md "day07")
+## [day07 高级类特性](./day07/README.md "day07")
 
 * [this](./day07/README.md#1-this)
 
@@ -98,57 +98,44 @@ J2SE
 
   
 
-## [day08_高级类特性](./day08/README.md "day08")
+## [day08 高级类特性](./day08/README.md "day08")
 
-* [四种访问权限修饰符](./day08/README.md#四种访问权限修饰符)
-* [super关键字](./day08/README.md#super关键字)
-    * [调用父类的构造器](./day08/README.md#调用父类的构造器)
-* [this和super的区别](./day08/README.md#this和super的区别)
-    * [super父类与子类的内存结构](./day08/README.md#super父类与子类的内存结构)
-    * [子类对象实例化的过程及内存结构](./day08/README.md#子类对象实例化的过程及内存结构)
-* [面向对象特征之三：多态性](./day08/README.md#面向对象特征之三多态性)
-    * [虚拟方法调用(Virtual method invocation)](./day08/README.md#虚拟方法调用Virtual-method-invocation)
-    * [子类继承父类](./day08/README.md#子类继承父类)
-* [instanceof操作符](./day08/README.md#instanceof操作符)
-* [对象类型转换(Casting)](./day08/README.md#对象类型转换Casting)
-* [Object类](./day08/README.md#Object类)
+* [四种访问权限修饰符](./day08/README.md#1-四种访问权限修饰符)
+* [super关键字](./day08/README.md#2-super关键字)
+* [this和super的区别](./day08/README.md#3-this和super的区别)
+* [面向对象特征之三：多态性](./day08/README.md#4-面向对象特征之三多态性)
+* [instanceof操作符](./day08/README.md#5-instanceof操作符)
+* [对象类型转换(Casting)](./day08/README.md#6-对象类型转换Casting)
+* [Object类](./day08/README.md#7-Object类)
     * [Object类中的主要方法](./day08/README.md#Object类中的主要方法)
-* [==操作符与equals方法](./day08/README.md#操作符与equals方法)
+    * [==操作符与equals方法](./day08/README.md#操作符与equals方法)
 
 
 
+## [day09 高级类特性](./day09/README.md "day09")
+
+* [toString()方法](./day09/README.md#toString方法)
+* [包装类(Wrapper)](./day09/README.md#包装类Wrapper)
+    * [基本数据类型、包装类、String类三者之间的互转](./day09/README.md#基本数据类型包装类String类三者之间的互转)
+* [static关键字](./day09/README.md#static关键字)
+    * [类属性、类方法的设计思想](./day09/README.md#类属性类方法的设计思想)
+    
 
 
 
-<details>
-<summary>day09_高级类特性1：toString(方法)、包装类、static关键字</summary>
+## [day10 高级类特性](./day10/README.md "day10")
 
-* [day09_高级类特性1](./day09/README.md "day09")
-    * [toString()方法](./day09/README.md#toString方法)
-    * [包装类(Wrapper)](./day09/README.md#包装类Wrapper)
-        * [基本数据类型、包装类、String类三者之间的互转](./day09/README.md#基本数据类型包装类String类三者之间的互转)
-    * [static关键字](./day09/README.md#static关键字)
-        * [类属性、类方法的设计思想](./day09/README.md#类属性类方法的设计思想)
-        
-
-</details>
-
-
-<details>
-<summary>day10_高级类特性2：初始化块、抽象类、interface接口、main方法、单例模式、模板方法设计模式</summary>
-
-* [day10_高级类特性2](./day10/README.md "day10")
-    * [单例设计模式(Singleton)](./day10/README.md#单例设计模式Singleton)
-        * [单例的实现](./day10/README.md#单例的实现)
-    * [main方法](./day10/README.md#main方法)
-    * [类的成员之四：初始化块](./day10/README.md#类的成员之四初始化块)
-        * [代码块分类：static代码块、非satic代码块](./day10/README.md#代码块分类)
-    * [final关键字](./day10/README.md#final关键字)
-    * [抽象类(abstract class)](./day10/README.md#抽象类abstract-class)
-    * [模板方法设计模式(TemplateMethod)](./day10/README.md#模板方法设计模式TemplateMethod)
-    * [interfacer接口](./day10/README.md#interfacer接口)
-        * [接口用法总结](./day10/README.md#接口用法总结)
-        * [java8接口的改进](./day10/README.md#java8接口的改进)
+* [单例设计模式(Singleton)](./day10/README.md#单例设计模式Singleton)
+    * [单例的实现](./day10/README.md#单例的实现)
+* [main方法](./day10/README.md#main方法)
+* [类的成员之四：初始化块](./day10/README.md#类的成员之四初始化块)
+    * [代码块分类：static代码块、非satic代码块](./day10/README.md#代码块分类)
+* [final关键字](./day10/README.md#final关键字)
+* [抽象类(abstract class)](./day10/README.md#抽象类abstract-class)
+* [模板方法设计模式(TemplateMethod)](./day10/README.md#模板方法设计模式TemplateMethod)
+* [interfacer接口](./day10/README.md#interfacer接口)
+    * [接口用法总结](./day10/README.md#接口用法总结)
+    * [java8接口的改进](./day10/README.md#java8接口的改进)
 </details>
 
 
