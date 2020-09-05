@@ -1,18 +1,18 @@
-package test.com.java.www; 
+package com.java.www;
 
-import com.java.www.SingletonLazybones;
+import com.java.www.Singleton;
 import org.junit.Test;
 import org.junit.Before; 
 import org.junit.After; 
 
 /** 
-* SingletonLazybones Tester. 
+* Singleton Tester. 
 * 
 * @author <Authors name> 
 * @since <pre>06/20/2019</pre> 
 * @version 1.0 
 */ 
-public class SingletonLazybonesTest { 
+public class SingletonTest { 
 
     @Before
     public void before() throws Exception { 
@@ -30,12 +30,10 @@ public class SingletonLazybonesTest {
     @Test
     public void testGetInstance() throws Exception { 
     //TODO: Test goes here...
-        SingletonLazybones s1 = SingletonLazybones.getInstance();
-        SingletonLazybones s2 = SingletonLazybones.getInstance();
-        SingletonLazybones s3 = SingletonLazybones.getInstance();
-
-        System.out.println(s1 == s2 && s1 == s2);
-    }
+        Singleton s1 = Singleton.getInstance();
+        Singleton s2 = Singleton.getInstance();
+        System.out.println(s1 == s2);
+    } 
 
 
 } 
