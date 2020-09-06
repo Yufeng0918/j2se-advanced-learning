@@ -174,53 +174,17 @@ J2SE
 
 
 
-<details>
-<summary>day14_泛型</summary>
+## [day14 高级类特性](./day14/README.md "泛型")
 
-* [day14_泛型](./day14/README.md "泛型")
-    * [泛型概述](./day14/README.md#泛型概述)
-    * [泛型的使用](./day14/README.md#泛型的使用)
-    * [泛型的几个重要使用的地方](./day14/README.md#泛型的几个重要使用的地方)
-    * [泛型类规则](./day14/README.md#泛型类规则)
-        * 自定义泛型类示例
-    * [泛型接口](./day14/README.md#泛型接口)
-    * [泛型方法](./day14/README.md#泛型方法)
-    * [泛型与继承的关系](./day14/README.md#泛型与继承的关系)
-    * [泛型通配符](./day14/README.md#泛型通配符)
-</details>
+* [泛型](./day14/README.md#1-泛型)
 
 
-<details>
-<summary>day14_enmu枚举类</summary>
-
-* [enmu枚举类](./README/枚举类.md "enmu枚举类")
-    * [枚举类入门](./README/枚举类.md#)
-        * [枚举类的属性](./README/枚举类.md#枚举类的属性)
-    * [自定义枚举类](./README/枚举类.md#自定义枚举类)
-    * [enum枚举类与普通类的区别](./README/枚举类.md#enum枚举类与普通类的区别)
-    * [常用方法](./README/枚举类.md#常用方法)
-        * [enum枚举类示例](./README/枚举类.md#enum枚举类示例)
-    * [枚举类实现接口](./README/枚举类.md#枚举类实现接口)
-        * [实现接口的枚举类示例](./README/枚举类.md#实现接口的枚举类示例)
-    * [JDK内置的枚举类示例](./day14/src/com/java/enumerate/enumerate.md)
-</details>
+* [枚举类](./day14/README.md#2-泛型 "enmu枚举类")
 
 
-<details>
-<summary>day14_注解</summary>
+* [注解](./day14/README.md#3-注解 "注解")
 
-* [注解](./README/注解.md "注解")
-    * [注解概述](./README/注解.md#注解概述)
-    * [三个常用的Annotation](./README/注解.md#三个常用的Annotation)
-        * [三个基本注解的使用示例](./README/注解.md#三个基本注解的使用示例)
-    * [自定义注解](./README/注解.md#自定义注解)
-        * [自定义注解示例](./README/注解.md#自定义注解示例)
-    * [元注解](./README/注解.md#元注解)
-    * [提取Annotation信息](./README/注解.md#提取Annotation信息)
-    * [内置注解源码](./README/注解.md#内置注解源码)
-    * [java8注解新特性](./README/注解.md#java8注解新特性)
 
-</details>
 
 
 <details>
