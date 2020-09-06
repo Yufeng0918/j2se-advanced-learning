@@ -211,71 +211,52 @@ J2SE
 * [NIO与IO的区别](./NIO/README.md#[NIO与IO的区别])
 * [Channel通道与Buffer缓冲区](./NIO/README.md#Channel通道与Buffer缓冲区)
 * [Buffer缓冲区](./NIO/README.md#Buffer缓冲区)
-    * [缓冲区的基本属性](./NIO/README.md#缓冲区的基本属性)
-    * [Buffer常用方法](./NIO/README.md#Buffer常用方法)
-    * [Buffer数据操作方法](./NIO/README.md#Buffer数据操作方法)
-    * [直接缓冲区与非直接缓冲区](./NIO/README.md#直接缓冲区与非直接缓冲区)
-    * [HeapByteBuffer与DirectByteBuffer](./NIO/README.md#HeapByteBuffer与DirectByteBuffer)
 * [Channel通道](./NIO/README.md#Channel通道)
-    * [Channel接口的主要实现类](./NIO/README.md#Channel接口的主要实现类)
-    * [获取通道](./NIO/README.md#获取通道)
-    * [分散读取Scatter和聚集写入Gather](./NIO/README.md#分散读取Scatter和聚集写入Gather)
-    * [通道之间的数据传输](./NIO/README.md#通道之间的数据传输)
 * [FileChannel常用方法](./NIO/README.md#FileChannel常用方法)
 * [非阻塞式NIO、阻塞式NIO、与阻塞式IO](./NIO/README.md#非阻塞式NIO阻塞式NIO与阻塞式IO)
-    * [NIO TCP socket编程](./NIO/README.md#NIOTCPsocket编程)
-    * [NIO UDP socket编程](./NIO/README.md#NIOUDPsocket编程)
-    * [选择器Selector](./NIO/README.md#选择器Selector)
-    * [SelectionKey](./NIO/README.md#SelectionKey)
-    * [网络编程常用Channel](./NIO/README.md#网络编程常用Channel)
 * [字符集编码与解码](./NIO/README.md#字符集编码与解码)
 * [Pipe管道](./NIO/README.md#Pipe管道)
 * [NIO2 Path、Paths、Files](./NIO/README.md#NIO2PathPathsFiles)
-    * [Path接口](./NIO/README.md#Path接口)
-    * [Paths类](./NIO/README.md#Paths类)
-    * [Files类](./NIO/README.md#Files类)
 * [自动资源管理](./NIO/README.md#自动资源管理)
-</details>
 
 
 
-[day16_多线程练习](./day16/README.md "")
+## [day16_多线程练习](./day16/README.md "")
 
 
-<details>
-<summary>day17_多线程</summary>
 
-* [day17_多线程](./day17/README.md "多线程")
-    * [程序、进程、线程概念](./day17/README.md#程序进程线程概念)
-    * [多线程使用场景](./day17/README.md#多线程使用场景)
-        * 多线程的创建和启动
-    * [Thread类](./day17/README.md#Thread类)
-        * [创建线程(类)的两种方法](./day17/README.md#创建线程类的两种方法)
-            * [继承Thread类](./day17/README.md#继承Thread类)
-            * [实现Runnable接口](./day17/README.md#实现Runnable接口)
-         * [继承Thread方式和实现Runnable方法的联系与区别](./day17/README.md#继承Thread方式和实现Runnable方法的联系与区别)
-         * [Thread构造器](./day17/README.md#Thread构造器)
-         * [Thread常用方法](./day17/README.md#Thread常用方法)
-    * [线程的调度](./day17/README.md#线程的调度)
-    * [线程的优先级](./day17/README.md#线程的优先级)
-    * [使用多线程的优点](./day17/README.md#使用多线程的优点)
-    * [线程的分类](./day17/README.md#线程的分类)
-        * 守护线程
-        * 用户线程
-    * [线程的生命周期](./day17/README.md#线程的生命周期)
-    * [线程的同步](./day17/README.md#线程的同步)
-    * [synchronized线程同步使用方法](./day17/README.md#synchronized线程同步使用方法)
-    * [synchronized线程同步机制的两种实现方式](./day17/README.md#synchronized线程同步机制的两种实现方式)
-        * 同步代码块
-        * 同步方法
-    * [互斥锁](./day17/README.md#互斥锁)
-    * [懒汉式单例模式线程安全问题修复](./day17/README.md#懒汉式单例模式线程安全问题修复)
-    * [释放锁的操作](./day17/README.md#释放锁的操作)
-    * [不会释放锁的操作](./day17/README.md#不会释放锁的操作)
-    * [线程的死锁问题](./day17/README.md#线程的死锁问题)
-    * [线程通信](./day17/README.md#线程通信)
-        * 线程通信示例
-        * 线程通信应用示例(生产者/消费者问题)
+## [day17_多线程](./day17/README.md "多线程")
+
+* [程序、进程、线程概念](./day17/README.md#程序进程线程概念)
+* [多线程使用场景](./day17/README.md#多线程使用场景)
+    * 多线程的创建和启动
+* [Thread类](./day17/README.md#Thread类)
+    * [创建线程(类)的两种方法](./day17/README.md#创建线程类的两种方法)
+        * [继承Thread类](./day17/README.md#继承Thread类)
+        * [实现Runnable接口](./day17/README.md#实现Runnable接口)
+     * [继承Thread方式和实现Runnable方法的联系与区别](./day17/README.md#继承Thread方式和实现Runnable方法的联系与区别)
+     * [Thread构造器](./day17/README.md#Thread构造器)
+     * [Thread常用方法](./day17/README.md#Thread常用方法)
+* [线程的调度](./day17/README.md#线程的调度)
+* [线程的优先级](./day17/README.md#线程的优先级)
+* [使用多线程的优点](./day17/README.md#使用多线程的优点)
+* [线程的分类](./day17/README.md#线程的分类)
+    * 守护线程
+    * 用户线程
+* [线程的生命周期](./day17/README.md#线程的生命周期)
+* [线程的同步](./day17/README.md#线程的同步)
+* [synchronized线程同步使用方法](./day17/README.md#synchronized线程同步使用方法)
+* [synchronized线程同步机制的两种实现方式](./day17/README.md#synchronized线程同步机制的两种实现方式)
+    * 同步代码块
+    * 同步方法
+* [互斥锁](./day17/README.md#互斥锁)
+* [懒汉式单例模式线程安全问题修复](./day17/README.md#懒汉式单例模式线程安全问题修复)
+* [释放锁的操作](./day17/README.md#释放锁的操作)
+* [不会释放锁的操作](./day17/README.md#不会释放锁的操作)
+* [线程的死锁问题](./day17/README.md#线程的死锁问题)
+* [线程通信](./day17/README.md#线程通信)
+    * 线程通信示例
+    * 线程通信应用示例(生产者/消费者问题)
 </details>
 
 
