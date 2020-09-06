@@ -70,6 +70,7 @@ public class StreamApiTest {
         stream2.forEach(System.out::println);
         System.out.println();
 
+        System.out.println("nullable");
         Stream<Object> objectStream = Stream.ofNullable(null);
 //        System.out.println(stream1.count()); // 0
         System.out.println(objectStream.findAny()); // Optional.empty
