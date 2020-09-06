@@ -1,32 +1,27 @@
-day18_java常用类
+day18 java常用类
 ==
 
-# 本章内容
-* String类
-* StringBuffer类
-* StringBuilder类
-* System类
-* Date类
-* SimpleDateFormat类
-* Calendar类
-* Math类
-* BigIntege类
-* BigDecimal类
 
 
-# String类
+
+## 1. String类
 
 作用：构造字符对象
-* 常量对象
->字符串常量对象是双引号括起来的字符序列
-* 字符串的字符使用unicode字符编码，一个字符占两个字节(即1 char 占用 2 byte)
+* 常量对象: 字符串常量对象是双引号括起来的字符序列
+* 字符串的字符使用unicode字符编码，一个字符占两个字节**(即1 char 占用 2 byte)**
 
-## 字符串的特性
+
+
+### 字符串的特性
+
 * String是一个final类，字符串是不可变的字符序列
 * 字符串是不可变的。一个字符串对象一旦被创建，其内容是不可变的
 
-## String类的构造器
-```text
+
+
+### String类的构造器
+
+```java
 String()
 String(String original)
 String(byte[] bytes) 使用运行JVM平台的默认字符集编码字节数组bytes，可用于byte[]字节数组转字符串
@@ -44,17 +39,20 @@ String(StringBuilder builder)
 ```
 
 
-String对象内存结构  
+
+### String对象内存结构  
+
 ![String对象内存结构](./images/String在内存中的结构.png)  
 ![String对象内存结构2](./images/String内存结构2.png)  
 ![string多次赋值操作内存结构变化](./images/string多次赋值操作.png)  
 
 
-## String方法
-```text
-* 常用方法
+
+### String方法
+
 字符串是不可变的，所以操作字符串时，返回字符串时都是一个新的对象，原来的字符串对象不变
 
+```java
 char charAt(int index) 返回索引为index的字符
 boolean endsWith(String suffix) 当前字符串是否以字符串suffix结尾
 byte[] getBytes() 把当前字符串使用平台默认字符集编码成一个新的字节数组并返回
@@ -128,10 +126,10 @@ static String valueOf(long l)
 static String valueOf(Object obj)
 ```
 
-示例  
-[String Test](./src/com/java/www/StringTest.java)
+
 
 ### String的hashCode()方法
+
 ```text
 S = s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
 n: 字符串长度
@@ -158,41 +156,55 @@ s[x]: 表示一个字符
 
 ```
 
-## 字符串与基本数据类型、包装类之间转换
+
+
+### 基本数据类型, 包装类之间转换
+
 * 字符串 -> 基本数据类型、包装类：调用 相应包装类.parseXxx(String str)   其中Xxx为相应的基本数据类型
 * 基本数据类型、包装类 -> 字符串：调用String.valueOf(T obj)  // T 为int、boolean、byte等基本数据类型
 
-## 字符串与字节数组的相互转换
+
+
+### 字节数组的相互转换
+
 * 字符串 -> 字节数组：字符串对象.getBytes()
+    
     >public byte[] getBytes(String charsetName) 使用参数指定字符编码，将当前字符串转化为一个字节数组
 * 字节数组 -> 字符串：new String(byte[] b)
+    
     >String(byte[]，int offset，int length)
-## 字符串与字符数组的相互转换
+
+
+
+### 字符数组的相互转换
+
 * 字符串 -> 字符数组：
     * 字符串对象.toCharArray()
     * String.getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
-    ```
+    ```java
     char[] ch = new char[s.length()];
     s.getChars(0, s.length(), ch, 0);
     ```
-* 字符数组 -> 字符串：
-    * new String(char[] ch)
-    >String(char[]，int offset，int length)
+    
+* 字符数组 -> 字符串
+    
+    ```java
+    new String(char[] ch)
+    String(char[]，int offset，int length)
+    ```
 
-示例  
-[String、字节数组、字符数组之间的转化](./src/com/java/www/String_CharArray_ByteArray_Transformation.java)  
 
 
-# StringBuffer类
+# 2. StringBuffer
+
 位于java.lang.StringBuffer  
 
-##  特点
 * StringBuffer对象是 可变的字符序列，可以对字符串内容进行增删改
 * 很多方法与String相同，StringBuffer对象长度可变
 * StringBuffer是一个容器
 
-## 构造器
-```text
+### 构造器
+```java
 StringBuffer() 新建一个空的字符串缓冲区，容量大小为16
 StringBuffer(CharSequence seq) 构造一个字符串缓冲区，该缓冲区包含与指定字符序列相同的字符
 StringBuffer(int capacity) 构建一个空字符串缓冲区，初始容量为指定的capacity
@@ -201,32 +213,33 @@ StringBuffer(String str) 新建一个字符串缓冲区，内容为指定字符�
 CharSequence类是java.lang包下的一个接口，此接口对多种不同的对char访问的统一接口，像String、StringBuffer、StringBuilder类都是CharSequence的子接口；
 ```
 
-StringBuffer对象内存结构  
+### StringBuffer对象内存结构  
+
 ![](./images/StringBuffer内存结构.png)  
 
 
 ## StringBuffer方法
-```text
-增
+```java
+//增
 StringBuffer append(T obj)  T为基本数据类型、字符串、字符数据等所有的Object
 StringBuffer insert(int offset, T obj) 在当前序列指定索引offset插入obj对象，obj为任意类型的对象
 
-删
+//删
 StringBuffer delete(int start, int end) 删除此序列中索引为[start, end)的字符
 StringBuffer deleteCharAt(int index) 删除此序列中索引为index的字符
 
-改
+//改
 void setCharAt(int index, char ch) 把索引为index处的字符重置为字符ch
 StringBuffer replace(int start, int end, String str) 把此序列中索引为[start, end)替换为字符串str
 
-查
+//查
 char charAt(int index) 返回索引为index的字符
 CharSequence subSequence(int start, int end) 获取索引为[start, end)的字符序列
 String substring(int start) 获取此序列中索引从start开始到结束的子序列
 String substring(int start, int end) 获取此序列中索引[start, end)的子序列
 void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) 把此序列中索引为[srcBegin, srcEnd)的字符复制到到目标字符数组dst，从索引为dstBegin开始存
 
-其他
+//其他
 int capacity() 返回当前的容量大小
 int length() 返回序列内容长度
 StringBuffer reverse() 反转当前序列内容，并返回当前序列
@@ -245,20 +258,23 @@ void setLength(int newLength) 设置字符序列的长度
 String toString()
 ```
 
-示例  
-[StringBufferTest](./src/com/java/www/StringBufferTest.java)  
 
 
-# StringBuilder类
-JDK 1.5开始有的特性  
-StringBuilder和StringBuffer非常类似，两者的对象都是可变的字符序列，方法也类似  
 
-## String、StringBuffer、StringBuilder特点比较
+
+## 3. StringBuilder类
+
+JDK 1.5开始有的特性  StringBuilder和StringBuffer非常类似，两者的对象都是可变的字符序列，方法也类似  
+
+
+
+### String, StringBuffer, StringBuilder特点比较
+
 * String：不可变字符序列
-* StringBuffer：可变字符序列、效率中等、线程安全
-* StringBuilder：可变字符序列、效率高、线程不安全
+* StringBuffer：可变字符序列、效率中等、**线程安全**
+* StringBuilder：可变字符序列、效率高、**线程不安全**
 * String使用缺陷
-```text
+```java
 string s="a"; // 创建了一个字符串 
 s=s+"b"; // 实际上原来的"a"字符串对象已经丢弃了，现在又产生了一个字符串s+"b"（也就是"ab")。
          // 如果多次执行这些改变串内容的操作，会导致大量副本字符串对象存留在内存中，降低效率。
@@ -267,10 +283,10 @@ s=s+"b"; // 实际上原来的"a"字符串对象已经丢弃了，现在又产�
 ```
 * 三者的效率：StringBuilder > StringBuffer > String
 
-[String, StringBuffer, StringBuilder 执行效率比较](./src/com/java/www/String_StringBuffer_StringBuilder_efficiency.java)  
 
 
-# 与时间相关的类
+## 4. 时间相关的类
+
 * System.currentTimeMillis();
 * Date：java.util.Date、java.sql.Date
 * SimpleDateFormat
@@ -278,18 +294,17 @@ s=s+"b"; // 实际上原来的"a"字符串对象已经丢弃了，现在又产�
 
 ![日期、时间类之间的关系](./images/日期、时间类之间的关系.png)
 
-# System类的System.currentTimeMillis()方法
-位于java.lang.System  
+### System.currentTimeMillis()方法
+位于java.lang.System。System类提供的public static long currentTimeMillis() 用来返回当前时间与1970-01-01 00:00:00 之间以毫秒为单位的时间差 1000ms = 1s System.currentTimeMillis() 方法适用于计算时间差
 
-System类提供的public static long currentTimeMillis() 用来返回当前时间与1970-01-01 00:00:00 之间以毫秒为单位的时间差  
-1000ms = 1s  
-System.currentTimeMillis() 方法适用于计算时间差
 
-## 主要时间标准
+
+### 主要时间标准
+
 * UTC(Universal Time Coordinated)世界标准时间
 * GMT(Greenwich Mean Time)格林威治时间
 * CST
-```text
+```java
 有4中表示：
 Central Standard Time (USA) UTC-6:00 美国时间
 
@@ -303,28 +318,28 @@ Linux系统中用表示北京时间
 ```
 
 
-# Date类
-表示特定的瞬间，精确到毫秒  
 
-另外还有一个java.sql.Date，这个主要用于数据库相关的
+## 5. Date类
 
-## 构造器
-```text
+表示特定的瞬间，精确到毫秒  另外还有一个java.sql.Date，这个主要用于数据库相关的
+
+### 构造器
+```java
 Date() 获取本地当前时间构建一个Date
 Date(int year, int month, int date) // Deprecated
 Date(int year, int month, int date, int hrs, int min) // Deprecated
 Date(int year, int month, int date, int hrs, int min, int sec) // Deprecated
-以上三个构造器以1900-01-01 00:00:00 GMT为基准时间。年为相对于1900年的差值，即偏移量。
-月份从0开始，即month为0表示1月
-如创建 2019-1-2
+//以上三个构造器以1900-01-01 00:00:00 GMT为基准时间。年为相对于1900年的差值，即偏移量。
+//月份从0开始，即month为0表示1月
+//如创建 2019-1-2
 Date date = new Date(2019- 1900, 1 - 1, 2);
 
 Date(long date) 以1970-01-01 00:00:00 GMT为基准的，毫秒差值
 Date(String s) // Deprecated
 ```
 
-## 方法
-```text
+### 方法
+```java
 boolean after(Date when)
 boolean before(Date when)
 Object clone()
@@ -376,27 +391,26 @@ static Date valueOf(String s) 从字符串中获取Date实例
 过时的方法到SimpleDateFormat中找
 ```
 
-示例  
-[Date Test](./src/com/java/www/DateTest.java)  
 
 
-# SimpleDateFormat类
-位于java.text.SimpleDateFormat
+## 6. SimpleDateFormat类
 
-Date类的API不易于国际化，大部分被废弃了，java.text.SimpleDateFormat类
-是一个不与语言环境有关的方式来格式化和解析日期的具体类
+位于java.text.SimpleDateFormat。Date类的API不易于国际化，大部分被废弃了，java.text.SimpleDateFormat类是一个不与语言环境有关的方式来格式化和解析日期的具体类
 
-## 主要作用
 * 格式化：Date对象 -> 指定格式文本
 * 解析：一定格式的文本 -> Date对象
 
-## SimpleDateFormat构造器
-SimpleDateFormat() 使用默认的本地时间格式构建一个SimpleDateFormat对象
-SimpleDateFormat(String pattern) 使用指定的时间格式pattern构建一个SimpleDateFormat对象
+### 构造器
+```JAVA
+SimpleDateFormat() // 使用默认的本地时间格式构建一个SimpleDateFormat对象
+SimpleDateFormat(String pattern) //使用指定的时间格式pattern构建一个SimpleDateFormat对象
 SimpleDateFormat(String pattern, DateFormatSymbols formatSymbols)
 SimpleDateFormat(String pattern, Locale locale)
+```
 
-### SimpleDateForma的pattern字母定义
+
+
+### pattern定义
 
 字母 | 日期或时间元素 | 表示 | 示例
 :--- |:--- |:--- |:--- 
@@ -424,8 +438,8 @@ z | Time zone | General time zone | Pacific Standard Time; PST; GMT-08:00
 Z | Time zone | RFC 822 time zone | -0800
 X | Time zone | ISO 8601 time zone | -08; -0800; -08:00
 
-## 方法
-```text
+### 方法
+```java
 String format(Date date)  把Date对象转成时间字符串，其父类DateFormat类中的方法
 StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition fieldPosition)
 Date parse(String source) 把字符串解析成Date，日期的格式要对应上，以1970, 00:00:00 GMT基准时间
@@ -446,26 +460,24 @@ String toPattern()
 
 ```
 
-示例  
-[SimpleDateFormat Test](./src/com/java/www/SimpleDateFormatTest.java)  
 
 
-# Calendar类
-位于java.util.Calendar  
-Calendar是一个抽象基类，主用用于完成日期字段之间相互操作的功能
+## 7. Calendar类
 
-* 获取Calendar实例的方法
-    * 调用 Calendar.getInstace() 方法
-    * 调用它的子类 GregorianCalendar 的构造器
-* 一个Calendar的实例是系统时间的抽象表示，通过 get(int field) 方法来获取想要的时间信息。
-    >比如 YEAR、MONTH、DAY_OF_WEEK、HOUR_OF_DAY、MINUTE、SECOND  
-    * public void set(int field, int value)
-    * public void add(int field, int amount)
-    * public final Date getTime()
-    * public final void setTime(Date date)
-    
-* 常量字段
-```text
+位于java.util.Calendar。Calendar是一个抽象基类，主用用于完成日期字段之间相互操作的功能
+
+获取Calendar实例的方法
+* 调用 Calendar.getInstace() 方法
+* 调用它的子类 GregorianCalendar 的构造器
+
+一个Calendar的实例是系统时间的抽象表示，通过 get(int field) 方法来获取想要的时间信息。
+>比如 YEAR、MONTH、DAY_OF_WEEK、HOUR_OF_DAY、MINUTE、SECOND  
+* public void set(int field, int value)
+* public void add(int field, int amount)
+* public final Date getTime()
+* public final void setTime(Date date)
+
+```java
 public static final int ERA = 0;
 public static final int YEAR = 1;
 public static final int MONTH = 2;
@@ -486,7 +498,7 @@ public static final int ZONE_OFFSET = 15;
 public static final int DST_OFFSET = 16;
 public static final int FIELD_COUNT = 17;
 
-
+//获取星期时：周日是1、周一是2、周二是3、周三是4、周四是5、周五是6、周六是7
 public static final int SUNDAY = 1;
 public static final int MONDAY = 2;
 public static final int TUESDAY = 3;
@@ -495,6 +507,7 @@ public static final int THURSDAY = 5;
 public static final int FRIDAY = 6;
 public static final int SATURDAY = 7;
 
+//获取月份时：1月是0, 2月是1， 依次类推，12月是11
 public static final int JANUARY = 0;
 public static final int FEBRUARY = 1;
 public static final int MARCH = 2;
@@ -514,26 +527,23 @@ public static final int PM = 1;
 
 ```
 
-## Calendar类使用注意
-获取月份时：1月是0, 2月是1， 依次类推，12月是11
-获取星期时：周日是1、周一是2、周二是3、周三是4、周四是5、周五是6、周六是7
 
- 
-# Math类
-位于java.lang.Math
 
-提供了一系列用于科学计算的方法。
 
-## 特点
+
+## 8. Math类
+
+位于java.lang.Math。提供了一系列用于科学计算的方法。
+
 * 不能再继承，final修饰的类
 * 不需要实例化，方法都为static静态的
- 
-## 常量
+
+### 常量
 public static final double E = 2.7182818284590452354;  
 public static final double PI = 3.14159265358979323846;
- 
-## Math方法
-```text
+
+### Math方法
+```java
 static T abs(T a) 求绝对值，T为double、float、int、long
 static int addExact(int x, int y) 返回传入的两个数的和
 static long addExact(long x, long y) 返回传入的两个数的和
@@ -621,38 +631,40 @@ An ulp stands for unit of least precision 一个ulp表示最小精度单位, htt
 
 ```
 
-示例  
-[Math Test](./src/com/java/www/MathTest.java)  
 
 
-# BigInteger类
-Integer类是int的包装类，能存储的最大整型值为2^31 - 1  
-BitInteger类的数字范围比Integer类的数字范围要大的多，可以支持任意精度的整数
+## 9. BigInteger类
 
-## 使用场景
-整数范围超过2^31 - 1，科学研究计算
+Integer类是int的包装类，能存储的最大整型值为2^31 - 1。BitInteger类的数字范围比Integer类的数字范围要大的多，可以支持任意精度的整数。**整数范围超过2^31 - 1，科学研究计算**
 
-## BigInteger构造器
-```text
+
+
+### 构造器
+
+```java
 BigInteger(String val)
 BigInteger(byte[] val)
 BigInteger(int signum, byte[] magnitude)
 BigInteger(int bitLength, int certainty, Random rnd)
 BigInteger(int numBits, Random rnd)
 BigInteger(String val, int radix)
-
 ```
 
-## BigInteger常量
-```text
+
+
+### 常量
+
+```java
 static BigInteger ONE
 static BigInteger TEN
 static BigInteger ZERO
-
 ```
 
-## BigInteger方法
-```text
+
+
+### 方法
+
+```java
 BigInteger abs() 返回绝对值
 BigInteger add(BigInteger val) 返回 this + val
 BigInteger subtract(BigInteger val) 返回 this - val
@@ -705,22 +717,18 @@ byte[] toByteArray()
 String toString()
 String toString(int radix)
 static BigInteger valueOf(long val)
-
 ```
 
-示例  
-[BigInteger Test](./src/com/java/www/BigIntegerTest.java)
 
 
-# BigDecimal类
-```text
-一般的Float类和Double类可以用来做科学计算或工程计算，但在商业计算中，  
-要求数字精度比较高，故用到java.math.BigDecimal类。BigDecimal类支持任何精度的定点数
-遇到和钱有关的数据，对精度有要求的，必须使用BigDecimal类
-```
+## 10. BigDecimal类
 
-## BigDecimal类构造器
-```text
+一般的Float类和Double类可以用来做科学计算或工程计算，但在商业计算中，要求数字精度比较高，故用到java.math.BigDecimal类。BigDecimal类支持任何精度的定点数。遇到和钱有关的数据，对精度有要求的，必须使用BigDecimal类
+
+
+
+### 类构造器
+```java
 BigDecimal(BigInteger val)
 BigDecimal(BigInteger unscaledVal, int scale)
 BigDecimal(BigInteger unscaledVal, int scale, MathContext mc)
@@ -740,8 +748,11 @@ BigDecimal(String val, MathContext mc)
 
 ```
 
-## BigDecimal类常量
-```text
+
+
+### 类常量
+
+```java
 static BigDecimal ONE  // 1
 static BigDecimal TEN  // 10
 static BigDecimal ZERO  // 0
@@ -754,10 +765,10 @@ static int ROUND_HALF_UP
 static int ROUND_UNNECESSARY
 static int ROUND_UP
 
-``` 
+```
 
-## BigDecimal方法
-```text
+### 方法
+```java
 BigDecimal abs()
 BigDecimal abs(MathContext mc)
 BigDecimal add(BigDecimal augend)
@@ -819,24 +830,23 @@ static BigDecimal valueOf(long val)
 static BigDecimal valueOf(long unscaledVal, int scale)
 
 ```
-示例  
-[BigDecimal Test](./src/com/java/www/BigDecimalTest.java)
+### 精度丢失避免方法
+```JAVA
+new BigDecimal(String val);
+BigDecimal.valueOf(double val);
+```
 
-## float、double类型数据计算时精度丢失避免方法
-* 方法1
-    >new BigDecimal(String val);
-* 方法2
-    >BigDecimal.valueOf(double val);
 
-**示例**
-[BigDecimalTest test2 \ test3](../day18/src/com/java/www/BigDecimalTest.java)
 
-# Scanner类
-## next()与nextLine()区别
-* next()
-    * 一定要读取到有效字符后才可以结束输入。以空格、回车、Tab键都会视为结束符。
-    * 对输入有效字符之前遇到的空白，next() 方法会自动将其去掉。
-    * 只有输入有效字符后才将其后面输入的空白作为分隔符或者结束符。
-    * next()不能得到带有空格的字符串。
-* nextLine()
-    * 以Enter(\n)为结束符,也就是说 nextLine()方法返回的是输入回车之前的所有字符。
+## 11. Scanner类
+
+### next()
+
+* 一定要读取到有效字符后才可以结束输入。以空格、回车、Tab键都会视为结束符。
+* 对输入有效字符之前遇到的空白，next() 方法会自动将其去掉。
+* 只有输入有效字符后才将其后面输入的空白作为分隔符或者结束符。
+* next()不能得到带有空格的字符串。
+
+### nextLine()
+
+* 以Enter(\n)为结束符,也就是说 nextLine()方法返回的是输入回车之前的所有字符。

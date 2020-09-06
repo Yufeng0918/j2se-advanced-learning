@@ -18,5 +18,7 @@ include 'day15'
 include 'day16'
 include 'day17'
 include 'nio'
-include 'nio'
+include 'day18'
+include 'day19'
+include 'day20'
 
