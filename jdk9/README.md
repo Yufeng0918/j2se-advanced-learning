@@ -280,7 +280,7 @@ java 9开始，String,StringBuffer,StringBuild再也不用 char[] 来存储啦�
 
 
 
-## 10. 集合工厂方法创建只读集合
+## 10. 工厂方法创建只读集合
 
 java9创建只读集合写法
 
@@ -342,7 +342,6 @@ java 8方法：public static<T> Stream<T> iterate(final T seed, final UnaryOpera
 
 ## 12. 增强Optaional类
 
-* 增加方法
 ```java
 public Stream<T> stream()
 //把Optional对象转成一个Stream流

@@ -12,8 +12,7 @@ import org.junit.Test;
 public class UnderScoreTest {
     @Test
     public void test() {
-//        String _ = "旅游"; // java 9之前可以用
+//        String _a = "旅游"; // java 9之前可以用
 //        System.out.println(_);
-
     }
 }
