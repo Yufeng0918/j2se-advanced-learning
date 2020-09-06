@@ -41,14 +41,7 @@ public class StreamApiTest {
         Stream<Integer> stream = list.stream();
 //        Stream<Integer> stream = list.parallelStream(); // 并行流同样适用
         stream.takeWhile(i -> i < 70).forEach(System.out::println);
-/*
-// 打印结果
-21
-33
-34
-55
-*/
-
+        // 21 33 34 55
     }
 
     /**
@@ -60,14 +53,7 @@ public class StreamApiTest {
         List<Integer> list = Arrays.asList(21, 33, 34, 55, 79, 11, 23, 99, 10);
         Stream<Integer> stream = list.stream();
         stream.dropWhile(i -> i < 70).forEach(System.out::println);
-/*
-// 打印结果
-79
-11
-23
-99
-10
-* */
+        // 79 11 23 99 10
     }
 
     /**

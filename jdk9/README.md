@@ -315,27 +315,32 @@ Map.ofEntries()
 
 ## 11. 增强的Stream API
 
-新增4个方法
-* default Stream<T> takeWhile(Predicate<? super T> predicate)
->从此Stream对象由前往后去元素，当出现一个不符合predicate判断条件的停止取元素操作。
+default Stream<T> takeWhile(Predicate<? super T> predicate)
 
-与  Stream<T> filter(Predicate<? super T> predicate) 是有区别的
-* default Stream<T> dropWhile(Predicate<? super T> predicate)
+>从此Stream对象由前往后去元素，当出现一个不符合predicate判断条件的停止取元素操作。
+>
+>与  Stream<T> filter(Predicate<? super T> predicate) 是有区别的
+
+default Stream<T> dropWhile(Predicate<? super T> predicate)
+
  >从此Stream对象由前往后舍去元素，当出现一个不符合predicate判断条件的停止舍去元素操作  
  与takeWhile(Predicate predicate) 是互为反操作
 
-* public static<T> Stream<T> ofNullable(T t)
+public static<T> Stream<T> ofNullable(T t)
+
 >创建一个只能包含一个元素的Steam对象，如果该元素为null，则返回一个空的Stream对象
 
-* public static<T> Stream<T> iterate(T seed, Predicate<? super T> hasNext, UnaryOperator<T> next)
->重载方法，创建无限流方法  
+public static<T> Stream<T> iterate(T seed, Predicate<? super T> hasNext, UnaryOperator<T> next)
+
+>重载方法，创建无限流方法 
 java 8方法：public static<T> Stream<T> iterate(final T seed, final UnaryOperator<T> f)
 
-**java 8已经有此方法**
-* public static<T> Stream<T> of(T t)
->当只添加一个元素时，则该元素不能为null,否则报NullPointerException异常
+public static<T> Stream<T> of(T t)
 
-* public static<T> Stream<T> of(T... values)
+>**当只添加一个元素时，则该元素不能为null,否则报NullPointerException异常**
+
+public static<T> Stream<T> of(T... values)
+
 >添加多个个元素时，允许元素为null，且允许出现多个null
 
 
