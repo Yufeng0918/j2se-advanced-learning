@@ -186,74 +186,60 @@ J2SE
 
 
 
+## [day15 IO流](./day15/README.md "IO流")
 
-<details>
-<summary>day15_IO流：File类、InputStream、OutputStream、Reader、Writer、缓冲流、转换流、标准输入输出流、打印流、数据流、对象流</summary>
+* [File类](./day15/README.md#File类)
+* [JAVA IO原理](./day15/README.md#java-io原理)
+* [流的分类](./day15/README.md#流的分类)
+* [InputStream, Reader](./day15/README.md#inputstreamreader)
+* [OutputStream, Writer](./day15/README.md#outputstreamwriter)
+* [处理流之一：缓冲流](./day15/README.md#处理流之一缓冲流)
+* [处理流之二：转换流](./day15/README.md#处理流之二转换流)
+* [字符集](./day15/README.md#字符集)
+* [处理之三：标准输入输出流](./day15/README.md#处理之三标准输入输出流)
+* [处理流之四：打印流](./day15/README.md#处理流之四打印流)
+* [处理流之五：数据流DataInputStream、DataOutputStream](./day15/README.md#处理流之五数据流DataInputStreamDataOutputStream)
+* [处理流之六：对象流](./day15/README.md#处理流之六对象流)
+* [RandomAccessFile类,可控制可任意位置读写文件](./day15/README.md#RandomAccessFile类)
+* [流的基本应用小总结](./day15/README.md#流的基本应用小总结)
 
-* [day15_IO流](./day15/README.md "IO流")
-    * [File类](./day15/README.md#File类)
-    * [JAVA IO原理](./day15/README.md#java-io原理)
-    * [流的分类](./day15/README.md#流的分类)
-        * [流的抽象基类](./day15/README.md#流的抽象基类)
-        * [IO流体系](./day15/README.md#IO流体系)
-        * [节点流和处理流](./day15/README.md#节点流和处理流)
-    * [InputStream、Reader](./day15/README.md#inputstreamreader)
-    * [OutputStream、Writer](./day15/README.md#outputstreamwriter)
-    * [处理流之一：缓冲流](./day15/README.md#处理流之一缓冲流)
-    * [处理流之二：转换流](./day15/README.md#处理流之二转换流)
-        * [InputStreamReader](./day15/README.md#InputStreamReader)
-        * [OutputStreamWriter](./day15/README.md#OutputStreamWriter)
-    * [字符集](./day15/README.md#字符集)
-    * [字符编码、解码(字节数组与字符数组互转时才需要指定字符集)](./day15/README.md#字符编码解码字节数组与字符数组互转时才需要指定字符集)
-    * [处理之三：标准输入输出流](./day15/README.md#处理之三标准输入输出流)
-    * [处理流之四：打印流](./day15/README.md#处理流之四打印流)
-    * [处理流之五：数据流DataInputStream、DataOutputStream](./day15/README.md#处理流之五数据流DataInputStreamDataOutputStream)
-    * [处理流之六：对象流](./day15/README.md#处理流之六对象流)
-        * [对象流使用注意，读取时报java.io.EOFException异常](./day15/README.md#对象流使用注意读取时报javaioEOFException异常)
-        * 对象的序列化
-        * 使用对象流序列化对象
-    * [RandomAccessFile类,可控制可任意位置读写文件](./day15/README.md#RandomAccessFile类)
-    * [流的基本应用小总结](./day15/README.md#流的基本应用小总结)
-    
 
+
+## [NIO](./NIO/README.md)
+
+* [NIO概述](./NIO/README.md#NIO概述)
+* [NIO与IO的区别](./NIO/README.md#[NIO与IO的区别])
+* [Channel通道与Buffer缓冲区](./NIO/README.md#Channel通道与Buffer缓冲区)
+* [Buffer缓冲区](./NIO/README.md#Buffer缓冲区)
+    * [缓冲区的基本属性](./NIO/README.md#缓冲区的基本属性)
+    * [Buffer常用方法](./NIO/README.md#Buffer常用方法)
+    * [Buffer数据操作方法](./NIO/README.md#Buffer数据操作方法)
+    * [直接缓冲区与非直接缓冲区](./NIO/README.md#直接缓冲区与非直接缓冲区)
+    * [HeapByteBuffer与DirectByteBuffer](./NIO/README.md#HeapByteBuffer与DirectByteBuffer)
+* [Channel通道](./NIO/README.md#Channel通道)
+    * [Channel接口的主要实现类](./NIO/README.md#Channel接口的主要实现类)
+    * [获取通道](./NIO/README.md#获取通道)
+    * [分散读取Scatter和聚集写入Gather](./NIO/README.md#分散读取Scatter和聚集写入Gather)
+    * [通道之间的数据传输](./NIO/README.md#通道之间的数据传输)
+* [FileChannel常用方法](./NIO/README.md#FileChannel常用方法)
+* [非阻塞式NIO、阻塞式NIO、与阻塞式IO](./NIO/README.md#非阻塞式NIO阻塞式NIO与阻塞式IO)
+    * [NIO TCP socket编程](./NIO/README.md#NIOTCPsocket编程)
+    * [NIO UDP socket编程](./NIO/README.md#NIOUDPsocket编程)
+    * [选择器Selector](./NIO/README.md#选择器Selector)
+    * [SelectionKey](./NIO/README.md#SelectionKey)
+    * [网络编程常用Channel](./NIO/README.md#网络编程常用Channel)
+* [字符集编码与解码](./NIO/README.md#字符集编码与解码)
+* [Pipe管道](./NIO/README.md#Pipe管道)
+* [NIO2 Path、Paths、Files](./NIO/README.md#NIO2PathPathsFiles)
+    * [Path接口](./NIO/README.md#Path接口)
+    * [Paths类](./NIO/README.md#Paths类)
+    * [Files类](./NIO/README.md#Files类)
+* [自动资源管理](./NIO/README.md#自动资源管理)
 </details>
 
 
-<details>
-<summary>NIO：Buffer缓冲区、Channel通道、FileChannel、字符集编码与解码、Pipe管道、NIO2Path、Paths、Files</summary>
 
-* [NIO](./NIO/README.md)
-    * [NIO概述](./NIO/README.md#NIO概述)
-    * [NIO与IO的区别](./NIO/README.md#[NIO与IO的区别])
-    * [Channel通道与Buffer缓冲区](./NIO/README.md#Channel通道与Buffer缓冲区)
-    * [Buffer缓冲区](./NIO/README.md#Buffer缓冲区)
-        * [缓冲区的基本属性](./NIO/README.md#缓冲区的基本属性)
-        * [Buffer常用方法](./NIO/README.md#Buffer常用方法)
-        * [Buffer数据操作方法](./NIO/README.md#Buffer数据操作方法)
-        * [直接缓冲区与非直接缓冲区](./NIO/README.md#直接缓冲区与非直接缓冲区)
-        * [HeapByteBuffer与DirectByteBuffer](./NIO/README.md#HeapByteBuffer与DirectByteBuffer)
-    * [Channel通道](./NIO/README.md#Channel通道)
-        * [Channel接口的主要实现类](./NIO/README.md#Channel接口的主要实现类)
-        * [获取通道](./NIO/README.md#获取通道)
-        * [分散读取Scatter和聚集写入Gather](./NIO/README.md#分散读取Scatter和聚集写入Gather)
-        * [通道之间的数据传输](./NIO/README.md#通道之间的数据传输)
-    * [FileChannel常用方法](./NIO/README.md#FileChannel常用方法)
-    * [非阻塞式NIO、阻塞式NIO、与阻塞式IO](./NIO/README.md#非阻塞式NIO阻塞式NIO与阻塞式IO)
-        * [NIO TCP socket编程](./NIO/README.md#NIOTCPsocket编程)
-        * [NIO UDP socket编程](./NIO/README.md#NIOUDPsocket编程)
-        * [选择器Selector](./NIO/README.md#选择器Selector)
-        * [SelectionKey](./NIO/README.md#SelectionKey)
-        * [网络编程常用Channel](./NIO/README.md#网络编程常用Channel)
-    * [字符集编码与解码](./NIO/README.md#字符集编码与解码)
-    * [Pipe管道](./NIO/README.md#Pipe管道)
-    * [NIO2 Path、Paths、Files](./NIO/README.md#NIO2PathPathsFiles)
-        * [Path接口](./NIO/README.md#Path接口)
-        * [Paths类](./NIO/README.md#Paths类)
-        * [Files类](./NIO/README.md#Files类)
-    * [自动资源管理](./NIO/README.md#自动资源管理)
-</details>
-
-* [day16_多线程练习](./day16/README.md "")
+[day16_多线程练习](./day16/README.md "")
 
 
 <details>
