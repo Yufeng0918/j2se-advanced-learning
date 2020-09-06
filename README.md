@@ -318,93 +318,65 @@
 * [多分辨率图像API](./jdk9/README.md#多分辨率图像API)
 * [全新的Http客户端接口HttpClient](./jdk9/README.md#全新的Http客户端接口HttpClient)
 * [其他特性](./jdk9/README.md#)
-    * 
-          
-
-<details>
-<summary>java 10新特性</summary>
-
-* [java 10新特性](./java10_features/README.md)
-    * [局部变量类型推断](./java10_features/README.md#局部变量类型推断)
-        * [适用情况](./java10_features/README.md#适用情况)
-            * 局部变量的初始化
-            * forEach增添循环
-            * for遍历
-        * [不适用情况](./java10_features/README.md#)
-            * 变量初始值为null
-            * lambda表达式
-            * 方法引用中
-            * 为数组静态初始化
-            * 没有初始化的局部变量声明
-            * 方法的返回类型
-            * 方法的参数类型
-            * 构造器的参数类型
-            * 字段属性
-            * catch块中的异常类型
-        * [局部变量类型推断原理](./java10_features/README.md#局部变量类型推断原理)
-    * [集合新增创建不可变集合的方法](./java10_features/README.md#集合新增创建不可变集合的方法)
-</details>
-
-<details>
-<summary>java 11新特性</summary>
-
-* [java 11新特性](./java11_features/README.md)
-    * [String类新增方法](./java11_features/README.md#String类新增方法)
-        * [String类新增方法示例](./java11_features/README.md#String类新增方法示例)
-    * [Optional类新增方法](./java11_features/README.md#Optional类新增方法)
-    * [局部变量类型推断升级](./java11_features/README.md#局部变量类型推断升级)
-    * [HttpClient增强](./java11_features/README.md#HttpClient增强)
-    * [更简单的编译运行程序](./java11_features/README.md#更简单的编译运行程序)
-    * [其他特性](./java11_features/README.md#其他特性)  
-</details>
-
-<details>
-<summary>java 12新特性</summary>
-
-* [java 12新特性](./java12_features/README.md)
-    * [新特性官方介绍](./java12_features/README.md)
-    * 新增Shenandoah低暂停时间垃圾回收器算法(实验性功能)
-    * 添加一个基本的microbenchmark套件
-    * 增强switch表达式(预览功能)
-    * 引入JVM常量API
-    * 只保留一个64位AARCH64端口
-    * 64位平台上使用默认CDS存档
-    * 增强G1垃圾回收器，可中止混合集合
-    * 增强G1垃圾回收器，使其能自动返回未用堆内存给操作系统
-    * 添加一个基本的microbenchmark套件  
-</details>
 
 
-<details>
-<summary>java 13新特性</summary>
 
-* [java 13新特性](./java13_features/README.md)
-    * 新特性官方说明
-    * 动态CDS归档
-    * 增强ZGC垃圾回收器，不提交未使用的内存
-    * 重新实现Socket API
-    * 增强switch表达式(预览功能)
-    * 文本块(预览功能)
-</details> 
-</details>
+## [java 10新特性](./java10_features/README.md)
+
+* [局部变量类型推断](./java10_features/README.md#局部变量类型推断)
+* [集合新增创建不可变集合的方法](./java10_features/README.md#集合新增创建不可变集合的方法)
 
 
-* other
-    * [Java学习线路](./README/java学习线路_ok.md)
-    * [廖雪峰Java教程](https://www.liaoxuefeng.com/wiki/1252599548343744)
-    * [安装JDK](./README/install_JDK.md "安装JDK")  
-    * [IntelliJ_IDEA生成JavaDoc文档](./README/IntelliJ_IDEA生成JavaDoc文档.md)
-    * [clone或一个新的Interlij IDE项目到本地如何正常运行](README/Intellij_IDE_open_new_clone_project.md "clone或一个新的Interlij IDE项目到本地如何正常运行")
-    * [IntelliJ IDEA的安装、配置与使用](README/images/other/IntelliJ_IDEA的安装、配置与使用.pdf)
-        * [IntelliJ_IDE常规设置](./README/IntelliJ_IDE设置.md)
-    * [JUnit单元测试--IntelliJ IDEA](./README/JUnit_IntelliJ_IDEA.md)
-    * [如何编译和运行包含package的java源文件](./README/Compile_and_run_a_contain_package.md)
-    * [JDK API在线文档](./README/java_resources.md)
-    * [java方法区以及static的内存分配图](./README/java方法区以及static的内存分配图.md)
-    * [URI、URL、URN联系与区别](./README/URI_URL_URN.md)
-    * [double数据的内存存储方式](./README/double数据的内存存储方式.md)
-    * [Java常用工具类](./README/Java常用工具类.md)
-    * java中调用shell脚本
-        * [java中调用shell脚本](./README/java中调用shell脚本/java中调用shell脚本.md)
-        * [Runtime.exec()执行shell、cmd命令常见陷阱与完善](./README/java中调用shell脚本/Runtime.exec()执行shell、cmd命令常见陷阱与完善.md)
-    * [一个Java字符串到底有多少个字符](README/一个Java字符串到底有多少个字符.md)
+
+
+## [java 11新特性](./java11_features/README.md)
+
+* [String类新增方法](./java11_features/README.md#String类新增方法)
+    * [String类新增方法示例](./java11_features/README.md#String类新增方法示例)
+* [Optional类新增方法](./java11_features/README.md#Optional类新增方法)
+* [局部变量类型推断升级](./java11_features/README.md#局部变量类型推断升级)
+* [HttpClient增强](./java11_features/README.md#HttpClient增强)
+* [更简单的编译运行程序](./java11_features/README.md#更简单的编译运行程序)
+* [其他特性](./java11_features/README.md#其他特性)  
+
+
+
+
+## [java 12新特性](./java12_features/README.md)
+
+* [新特性官方介绍](./java12_features/README.md)
+* 新增Shenandoah低暂停时间垃圾回收器算法(实验性功能)
+* 添加一个基本的microbenchmark套件
+* 增强switch表达式(预览功能)
+* 引入JVM常量API
+* 只保留一个64位AARCH64端口
+* 64位平台上使用默认CDS存档
+* 增强G1垃圾回收器，可中止混合集合
+* 增强G1垃圾回收器，使其能自动返回未用堆内存给操作系统
+* 添加一个基本的microbenchmark套件  
+
+
+
+
+## [java 13新特性](./java13_features/README.md)
+
+* 新特性官方说明
+* 动态CDS归档
+* 增强ZGC垃圾回收器，不提交未使用的内存
+* 重新实现Socket API
+* 增强switch表达式(预览功能)
+* 文本块(预览功能)
+
+
+## Other
+
+* [IntelliJ IDEA的安装、配置与使用](README/images/other/IntelliJ_IDEA的安装、配置与使用.pdf)
+* [JUnit单元测试--IntelliJ IDEA](./README/JUnit_IntelliJ_IDEA.md)
+* [如何编译和运行包含package的java源文件](./README/Compile_and_run_a_contain_package.md)
+* [JDK API在线文档](./README/java_resources.md)
+* [java方法区以及static的内存分配图](./README/java方法区以及static的内存分配图.md)
+* [URI、URL、URN联系与区别](./README/URI_URL_URN.md)
+* [double数据的内存存储方式](./README/double数据的内存存储方式.md)
+* [Java常用工具类](./README/Java常用工具类.md)
+* [java中调用shell脚本](./README/java中调用shell脚本/java中调用shell脚本.md)
+* [一个Java字符串到底有多少个字符](README/一个Java字符串到底有多少个字符.md)

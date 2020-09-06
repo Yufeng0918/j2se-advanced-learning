@@ -26,4 +26,5 @@ include 'jdk10'
 include 'jdk11'
 include 'module-core'
 include 'module-page'
+include 'jdk9'
 
