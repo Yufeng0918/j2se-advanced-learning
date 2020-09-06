@@ -273,25 +273,12 @@ J2SE
 ## [day20_网络编程](./day20/README.md "网络编程")
 
 * [网络编程概述](./day20/README.md#网络编程概述)
-* [通讯要素](./day20/README.md#网络基础)
-    * IP和端口
-        * InetAddress类(IP地址)、InetSocketAddress(IP、端口)
-    * 网络通信协议
-* [TCP socket网络编程](./day20/README.md#基于Socket的TCP编程)
-    * ServerSocket类
-    * Socket类
-    * [TCP socket、WebServer示例](./day20/README.md#TCP-socket示例)
-* [UDP socket网络编程](./day20/README.md#基于socket的UDP编程)
-    * DatagramSocket类
-    * DatagramPacket类
-* [URL socket网络编程](./day20/README.md#URL编程)
-    * URL类
-    * URLConnection类
-    * HttpURLConnection类
-* [小结](./day20/README.md#小结)
-* [其他](./day20/README.md#其他)
-    * [java lambda表达式](./day20/README.md#java-lambda表达式)
-    * [InputStream判断数据已经读取结束的解决方法](./day20/README.md#InputStream判断数据已经读取结束的解决方法)
+* [IP和端口](./day20/README.md#网络基础)
+* [TCP网络通信](./day20/README.md#网络基础)
+* [基于Socket的TCP编程](./day20/README.md#基于Socket的TCP编程)
+* [UDP网络通信](./day20/README.md#基于socket的UDP编程)
+* [基于socket的UDP编程](./day20/README.md#URL编程)
+* [URL编程](./day20/README.md#小结)
 
 
 
