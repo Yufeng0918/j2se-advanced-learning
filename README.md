@@ -244,78 +244,29 @@ J2SE
 
     
 
-## [day18_java常用类](./day18/README.md "java常用类")
+## [day18 java常用类](./day18/README.md "java常用类")
 
 * [String类](./day18/README.md#String类)
-    * 字符串的特性
-    * String类的构造器
-    * String方法
-        * [String的hashCode()方法](./day18/README.md#String的hashCode方法)
-    * 字符串与基本数据类型、包装类之间转换
-    * 字符串与字节数组的相互转换
-    * 字符串与字符数组的相互转换
 * [StringBuffer类](./day18/README.md#StringBuffer类)
-    * 特点
-    * 构造器
-    * StringBuffer方法
 * [StringBuilder类](./day18/README.md#StringBuilder类)
-    * String、StringBuffer、StringBuilder特点比较
-* 与时间相关的类
-    * System.currentTimeMillis();
-    * Date：java.util.Date、java.sql.Date
-    * SimpleDateFormat
-        * [SimpleDateForma的pattern字母定义](./day18/README.md#SimpleDateForma的pattern字母定义)
-    * Calendar
+* [时间相关的类](./day18/README.md#4-时间相关的类)
 * [Date类](./day18/README.md#Date类)
 * [SimpleDateFormat类](./day18/README.md#SimpleDateFormat类)
-    * [匹配模式的字母定义](./day18/README.md#simpledateforma的pattern字母定义)
-    * [根据指定格式 日期时间对象与字符串互转](./day18/src/com/java/www/SimpleDateFormatTest.java)
 * [Calendar类](./day18/README.md#Calendar类)
-    * [Calendar类使用注意](./day18/README.md#Calendar类使用注意)
 * [Math类](./day18/README.md#Math类)
 * [BigInteger类](./day18/README.md#BigInteger类)
 * [BigDecimal类](./day18/README.md#BigDecimal类)
-    * [float、double类型数据计算时精度丢失避免方法](./day18/README.md#floatdouble类型数据计算时精度丢失避免方法)
 * [Scanner类](./day18/README.md#Scanner类)
-    * [Scanner类](./day18/README.md#next与nextLine区别)
-</details>
 
 
 
-## [day19_java反射机制](./day19/README.md "java反射机制")
+## [day19 java反射机制](./day19/README.md "java反射机制")
 
 * [java reflection](./day19/README.md#java-reflection)
-    * 反射机制提供的功能
-    * 反射相关的主要API
-    * Class类主要方法
-    * 反射示例
-    * 获取类的Class实例的4种方法
-    * 示例
 * [JAVA类加载过程](./day19/README.md#JAVA类加载过程)
-    * ClassLoader
-    *  类加载器一个主要方法
 * [通过反射调用类的完整结构](./day19/README.md#通过反射调用类的完整结构)
-    * 获取实现的接口
-    * 获取所继承的父类
-    * 获取全部的构造器
-    * 获取全部的方法
-    * 获取全部的属性(Field)
-    * 获取注解(Annotation)
-    * 泛型相关
-    * 获取类所在的包
-    * 获取内部类
-    * 数字形式修饰符转String修饰符
-    * 示例
-* [通过反射调用类中指定的方法、属性、构造器](./day19/README.md#通过反射调用类中指定的方法属性构造器)
-    * 调用指定的方法
-    * 调用指定的属性
-    * 调用指定的构造器
-* [遍历打印指定类的成员（属性变量、构造器、方法）](./day19/README.md#遍历指定类的成员属性变量构造器方法)
 * [JAVA动态代理](./day19/README.md#JAVA动态代理)
-    * 静态代理示例
-    * 动态代理示例
-* [动态代理与AOP(Aspect Orient Programming面向切面编程)](./day19/README.md#动态代理与aopaspect-orient-programming面向切面编程)
-    * AOP代理示例
+* [动态代理与AOP](./day19/README.md#动态代理与aopaspect-orient-programming面向切面编程)
 
     
 
