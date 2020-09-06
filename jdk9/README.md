@@ -11,7 +11,7 @@ java 9 发布于2017-9-21, java 9 提供了超过150项新功能特性，
 + 模块化系统
 + 可交互的 REPL 工具：jshell
 + JDK 编译工具
-+ Java 公共 API 和私有代码,以及安全增强、扩展提升、性能管理改善等。
++ Java 公共 API 和私有代码,以及安全增强, 扩展提升, 性能管理改善等。
 
 
 
@@ -386,12 +386,12 @@ I将不同分辨率的图像封装到一张（多分辨率的）图像中，作�
   JDK 9 还更新了 javac 编译器以便能够将 java 9 代码编译运行在低版本 Java 中
 * 统一的JVM日志系统
 
-* javadoc的HTML 5支持
+* **javadoc的HTML 5支持**
 
 * Javascript引擎升级为Nashorn
 
 * java的动态编译器
 
   JIT（Just-in-time）编译器可以在运行时将热点编译成本地代码，速度很快。但是 Java 项目现在变得很大很复杂，因此 JIT 编译器需
-  要花费较长时间才能热身完，而且有些 Java 方法还没法编译，性能方面也会下降。AoT(Ahead-of-Time Compilation)编译就是为了解决这些问题而生的
+  要花费较长时间才能热身完，而且有些 Java 方法还没法编译，性能方面也会下降。**AoT(Ahead-of-Time Compilation)编译就是为了解决这些问题而生的**
 

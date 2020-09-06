@@ -15,15 +15,11 @@ import java.util.stream.Stream;
  *
  */
 public class OptionalTest {
+
     @Test
     public void test1() {
-        List<Integer> list = new ArrayList<>(){
-            {
-                add(11);
-                add(33);
-                add(22);
-            }
-        };
+
+        List<Integer> list = List.of(11, 33, 22);
         Optional<List<Integer>> optional = Optional.ofNullable(list);
         Stream<List<Integer>> stream = optional.stream();
         stream.forEach(System.out::println);
