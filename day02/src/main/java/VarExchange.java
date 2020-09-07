@@ -31,6 +31,7 @@ class VarExchange {
         // m = m ^ n = 1001
         // n = m ^ n = 1100
         // m = m ^ n = 0101
+        // m = (m ^ n) ^ n = m
         m = m ^ n;
         n = m ^ n; // ==>  (m ^ n) ^ n == m
         m = m ^ n; // ==> (m ^ n) ^ m == n
