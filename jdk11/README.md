@@ -29,15 +29,13 @@ public Stream<String> lines()
 
 
 ## 2. Optional类新增方法
-* public boolean isEmpty()
->判断此Optional对象的value是否为null
+isEmpty(): 判断此Optional对象的value是否为null
 
-**示例**
-```text
+```JAVA
 public void test1() {
         Optional<Object> optional = Optional.ofNullable(null);
         System.out.println(optional.isEmpty()); // true
-    }
+}
 ```
 
 
@@ -46,8 +44,7 @@ public void test1() {
 
 在var上添加注解的语法格式
 
-**示例**
-```text
+```JAVA
     public void test1() {
         Consumer<String> consumer = (t) -> System.out.println(t.toUpperCase());
         Consumer<String> consumer1 = (@Deprecated String t) -> System.out.println(t.toUpperCase());
@@ -64,23 +61,40 @@ public void test1() {
 
 ## 4. HttpClient增强
 
-示例  
+提供同步请求和异步请求
 
-[HttpClientTest](./src/com/java/www/HttpClientTest.java)
+```JAVA
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder(URI.create("https://www.baidu.com")).build();
+HttpResponse.BodyHandler<String> bodyHandler = HttpResponse.BodyHandlers.ofString();
+HttpResponse<String> response = client.send(request, bodyHandler); // 同步请求方法
+String body = response.body();
+System.out.println(body);
+
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder(URI.create("https://www.baidu.com")).build();
+HttpResponse.BodyHandler<String> bodyHandler = HttpResponse.BodyHandlers.ofString();
+CompletableFuture<HttpResponse<String>> sendAsync = client.sendAsync(request, bodyHandler); // 异步请求
+sendAsync.thenApply(t -> t.body()).thenAccept(System.out::println);
+```
+
+
 
 
 
 ## 5. 简单的编译运行程序
 
-```text
-看下面的代码。
-//编译 
-javacJavastack.java //运行 
-javaJavastack
+```shell
+# 编译 
+javac Javastack.java 
 
-在我们的认知里面，要运行一个Java源代码必须先编译，再运行，两步执行动作。
-而在未来的Java11版本中，通过一个java命令就直接搞定了，如以下所示：
-javaJavastack.java
+#运行 
+java Javastack
+
+#在我们的认知里面，要运行一个Java源代码必须先编译，再运行，两步执行动作。
+#而在未来的Java11版本中，通过一个java命令就直接搞定了，如以下所示：
+java Javastack.java
 ```
 
 一个命令编译运行源代码的注意点
