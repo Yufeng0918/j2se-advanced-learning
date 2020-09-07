@@ -15,6 +15,7 @@ import java.util.Map;
  * 如果coll可读写集合，则根据coll元素调用of(T t)方法创建一个新的只读集合，不改变原来的coll
  */
 public class CollectionsMapTest {
+
     @Test
     public void test1() {
         List<String> list = List.of("aa", "bb", "cc");

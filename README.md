@@ -321,10 +321,10 @@
 
 
 
-## [java 10新特性](./java10_features/README.md)
+## [java 10新特性](./jdk10/README.md)
 
-* [局部变量类型推断](./java10_features/README.md#局部变量类型推断)
-* [集合新增创建不可变集合的方法](./java10_features/README.md#集合新增创建不可变集合的方法)
+* [局部变量类型推断](./jdk10/README.md#局部变量类型推断)
+* [集合新增创建不可变集合的方法](./jdk10/README.md#集合新增创建不可变集合的方法)
 
 
 
