@@ -19,13 +19,18 @@ class VarExchange {
 
         // 方法2：两个变量加一起
         // 当m和n较大时，有可能出现精度损失
-//        m = m + n;
-//        n = m - n;
-//        m = m - n;
-//        System.out.println("方法2  " + "m:" + m + "   n:" + n);
+        m = m + n;
+        n = m - n;
+        m = m - n;
+        System.out.println("方法2  " + "m:" + m + "   n:" + n);
 
         // 方法3：用位的异或运算
         // 无上面两种方法的缺点
+        // m: 1100
+        // n: 0101
+        // m = m ^ n = 1001
+        // n = m ^ n = 1100
+        // m = m ^ n = 0101
         m = m ^ n;
         n = m ^ n; // ==>  (m ^ n) ^ n == m
         m = m ^ n; // ==> (m ^ n) ^ m == n

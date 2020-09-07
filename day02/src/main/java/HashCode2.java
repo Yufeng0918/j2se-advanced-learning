@@ -4,6 +4,8 @@ String HashCode计算方法之一
 
 * */
 
+import static java.lang.reflect.Array.getChar;
+
 final class StringUTF16 {
 
     public static int hashCode(byte[] value) {
@@ -14,6 +16,5 @@ final class StringUTF16 {
         }
         return h;
     }
-
 
 }
