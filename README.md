@@ -324,7 +324,7 @@
 ## [java 10新特性](./jdk10/README.md)
 
 * [局部变量类型推断](./jdk10/README.md#局部变量类型推断)
-* [集合新增创建不可变集合的方法](./jdk10/README.md#集合新增创建不可变集合的方法)
+* [创建不可变集合](./jdk10/README.md#集合新增创建不可变集合的方法)
 
 
 
@@ -332,7 +332,6 @@
 ## [java 11新特性](./java11_features/README.md)
 
 * [String类新增方法](./java11_features/README.md#String类新增方法)
-    * [String类新增方法示例](./java11_features/README.md#String类新增方法示例)
 * [Optional类新增方法](./java11_features/README.md#Optional类新增方法)
 * [局部变量类型推断升级](./java11_features/README.md#局部变量类型推断升级)
 * [HttpClient增强](./java11_features/README.md#HttpClient增强)
@@ -366,6 +365,7 @@
 * 重新实现Socket API
 * 增强switch表达式(预览功能)
 * 文本块(预览功能)
+
 
 
 ## Other
