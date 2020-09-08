@@ -27,17 +27,17 @@ class ContinueTest {
         System.out.println();
         for (int h = 0; h < 10; ++h) {
             System.out.println("h: " + h);
-            if (h = 5) {
+            if (h == 5) {
                 continue;
             }
         }
 
         // continue whith while
-        int x = 10
+        int x = 10;
         while (true) {
             --x;
             System.out.println(x);
-            if (x = 7) {
+            if (x == 7) {
                 continue;
             }
             if (x <= 0) {
