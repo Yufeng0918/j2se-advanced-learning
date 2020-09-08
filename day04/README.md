@@ -1,9 +1,11 @@
 day04 数组
 ==
 
-* 数组是多个相同类型数据的组合，实现对这些数据的统一管理
-* 数组中的元素可以是任何数据类型，包括基本数据类型和引用数据类型
-* 数组属引用类型，数组型数据是对象（object），数组中的每个元素相当于该对象的成员变量
+数组是多个相同类型数据的组合，实现对这些数据的统一管理
+
+数组中的元素可以是任何数据类型，包括基本数据类型和引用数据类型
+
+数组属引用类型，数组型数据是对象（object），数组中的每个元素相当于该对象的成员变量
 
 
 
@@ -48,11 +50,6 @@ boolean数组元素默认值：false
 
 
 ## 3. 内存基本结构
-
-基本结构
-![内存基本结构](./images/内存基本结构.png)
-
-数组在内存的结构
 ![数组内存结构](./images/数组在内存中的结构.png)
 
 
@@ -65,12 +62,9 @@ boolean数组元素默认值：false
         // 二维数组
         // # 声明二维数组(可以先声明二维数组变量，后初始化； 也可以声明并初始二维数组)
         int[][] score2;
-        String[][] names; // 也可以写成 String[] names[];
-                            // 或 String names[][];
-                            // 但不建议这两种方式
+        String[][] names; // 也可以写成 String[] names[]; 或 String names[][];但不建议这两种方式
 
         String[][] names2;
-
         // #.静态初始化
         score2 = new int[][]{{3, 5, 7}, {2, 9}, {33, 11}};
         // 同时声明和静态初始化
@@ -123,17 +117,17 @@ int y[][];
 ### 混合数据类型
 
 ```java
-        Object[][]  aa = new Object[][]{{1, "china", 5}, {"aa", "bb", "bb"}, {2.3, 3,14}};
+Object[][]  aa = new Object[][]{{1, "china", 5}, {"aa", "bb", "bb"}, {2.3, 3,14}};
 
-        System.out.print("{ ");
-        for (int i = 0; i < aa.length; ++i) {
-            System.out.print("{ ");
-            for (int j = 0; j < aa[i].length; ++j) {
-                System.out.print(aa[i][j] + ", ");
-            }
-            System.out.print(" }");
-        }
-        System.out.print(" }");
+System.out.print("{ ");
+for (int i = 0; i < aa.length; ++i) {
+    System.out.print("{ ");
+    for (int j = 0; j < aa[i].length; ++j) {
+        System.out.print(aa[i][j] + ", ");
+    }
+    System.out.print(" }");
+}
+System.out.print(" }");
 
 ```
 
@@ -141,19 +135,22 @@ int y[][];
 
 ## 5. Arrays数组操作类
 
+```JAVA
+public static boolean equals(int[] a, int[] a2)
+// 比较两个数组是否相等    
+
+public static String toString(int[] a)
+// 数组转成字符串
+    
+public static void fill(int[] a, int val)
+// 数组中所有的元素填充为指定的值val
+    
+public static void sort(int[] a)
+// 数组排序
+    
+public static int binarySearch(int[] a, int key)
+// 二分查找指定的值的索引位置。要求数组已经排序好。返回值为负数时，表示没有找到    
+```
+
 [Arrays类详情](./Arrays类.md)  
 
-* public static boolean equals(int[] a, int[] a2)
->比较两个数组是否相等
-
-* public static String toString(int[] a)
->数组转成字符串
-
-* public static void fill(int[] a, int val)
->数组中所有的元素填充为指定的值val
-
-* public static void sort(int[] a)
->数组排序
-
-* public static int binarySearch(int[] a, int key)
->二分查找指定的值的索引位置。要求数组已经排序好。返回值为负数时，表示没有找到
