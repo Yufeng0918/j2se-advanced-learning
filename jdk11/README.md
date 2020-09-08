@@ -61,7 +61,7 @@ public void test1() {
 
 ## 4. HttpClient增强
 
-提供同步请求和异步请求
+提供同步请求和异步请求， 替换**HttpURLConnection**
 
 ```JAVA
 HttpClient client = HttpClient.newHttpClient();
