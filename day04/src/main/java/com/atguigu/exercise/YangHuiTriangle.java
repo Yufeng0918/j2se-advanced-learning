@@ -21,6 +21,7 @@
 package com.atguigu.exercise;
 
 public class YangHuiTriangle {
+
     public static void main(String[] args) {
         // 声明二维数组变量
         int[][] triangle = new int[10][]; // 行数
@@ -53,6 +54,5 @@ public class YangHuiTriangle {
             }
             System.out.println();
         }
-
     }
 }
