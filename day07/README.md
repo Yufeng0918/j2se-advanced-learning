@@ -5,16 +5,12 @@ day07 高级特性
 
 ## 1. this
 
-### 作用
+### 概述
 在java中，this的作用和其词义相近。
-* 它在方法内部使用，**即这个方法所属对象的引用**
-* 它在构造器内部使用，**表示该构造器正在初始化的对象**
+* 在方法内部使用，**即这个方法所属对象的引用**
+* 在构造器内部使用，**表示该构造器正在初始化的对象**
 
-this表示当前对象，可以调用类的属性， 方法和构造器
-
-什么时候用this关键字， 当在方法内需要调用该方法的对象时，就用this
-
-
+this表示当前对象，可以调用类的属性， 方法和构造器。当在方法内需要调用该方法的对象时，就用this
 
 **使用this调用属性， 方法， this理解为当前对象或当前正在创建的对象**
 
@@ -38,9 +34,7 @@ class Person {
     public void speak() {
         System.out.println("年龄: " + this.age);
     }
-    
 }
-
 ```
 
 **使用this调用本类的构造器**
@@ -70,7 +64,6 @@ class Person {
         return "姓名: " + this.name + ", 年龄: " + age;
     }
 }
-
 ```
 
 **this可表示正在操作本方法的对象，即当前对象**
@@ -92,23 +85,10 @@ class Person {
    public boolean compare(Person p) {
         return this.name = p.name;
    }
-   
 }
-
-public class TestPerson {
-    public static void main(String[] args) {
-        Person p1 = new Person("张三");
-        Person p2 = new Person("李四");
-        p1.getInfo();
-        p2.getInfo();
-        boolean bool = p1.compare(p2);
-    }
-}
-
-
 ```
 
-### this关键字使用注意事项
+### 注意事项
 * **构造器中，使用this(形参)必须放在构造器的首行**
 * 使用this调用本类中其他的构造器，保证至少有一个构造器不是使用this，避免形成死循环
 
@@ -120,9 +100,7 @@ JavaBean是一种java语言写成的可重用组件，所谓JavaBean，是指符
 
 * 类是公共的(public)
 * 有一个无参的公共构造器
-* 有属性，且有对应的get、set方法
-
-用户可以使用JavaBean将功能、处理、值、数据库访问和其他任何可以用java代码创造的对象进行打包，并且其他的开发者可以通过内部的JSP页面、Servlet、其他JavaBean、applet程序或者应用来使用这些对象。用户可以认为JavaBean提供了一种随时随地的复制和粘贴的功能，而不用关心任何改变。
+* 有属性，且有对应的get, set方法
 
 ```java
 public class TestJavaBean { // 类访问权限为public
@@ -152,7 +130,6 @@ public class TestJavaBean { // 类访问权限为public
     }
     
 }
-
 ```
 
 
@@ -184,13 +161,11 @@ public class TestJavaBean { // 类访问权限为public
 ![shipping](./images/shipping.png "shipping")
 
 ### 使用
-package语句作为java源文件的第一个语句，指明该文件中定义的类所在的包。(若缺省该语句，则指定为无名包)。
+package语句作为java源文件的**第一个语句，指明该文件中定义的类所在的包。**
 
 包对应文件系统的目录，package语句中，用"."来指明包(目录)的层次
 
 包通常用小写单词，类名首字母通常大写
-
->package 顶层包名.子包名;
 
 ```java
 // pack/Test.java
@@ -205,14 +180,12 @@ public class Test {
 ```
 
 
-  
+
 
 ## 4. 关键字-import
 ### 作用
 
 import语句告诉编译器到哪里去寻找类，为使用定义在不同包的java类，需要import语句来引入指定包层次下所需要的类或全部类(.*)
-
->import 包名[.子包名...].<类名 |*>
 
 ```java
 import pack.Test; // import pack.*; 表示引入pack包中所有的类
@@ -228,7 +201,7 @@ public class TestPackage {
 ### 注意事项
 若引入的包为:**java.lang,则编译器默认可获取此包下的类**，不需要再显式声明。
 
-import语句出现在package语句之后，类定义之前， 一个源文件可包含多个import语句
+import语句出现在package语句之后， 一个源文件可包含多个import语句
 
 **可以使用import lee.*;语句，表明导入lee包下的所有类，而lee包下sub子包内的类则不会被 导入。若要导入sub下的类:import lee.sub.*;**
 
@@ -264,10 +237,9 @@ JDK 1.5加入import static语句
 ## 6. 面向对象特征之二：继承
 
 ### 基本概念
-多个类中存在相同属性和行为时，将这些内容抽取到单独的一个类中，那么其他多个类就不
-需要再定义这些属性和行为，只要继承那个类即可
+多个类中存在相同属性和行为时，将这些内容抽取到单独的一个类中，那么其他多个类就不需要再定义这些属性和行为，只要继承那个类即可
 
-此处的多个类成为"子类"，单独的这个类称为"父类"(基类或超类)
+此处的多个类成为"子类"，单独的这个类称为"父类"
 
 ```JAVA
 class Subclass extends Superclass { }  
@@ -285,7 +257,7 @@ class Subclass extends Superclass { }
 ### 注意事项
 
 * 不要仅为了获取其他类中某个 功能而去继承
-* 子类继承了父类的方法和属性(两者都包括priavte的，只是不能直接调用)。
+* 子类继承了父类的方法和属性(**两者都包括priavte的，只是不能直接调用**)。
 * 在子类中，可以使用父类中定义的方法和属性，也可以创建新的属性和方法
 * java中，继承的关键字是"extends"，子类不是父类的子集，而是父类的扩展
 
@@ -314,9 +286,11 @@ class Subclass extends Superclass { }
 
 * 子类重写和父类被重写的**方法必须同时为static的或同时为非static的类型**
 
-* 子类重写方法抛出的异常类型不能大于父类被重写方法的异常类型
+* 子类重写方法**抛出的异常类型不能大于父类被重写方法的异常类型**
 
 * **private方法不能重写。**如果父类中一个方法 private myMethod() { },子类中写了一个 myMethod() { } 或public myMethod() { }，那么这两种情况都不叫重写。因为父类的方法在子类中不见。
+
+* **如果声明类型是父类，实际类型是子类，那么子类的属性不会覆盖父类属性**
 
   ```java
    // 父类
@@ -324,6 +298,17 @@ class Subclass extends Superclass { }
    
    // 子类
    public myMethod() { }
+  
+  public class Person {
+      public String a = "a";
+  }
+  
+  public class Student2 extends Person {
+      public String a = "b";
+  }
+  
+  Person s2 = new Student2();
+  System.out.println("s2's a: " + s2.a); //output is a
   ```
 
 

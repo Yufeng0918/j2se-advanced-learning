@@ -1,8 +1,13 @@
 package com.java.pug;
 
 public class Person {
-    private String name;
+    public String name;
+    public String a = "a";
     private int age;
+
+    public Person() {
+        this.name = "人";
+    }
 
     public String getName() {
         return name;
@@ -25,7 +30,7 @@ public class Person {
     }
 
     public void speek() {
-        System.out.println(name + "说话");
+        System.out.println(name + "说话 " + this.a);
     }
 
     public void showInfo() {
