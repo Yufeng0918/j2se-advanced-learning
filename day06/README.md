@@ -6,11 +6,11 @@ day06 构造器
 ## 1. 特征
 构造器具有与类相同的名称
 
-构造器不声明返回值类型。与声明为void不同
+构造器不声明返回值类型
 
 **不能被static、final、synchronized、abstract、native修饰**，不能有return语句返回值
 
-一旦显式的定义了类的构造器，默认的构造器就不再提供
+**一旦显式的定义了类的构造器，默认的构造器就不再提供**
 
 
 
@@ -23,8 +23,8 @@ day06 构造器
 ```java
 Order o = new Order();
 Person p = new Person(Peter, 15);
-
 ```
+
 
 
 ## 3. 语法格式
@@ -34,7 +34,6 @@ Person p = new Person(Peter, 15);
 //        初始化语句;
 //}
     
-//举例：
 public class Animal {
     private int legs;
     
@@ -54,7 +53,6 @@ public class Animal {
 
 // 创建Animal类的实例：Animal a = new Animal();
 // 调用构造器时，将legs初始化为4
-
 }
 ```
 
@@ -92,33 +90,9 @@ class Person {
         age = a;
     }
 }
-
 ```
 
-构造器重载使得对象的创建更加灵活，方便创建各种不同的对象
-
-```java
-public class Person {
-    public Person(String name, int age, Data d) {
-        this(name, age);
-        ... ...
-    }
-    
-    public Person(String name, int age) {
-        ...
-    }
-    
-    public Person(String name, Date d) {
-        ...
-    }
-    
-    public Person() {
-        ...
-    }
-}
-
-```
-构造器重载，参数列表必须不同
+构造器重载使得对象的创建更加灵活，参数列表必须不同, 方便创建各种不同的对象
 
 ```java
 public class Person {
@@ -142,7 +116,6 @@ public class Person {
         this(name, 30);
     }
 }
-
 ```
 
 
