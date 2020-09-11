@@ -30,24 +30,22 @@ day03 程序流程控制
 
 ```java
 if (true) {
-    执行的代码块;
+    //执行的代码块;
 }
 
 if (条件表达式) {
-    执行代码块;
+    //执行代码块;
 } else {
-    执行代码块;
+    //执行代码块;
 }
 
 
 if (表达式1) {
-    执行代码块;
+    //执行代码块;
 } else if {
-    执行代码块;
-} 
-... ...
-else {
-    执行代码块;
+    //执行代码块;
+} else {
+    //执行代码块;
 }
 ```
 
@@ -65,7 +63,6 @@ switch (变量) {
     case 常量2;
         语句2;
         break;
-    ... ...
     case 常量N:
         语句N;
         break;
@@ -138,7 +135,9 @@ while (布尔测试表达式) {
 ```
 
 
+
 ### do-while
+
 ```java
 [初始化语句;]
 do {
@@ -149,10 +148,12 @@ do {
 ```
 
 
+
 ### break
+
 break语句用于终止某个语句块的执行
 
-```text
+```java
 {
     ... ...
     break;
@@ -162,47 +163,45 @@ break语句用于终止某个语句块的执行
 break语句出现在多层，嵌套的语句块中时，**可以通过标签指明要终止的是哪一层语句块**
 
 ```java
-        lable1:
-        for (int i = 0; i < 4; ++i) {
-            System.out.println("i layer: " + i);
-            lable2:
-            for (int j = 0; j < 4; ++j) {
-                System.out.println("j layer: " + j);
-                lable3:
-                for (int k = 0; k < 4; ++k) {
-                    if (k == 2) {
-                        break lable2;
-                    }
-                    System.out.println("k layer: " + k);
-                }
+lable1:
+for (int i = 0; i < 4; ++i) {
+    System.out.println("i layer: " + i);
+    lable2:
+    for (int j = 0; j < 4; ++j) {
+        System.out.println("j layer: " + j);
+        lable3:
+        for (int k = 0; k < 4; ++k) {
+            if (k == 2) {
+                break lable2;
             }
+            System.out.println("k layer: " + k);
         }
-        
-        
+    }
+}
 ```
 
 
 
 ### continue
 ```java
-        // 跳过指定层的本次循环
-        lable1:
-        for (int i = 0; i < 4; ++i) {
-            System.out.println("i layer: " + i);
-            lable2:
-            for (int j = 0; j < 4; ++j) {
-                System.out.println("j layer: " + j);
-                lable3:
-                for (int k = 0; k < 4; ++k) {
-                    if (k == 2) {
-                        continue lable1;
-                    }
-                    System.out.println("k layer: " + k);
-                }
+// 跳过指定层的本次循环
+lable1:
+for (int i = 0; i < 4; ++i) {
+    System.out.println("i layer: " + i);
+    lable2:
+    for (int j = 0; j < 4; ++j) {
+        System.out.println("j layer: " + j);
+        lable3:
+        for (int k = 0; k < 4; ++k) {
+            if (k == 2) {
+                continue lable1;
             }
+            System.out.println("k layer: " + k);
         }
-
+    }
+}
 ```
+
 
 
 ### return
