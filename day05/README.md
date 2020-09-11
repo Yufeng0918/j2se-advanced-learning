@@ -375,7 +375,7 @@ class Value {
 
 
 
-## 8. 面向对象特征之一：封装和隐藏
+## 8. 面向对象特征之一：封装
 
 使用者对类内部的属性(对象的成员变量)直接操作会导致数据的错误、混乱或安全性问题
 ![属性需要隐藏](./images/属性需要隐藏.png)
@@ -384,7 +384,7 @@ class Value {
 
 ### 信息的封装和隐藏
 
-java中通过将数据声明为私有的(private)，再提供公共的(public)方法:getter()和。 setter()实现对该属性的操作，以实现下面的目的：
+java中通过将数据声明为私有的(private)，再提供公共的(public)方法:getter()和setter()实现对该属性的操作，以实现下面的目的：
 * **隐藏一个类中不需要对外提供实现的细节**
 * **使用者只能通过事先定制好的方法来访问数据**，可以方便地加入控制逻辑，限制对属性的不合理操作
 * 便于修改，增强代码的可维护性
@@ -397,7 +397,6 @@ public class EncapsulationAndHiding {
         dog1.setLegs(-100); // 不合法的数字
         System.out.println(dog1.getLegs());
     }
-
 }
 
 class Animal {
