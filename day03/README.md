@@ -7,7 +7,7 @@ day03 程序流程控制
 
 ### 顺序结构
 
-程序从上到下逐行地执行（从上往下），中间没有任何判断和跳转
+程序从上到下逐行地执行，中间没有任何判断和跳转
 
 ### 分支结构
 
@@ -23,8 +23,6 @@ day03 程序流程控制
 
 
 
-
-
 ## 2. 分支结构
 
 ### if-else
@@ -32,24 +30,22 @@ day03 程序流程控制
 
 ```java
 if (true) {
-    执行的代码块;
+    //执行的代码块;
 }
 
 if (条件表达式) {
-    执行代码块;
+    //执行代码块;
 } else {
-    执行代码块;
+    //执行代码块;
 }
 
 
 if (表达式1) {
-    执行代码块;
+    //执行代码块;
 } else if {
-    执行代码块;
-} 
-... ...
-else {
-    执行代码块;
+    //执行代码块;
+} else {
+    //执行代码块;
 }
 ```
 
@@ -67,7 +63,6 @@ switch (变量) {
     case 常量2;
         语句2;
         break;
-    ... ...
     case 常量N:
         语句N;
         break;
@@ -118,14 +113,12 @@ for (初始表达式; 布尔值测试表达式; 更改表达式) {
 //②循环条件
 //③迭代条件
 //④循环体
-
 for (①; ②; ③) {
     ④;
 }
 
 //无限循环
 for (; ; ) {
-
 }
 ```
 
@@ -142,7 +135,9 @@ while (布尔测试表达式) {
 ```
 
 
+
 ### do-while
+
 ```java
 [初始化语句;]
 do {
@@ -153,10 +148,12 @@ do {
 ```
 
 
+
 ### break
+
 break语句用于终止某个语句块的执行
 
-```text
+```java
 {
     ... ...
     break;
@@ -166,47 +163,45 @@ break语句用于终止某个语句块的执行
 break语句出现在多层，嵌套的语句块中时，**可以通过标签指明要终止的是哪一层语句块**
 
 ```java
-        lable1:
-        for (int i = 0; i < 4; ++i) {
-            System.out.println("i layer: " + i);
-            lable2:
-            for (int j = 0; j < 4; ++j) {
-                System.out.println("j layer: " + j);
-                lable3:
-                for (int k = 0; k < 4; ++k) {
-                    if (k == 2) {
-                        break lable2;
-                    }
-                    System.out.println("k layer: " + k);
-                }
+lable1:
+for (int i = 0; i < 4; ++i) {
+    System.out.println("i layer: " + i);
+    lable2:
+    for (int j = 0; j < 4; ++j) {
+        System.out.println("j layer: " + j);
+        lable3:
+        for (int k = 0; k < 4; ++k) {
+            if (k == 2) {
+                break lable2;
             }
+            System.out.println("k layer: " + k);
         }
-        
-        
+    }
+}
 ```
 
 
 
 ### continue
 ```java
-        // 跳过指定层的本次循环
-        lable1:
-        for (int i = 0; i < 4; ++i) {
-            System.out.println("i layer: " + i);
-            lable2:
-            for (int j = 0; j < 4; ++j) {
-                System.out.println("j layer: " + j);
-                lable3:
-                for (int k = 0; k < 4; ++k) {
-                    if (k == 2) {
-                        continue lable1;
-                    }
-                    System.out.println("k layer: " + k);
-                }
+// 跳过指定层的本次循环
+lable1:
+for (int i = 0; i < 4; ++i) {
+    System.out.println("i layer: " + i);
+    lable2:
+    for (int j = 0; j < 4; ++j) {
+        System.out.println("j layer: " + j);
+        lable3:
+        for (int k = 0; k < 4; ++k) {
+            if (k == 2) {
+                continue lable1;
             }
+            System.out.println("k layer: " + k);
         }
-
+    }
+}
 ```
+
 
 
 ### return
@@ -220,7 +215,7 @@ return并非专门用于结束循环的，它的功能是结束当前整个方�
 ### 特殊流程控制说明
 return 返回值，结束当前整个方法
 
-break 终止本层循环，只能用于 switch-case语句和for, while, do-while循环语句中
+**break 终止本层循环**，只能用于 switch-case语句和for, while, do-while循环语句中
 
 continue 终止本次循环，本次循环到此终止，继续下一次循环，只能用于循环语句（for、while、do-while）
 

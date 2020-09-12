@@ -8,7 +8,7 @@ Arrays类
 只有一个私有的构造器
 
 # 方法
-```text
+```java
 static <T> List<T> asList​(T... a) 
 Returns a fixed-size list backed by the specified array.
 把数组转成一个List，创建一个List对象

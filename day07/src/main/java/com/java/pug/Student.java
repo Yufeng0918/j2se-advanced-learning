@@ -1,7 +1,8 @@
 package com.java.pug;
 
 public class Student {
-     private String name;
+     public String name;
+
      private int age;
 
     public String getName() {

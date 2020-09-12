@@ -23,9 +23,9 @@ class BreakTest {
         }
 
         // break whith for
-        for (int i = 10, i < 0; --i) {
-            System.out.println(i);
-            if (i = 5) {
+        for (int q = 10; q < 0; --q) {
+            System.out.println(q);
+            if (q == 5) {
                 break;
             }
         }

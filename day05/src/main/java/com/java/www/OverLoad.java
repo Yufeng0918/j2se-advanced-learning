@@ -43,15 +43,17 @@ public class OverLoad {
     }
 
     // mOL重载
-    public  int mOL(int i) {
+    public int mOL(int i) {
         int m = i * i;
         System.out.println(m);
         return m;
     }
-    public  void mOL(int i, int j) {
+
+    public void mOL(int i, int j) {
         System.out.println(i * j);
     }
-    public  void mOL(String s) {
+
+    public void mOL(String s) {
         System.out.println(s);
     }
 
@@ -65,6 +67,14 @@ public class OverLoad {
     }
 
     public double max(double d1, double d2, double d3) {
-        return max(d1, d2) > d3 ?  max(d1, d2) : d3;
+        return max(d1, d2) > d3 ? max(d1, d2) : d3;
+    }
+
+    protected long max(long l1, long l2, double d) {
+        return Math.max(l1, l2);
+    }
+
+    protected long max(long l1, double d, long l2) {
+        return Math.max(l1, l2);
     }
 }
