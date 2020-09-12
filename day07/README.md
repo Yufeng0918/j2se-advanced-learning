@@ -203,7 +203,7 @@ public class TestPackage {
 
 import语句出现在package语句之后， 一个源文件可包含多个import语句
 
-**可以使用import lee.*;语句，表明导入lee包下的所有类，而lee包下sub子包内的类则不会被 导入。若要导入sub下的类:import lee.sub.*;**
+**可以使用import lee.\*;语句，表明导入lee包下的所有类，而lee包下sub子包内的类则不会被导入。若要导入sub下的类:import lee.sub.\*;**
 
 import 语句还是必须的，可在类里使用类的命名。如java.util.Scanner
 
@@ -213,31 +213,28 @@ JDK 1.5加入import static语句
 
 ## 5. JDK主要的包介绍
 
-+ java.lang
+java.lang：包含一些java语言的核心类，如String、Math、Integer、System、Thread，常用功能
 
->包含一些java语言的核心类，如String、Math、Integer、System、Thread，常用功能
-* java.net
->包含执行与网络相关操作的类和接口
-* java.io
->包括能提供多种输入/输出功能的类
-* java.util
->包含一些实用工具类，如定义系统特性、接口的集合框架类、与日期日历相关的函数
-* java.text
->包含了一些java格式化相关的类
-* java.sql
->包含了java进行JDBC数据库编程相关的类/接口
-* java.awt
->包含了构成抽象窗口工具集(abstract windows toolkits)的类，这些类被用来构建和管理
-应用程序的图形用户界面(GUI)
-* java.applet
->包含applet运行所需的类
+java.net：包含执行与网络相关操作的类和接口
+
+java.io: 提供多种输入/输出功能的类
+
+java.util: 一些实用工具类，如定义系统特性、接口的集合框架类、与日期日历相关的函数
+
+java.text: 一些java格式化相关的类
+
+java.sql: java进行JDBC数据库编程相关的类/接口
+
+java.awt: 包含了构成抽象窗口工具集(abstract windows toolkits)的类，这些类被用来构建和管理应用程序的图形用户界面(GUI)
+
+java.applet: 包含applet运行所需的类
 
 
 
 ## 6. 面向对象特征之二：继承
 
 ### 基本概念
-多个类中存在相同属性和行为时，将这些内容抽取到单独的一个类中，那么其他多个类就不需要再定义这些属性和行为，只要继承那个类即可
+多个类中存在相同属性和行为时，将这些内容抽取到单独的一个类中，那么多个子类就不需要再定义这些属性和行为，只要继承那个类即可
 
 此处的多个类成为"子类"，单独的这个类称为"父类"
 
@@ -259,7 +256,7 @@ class Subclass extends Superclass { }
 * 不要仅为了获取其他类中某个 功能而去继承
 * 子类继承了父类的方法和属性(**两者都包括priavte的，只是不能直接调用**)。
 * 在子类中，可以使用父类中定义的方法和属性，也可以创建新的属性和方法
-* java中，继承的关键字是"extends"，子类不是父类的子集，而是父类的扩展
+* java中，**继承的关键字是"extends"，子类不是父类的子集，而是父类的扩展**
 
 
 

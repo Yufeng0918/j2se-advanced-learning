@@ -5,9 +5,7 @@ day09 高级特性
 
 ## 1. toString()方法
 
-toString()方法在Object类中定义，其返回值是String类型，返回类名和它的引用地址
-
-在进行String与其他类型数据的连接操作时，自动调用toString()方法
+toString()方法在Object类中定义，其返回值是String类型，返回类名和它的引用地址。在进行String与其他类型数据的连接操作时，自动调用toString()方法
 
 ```java
     Date now = new Date();
@@ -26,20 +24,18 @@ System.out.println(s1); // 相当于System.out.println(s1.toString());
 
 ​    
 ## 2. 包装类
-针对8种基本定义相应的引用类型（包装类，或叫封装类）
+针对8种基本定义相应的引用类型， 有了类的特点，就可以调用类中的方法
 
-有了类的特点，就可以调用类中的方法
-
-基本数据类型 |包装类 |备注
-:--- |--- |---
-boolean |Boolean |
-byte |Byte |
-short |Short |
-int |Integer |
-long |Long |
+基本数据类型 |包装类 
+:--- |--- 
+boolean |Boolean 
+byte |Byte 
+short |Short 
+int |Integer 
+long |Long 
 char |Character
-float |Float |
-double |Double |
+float |Float 
+double |Double 
 
 ### 装箱
 
@@ -68,14 +64,14 @@ System.out.println(b3);
 
 获得包装类对象中包装的基本类型变量，叫做 拆箱
 
-调用包装类对象的.xxValue()方法
++ 调用包装类对象的.xxValue()方法
 
 ```java
 Boolean obj = new Boolean(true);
 boolean b = obj.booleanValue();
 ```
 
-JDK 1.5之后，支持自动装箱，自动拆箱。但类型必须匹配
++ JDK 1.5之后，支持自动装箱，自动拆箱。但类型必须匹配
 
 ```java
         // JDK 1.5后，自动装箱、拆箱
@@ -144,14 +140,13 @@ String相关的变量在内存的结构
 * 可以通过"类.类方法" 调用，也可以"对象.类方法"，建议使用第一种
 * 静态方法可以可以调用静态属性和静态方法，**但不能调用非静态的属性和非静态的方法**
 * 重载的方法需要同时为static或者非static
-* 静态的结构(static的属性、方法、代码块、内部类)的生命周期要早于非静态的结构，被回收的时间要晚于非静态的结构静态方法里不能有this、super关键字
+* **静态的结构(static的属性、方法、代码块、内部类)的生命周期要早于非静态的结构，被回收的时间要晚于非静态的结构静态方法**里不能有this、super关键字
 
 ### 类属性, 类方法的设计思想
-类属性作为该类各个对象之间共享的变量。在设计类时,分析哪些类属性不因对象的不同而改变，将这些属性设置为类属性。相应的方法设置为类方法。**如果方法与调用者无关，则这样的方法通常被声明为类方法**，由于不需要创建对象就可以调用类方法，从而简化了方法的调用
+类属性作为该类各个对象之间共享的变量。在设计类时, 分析哪些类属性不因对象的不同而改变，将这些属性设置为类属性。相应的方法设置为类方法。**如果方法与调用者无关，则这样的方法通常被声明为类方法**，由于不需要创建对象就可以调用类方法，从而简化了方法的调用
 
 
 ```java
-
 class SportMan {
     // 实例变量
     private String name;
@@ -230,7 +225,7 @@ class SportMan {
     }
 }
 ```
-</details>
+
 
 ![](./images/static属性内存结构.png)
 
