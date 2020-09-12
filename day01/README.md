@@ -29,7 +29,7 @@ java虚拟机(Java Virtal Machine)
 
 源文件后缀.java， 源文件中可以有多个class声明的类
 
-类中可以有主方法（即main()方法），其格式是固定的：public static void main(String[] args) {}，m**ain是()方法是程序的入口**，方法内是程序的执行部分
+类中可以有主方法（即main()方法），其格式是固定的：public static void main(String[] args) {}，**main是()方法是程序的入口**，方法内是程序的执行部分
 
 一个源文件中**只能有一个声明为public的类**，同时要求此类的类名与源文件名一致
 

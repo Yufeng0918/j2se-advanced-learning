@@ -118,7 +118,6 @@ public class Person {
     private int age;
     public String name = "Lilei";
 }
-
 ```
 
 
@@ -161,18 +160,18 @@ public class Person {
 
 ### 成员变量的默认值
 
-类型 |默认值 |打印效果 |备注
-:---| :--- |:--- |:---
-byte |0 |0 |
-short |0 |0 |
-int |0 |0 |
-long |0L |0 |
-float | 0.0F |0.0 |
-double |0.0 |0.0 |
-boolean | false |false |
-char | 空白 |不打印任何内容 |
-String |null |null |
-引用数据类型 |null |null |类、接口、数组(含多维数据)、集合
+类型 |默认值 |打印效果 
+:---| :--- |:--- 
+byte |0 |0 
+short |0 |0 
+int |0 |0 
+long |0L |0 
+float | 0.0F |0.0 
+double |0.0 |0.0 
+boolean | false |false 
+char | 空白 |不打印任何内容 
+String |null |null 
+引用数据类型 |null |null 
 
 
 
@@ -192,7 +191,6 @@ public class Animal {
     public void move() {
         System.out.println("Moving ...");
     }
-    
 }
 
 public class Zoo {
@@ -202,10 +200,8 @@ public class Zoo {
       System.out.println(xb.legs);
       xb.eat();
       xb.move();
-    }
-    
+    }   
 }
-
 ```
 
 
@@ -312,15 +308,13 @@ public void test(int a, String... books) {}
 
 
 ## 6. 内存划分的结构
-* 栈(stack)
-    局部变量，对象的引用名，数组的引用名
-* 堆(heap)
-    new 出来的对象实例，（对象实体，数组的实体），成员变量
-* 方法区
-    含字符串变量
-* 静态域
-    声明为static的变量
-    
+栈(stack): 局部变量，对象的引用名，数组的引用名
+
+堆(heap): new 出来的对象实例，（对象实体，数组的实体），成员变量
+
+方法区: 含字符串变量
+
+静态域: 声明为static的变量
 
 
 
@@ -369,7 +363,6 @@ public class Test {
 class Value {
     int i = 15;
 }
-
 ```
 ![java值传递](./images/java值传递.png) 
 
@@ -381,8 +374,6 @@ class Value {
 ![属性需要隐藏](./images/属性需要隐藏.png)
 
 
-
-### 信息的封装和隐藏
 
 java中通过将数据声明为私有的(private)，再提供公共的(public)方法:getter()和setter()实现对该属性的操作，以实现下面的目的：
 * **隐藏一个类中不需要对外提供实现的细节**
