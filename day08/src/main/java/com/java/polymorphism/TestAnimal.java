@@ -24,10 +24,6 @@ public class TestAnimal {
         t.call(an2);
         t.hobby(an1);
         t.hobby(an2);
-
-
-
-
     }
 
     // 利用instanceof判断实例所属类，再强制转换

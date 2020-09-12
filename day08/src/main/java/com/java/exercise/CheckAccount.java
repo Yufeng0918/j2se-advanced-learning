@@ -19,6 +19,7 @@ public class CheckAccount extends Account{
         this.overdraft = overdraft;
     }
 
+    @Override
     public void withdraw(double amount) {
         // 重写 取钱方法
         if (amount <= balance) {
