@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class IntersectionSet_UnionSet_DifferenceSet_test {
     private Set<String> result = new HashSet<>();
-    private Set<String> set1 = new HashSet<>() {
+    private Set<String> set1 = new HashSet<String>() {
         {
             add("地下城与勇士");
             add("英雄联盟");
@@ -20,7 +20,7 @@ public class IntersectionSet_UnionSet_DifferenceSet_test {
             add("王者荣耀");
         }
     };
-    private Set<String> set2 = new HashSet<>() {
+    private Set<String> set2 = new HashSet<String>() {
         {
             add("魔兽世界");
             add("地下城与勇士");

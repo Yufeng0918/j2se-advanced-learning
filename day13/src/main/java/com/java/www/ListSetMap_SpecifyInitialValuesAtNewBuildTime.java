@@ -20,7 +20,7 @@ public class ListSetMap_SpecifyInitialValuesAtNewBuildTime {
      */
     @Test
     public void test1() {
-        List<String> list = new ArrayList<>() { // 创建一个继承于ArrayList 匿名子类对象
+        List<String> list = new ArrayList<String>() { // 创建一个继承于ArrayList 匿名子类对象
             // 静态代码块，在加载类的时候就执行
             {
                 add("我的楼兰--云朵"); // this.add("我的楼兰--云朵");
@@ -37,7 +37,7 @@ public class ListSetMap_SpecifyInitialValuesAtNewBuildTime {
      */
     @Test
     public void test2() {
-        Set<Integer> set1 = new LinkedHashSet<>() {{
+        Set<Integer> set1 = new LinkedHashSet<Integer>() {{
             add(3);
             add(1);
             add(4);
@@ -50,7 +50,7 @@ public class ListSetMap_SpecifyInitialValuesAtNewBuildTime {
      */
     @Test
     public void test3() {
-        Map<String, Boolean> map1 = new TreeMap<>() {{
+        Map<String, Boolean> map1 = new TreeMap<String, Boolean>() {{
             put("北京", true);
             put("天津", false);
             put("深圳", true);
