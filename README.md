@@ -179,9 +179,9 @@
 * [字符集](./day15/README.md#字符集)
 * [处理之三：标准输入输出流](./day15/README.md#处理之三标准输入输出流)
 * [处理流之四：打印流](./day15/README.md#处理流之四打印流)
-* [处理流之五：数据流DataInputStream、DataOutputStream](./day15/README.md#处理流之五数据流DataInputStreamDataOutputStream)
+* [处理流之五：数据流](./day15/README.md#处理流之五数据流DataInputStreamDataOutputStream)
 * [处理流之六：对象流](./day15/README.md#处理流之六对象流)
-* [RandomAccessFile类,可控制可任意位置读写文件](./day15/README.md#RandomAccessFile类)
+* [RandomAccessFile类](./day15/README.md#RandomAccessFile类)
 * [流的基本应用小总结](./day15/README.md#流的基本应用小总结)
 
 
@@ -194,10 +194,10 @@
 * [Buffer缓冲区](./NIO/README.md#Buffer缓冲区)
 * [Channel通道](./NIO/README.md#Channel通道)
 * [FileChannel常用方法](./NIO/README.md#FileChannel常用方法)
-* [非阻塞式NIO、阻塞式NIO、与阻塞式IO](./NIO/README.md#非阻塞式NIO阻塞式NIO与阻塞式IO)
+* [NIO vs 阻塞式IO](./NIO/README.md#非阻塞式NIO阻塞式NIO与阻塞式IO)
 * [字符集编码与解码](./NIO/README.md#字符集编码与解码)
 * [Pipe管道](./NIO/README.md#Pipe管道)
-* [NIO2 Path、Paths、Files](./NIO/README.md#NIO2PathPathsFiles)
+* [NIO2 Path, Paths, Files](./NIO/README.md#NIO2PathPathsFiles)
 * [自动资源管理](./NIO/README.md#自动资源管理)
 
 
