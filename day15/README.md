@@ -25,65 +25,84 @@ File file3 = new File("E:/dev/java_2019//day15/testLab/lab1/qq.exe");
 
 
 ### 访问文件名
-* String getName() 获取文件名
-* String getPath() 获取路径
-* String getAbsoluteFile()  获取文件绝对路径
-* String getAbsolutePath() 获取目录绝对路径
-* String getParent() 获取父路径
-* boolean renameTo(File newFile) 重命名文件或目录，当目标文件名、目录名存在时，则重名失败
+
+```JAVA
+String getName() //获取文件名
+String getPath() //获取路径
+String getAbsoluteFile()  //获取文件绝对路径
+String getAbsolutePath() //获取目录绝对路径
+String getParent() //获取父路径
+boolean renameTo(File newFile) //重命名文件或目录，当目标文件名、目录名存在时，则重名失败
+```
 
 
 
 ### 文件检测
 
-* boolean exists() 是否存在
-* boolean canWrite() 是否能写
-* boolean canRead() 是否可读
-* boolean isFile() 是否为文件
-* boolean isDirectory() 是否为目录
-* boolean canExecute() 是否可执行
+```java
+boolean exists() //是否存在
+boolean canWrite() //是否能写
+boolean canRead() //是否可读
+boolean isFile() //是否为文件
+boolean isDirectory() //是否为目录
+boolean canExecute() //是否可执行
+```
 
 
 
 ### 获取常规文件信息
 
-* long lastModified() 返回文件、目录修改时间戳
-* long length() 字节长度，The length, in bytes, of the file denoted by this abstract pathname
+```JAVA
+long lastModified() //返回文件、目录修改时间戳
+long length() //字节长度，The length, in bytes, of the file denoted by this abstract pathname
+```
 
 
 
 ### 文件相关操作
 
-* boolean createNewFile() 创建新文件，父目录不存在时，报IOException异常；若文件存在，创建失败
-* boolean delete() 删除文件或空目录，非空目录删除失败
+```java
+boolean createNewFile() //创建新文件，父目录不存在时，报IOException异常；若文件存在，创建失败
+boolean delete() //删除文件或空目录，非空目录删除失败
+```
 
 
 
 ### 目录相关操作
 
-* boolean mkDir() 创建目录，父目录不存在时创建失败
-* boolean mkDirs() 创建多层目录，若父目录不存在时，父目录一同创建
-* String[] list() 列出指定路径下的文件和目录，只显示当前层的，返回String数组
-* File[] listFiles() 列出指定路径下的文件和目录，只显示当前层的，返回File数组
+```java
+boolean mkDir() //创建目录，父目录不存在时创建失败
+boolean mkDirs() //创建多层目录，若父目录不存在时，父目录一同创建
+String[] list() //列出指定路径下的文件和目录，只显示当前层的，返回String数组
+File[] listFiles() //列出指定路径下的文件和目录，只显示当前层的，返回File数组
+```
 
 
 
 ### 设置属性
 
-* boolean setReadOnly()
-* boolean setLastModified()
-* boolean setWritable()
-* boolean setExecutable()
+```java
+boolean setReadOnly()
+boolean setLastModified()
+boolean setWritable()
+boolean setExecutable()
+```
+
+
 
 
 
 
 ## 2. JAVA IO原理
-* IO流用来处理设备之间的数据传输
-* java程序中，对于数据的输入/输出操作以流(stream)的方式进行
-* java.io包下提供了各种流类和接口，用以获取不同各类的数据，并通过标准的方法输入和输出数据
-* 输入(Input): 从外部读取数据(硬盘、U盘，网络存储的数据)到程序(内存)
-* 输出(Output): 将程序数据输出到硬盘、U盘、网络、屏幕等
+IO流用来处理设备之间的数据传输
+
+java程序中，对于数据的输入/输出操作以流(stream)的方式进行
+
+java.io包下提供了各种流类和接口，用以获取不同各类的数据，并通过标准的方法输入和输出数据
+
+输入(Input): 从外部读取数据(硬盘、U盘，网络存储的数据)到程序(内存)
+
+输出(Output): 将程序数据输出到硬盘、U盘、网络、屏幕等
 
 
 
@@ -104,7 +123,7 @@ File file3 = new File("E:/dev/java_2019//day15/testLab/lab1/qq.exe");
 ![流的分类结构](./images/IO流分类结构.png)
 
 
-### 流的抽象基类
+### 抽象基类
 流方向 |字节流 |字符流
 :--- |--- |---
 输入流 |InputStream |Reader
@@ -149,16 +168,22 @@ File file3 = new File("E:/dev/java_2019//day15/testLab/lab1/qq.exe");
 InputStream、Reader是所有输入流的基类
 
 InputStream 方法(典型实现类：FileInputStream)
-* int read()
-* int read(byte[] b)
-* int read(byte[] b, int off, int len)
-* void close()
+
+```JAVA
+int read()
+int read(byte[] b)
+int read(byte[] b, int off, int len)
+void close()
+```
 
 Reader 方法(典型实现类：FileReader)
-* int read()
-* int read(char[])
-* int read(char[] c, int off, int len)
-* void close()
+
+```java
+int read()
+int read(char[])
+int read(char[] c, int off, int len)
+void close()
+```
 
 打开的IO流需要显式的关闭，IO资源不属于内存时的资源。JVM不会自动关闭
 
@@ -169,33 +194,39 @@ Reader 方法(典型实现类：FileReader)
 OutputStream、Writer是所有输出类的基类
 
 OutputStream 方法(典型实现类：FileOutputStream)
-* void write(int b)
-* void writer(byte[] b)
-* void write(byte[] b, int off, int len)
-* void flush()
-* void close() 需要先刷新，再关闭流对象
+
+```java
+void write(int b)
+void writer(byte[] b)
+void write(byte[] b, int off, int len)
+void flush()
+void close() //需要先刷新，再关闭流对象
+```
 
 Writer 方法(典型实现类：FileWriter)
-* void write(int c)
-* void writer(char[] cbuf)
-* void write(char[] cbuf, int off, int len)
-* void write(String str) // 因为字符流以字符为单位在操作，String就是char[]数组
-* void write(String str, int off, int len)
-* void flush()
-* void close()
 
-
+```java
+void write(int c)
+void writer(char[] cbuf)
+void write(char[] cbuf, int off, int len)
+void write(String str) // 因为字符流以字符为单位在操作，String就是char[]数组
+void write(String str, int off, int len)
+void flush()
+void close()
+```
 
 
 
 ## 6. 处理流之一：缓冲流
 为了提高数据读写的速度，JavaAPI提供了带缓冲功能的流类，在使用这些流类时，会创建一个内部缓冲区数组
 
-字节缓冲流
+**字节缓冲流**
+
 * BufferedInputStream
 * BufferedOutputStream
 
-字符缓冲流
+**字符缓冲流**
+
 * BufferedReader
 * BufferedWriter
 
@@ -268,17 +299,18 @@ UTF-8：最多用三个字节来表示一个字符。
 
 
 
-## 9. 处理之三：标准输入输出流
+## 9. 处理流之三：标准输入输出流
 
 System.in和System.out分别代表了系统标准的输入和输出设备
 
 默认输入设备是键盘，输出设备是显示器
 
-System.in的类型是InputStream
+**System.in的类型是InputStream**
 
-System.out的是类型是PrintStream，它是OutputStream子类FileOutputStream子类
+**System.out的是类型是PrintStream**，它是OutputStream子类FileOutputStream子类
 
-通过System类的setIn，setOut方法对默认设备进行改变。
+**通过System类的setIn，setOut方法对默认设备进行改变。**
+
 * public static void setIn(InputStream in)
 * public static void setOut(PrintStream out)
 
@@ -296,49 +328,54 @@ PrintStream（字节打印流）和PrintWriter（字符打印流）
 
 
 
-## 11. 处理流之五：数据流DataInputStream, DataOutputStream
+## 11. 处理流之五：数据流
 
 为了方便操作java语言的基本数据类型的数据，可以使用数据流
 
 数据流有两个类
-* DataInputStream 数据输入流，套接在InputStream 节点流上
-* DataOutputStream 数据输出流，套接在OutputStream 节点流上
+* **DataInputStream 数据输入流**，套接在InputStream 节点流上
+* **DataOutputStream 数据输出流**，套接在OutputStream 节点流上
 
 DataInputStream 方法
-* boolean readBoolean()
-* char readChar()
-* double readDouble()
-* long readLong()
-* String readUTF()
-* byte readByte()
-* float readFloat()
-* short readShort()
-* int readInt()
-* void readFully(byte[] b)
+
+```JAVA
+boolean readBoolean()
+char readChar()
+double readDouble()
+long readLong()
+String readUTF()
+byte readByte()
+float readFloat()
+short readShort()
+int readInt()
+void readFully(byte[] b)
+```
 
 DataOutputStream方法
-* void writeBoolean(boolean v)
-* void writeChar(int v)
-* void writeDouble(double v)
-* void writeLong(long v)
-* void writeUTF(String str)
-* int writeUTF(String str, DataOutput out)
-* void writeByte(int v)
-* void writeFloat(float v)
-* void wirteInt(int v)
-* void writeBytes(String s)
-* void writeChars(String s)
-* void write(byte b[], int off, int len)
-* void write(int b)
-* void flush()
+
+```java
+void writeBoolean(boolean v)
+void writeChar(int v)
+void writeDouble(double v)
+void writeLong(long v)
+void writeUTF(String str)
+int writeUTF(String str, DataOutput out)
+void writeByte(int v)
+void writeFloat(float v)
+void wirteInt(int v)
+void writeBytes(String s)
+void writeChars(String s)
+void write(byte b[], int off, int len)
+void write(int b)
+void flush()
+```
 
 
 
 
 ## 12. 处理流之六：对象流
 
-ObjectInputStream， ObjectOutputStream, 用于存储和读取对象的处理流，它的强大之处是可以把对象写入到存储设备中，也能把对象从
-外部设备中读取出来
+ObjectInputStream， ObjectOutputStream, 用于存储和读取对象的处理流，它的强大之处是可以把对象写入到存储设备中，也能把对象从外部设备中读取出来
 
 序列化(Serialize):用ObjectOutputStream类将对象写入IO流中
 
@@ -375,7 +412,7 @@ new ObjectOutputStream(new FileOutputStream("file.txt"))一创建对象流，fil
 
 
 
-### 对象流序列化对象
+### 序列化对象
 
 若某个类实现了Serializable就扣，该类的实例对象就是可以序列化的
 
@@ -404,12 +441,17 @@ RandomAccessFile类支持"随机访问"的方式，程序可以直接跳到文�
 
 RandomAccessFile对象包含一个文件指针，用以标示当前读写出的位置，RandomAccessFile类对象可以移动文件指针
 
-  * long getFilePointer() 获取文件指针的位置
-  * void seek(long pos) 将文件指针定位到pos位置
+```JAVA
+long getFilePointer() 获取文件指针的位置
+void seek(long pos) 将文件指针定位到pos位置
+```
 
 RandomAccessFile类的构造器
-* public RandomAccessFile(File file, String mode)    
-* public RandomAccessFile(String fileName, String mode)
+
+```java
+public RandomAccessFile(File file, String mode)    
+public RandomAccessFile(String fileName, String mode)
+```
 
 创建RandomAccessFile类实例需要制定mode访问模式，mode有以下4种
 * r 以只读模式打开
