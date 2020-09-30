@@ -5,18 +5,17 @@ day17 多线程
 
 
 ## 1. 程序, 进程, 线程概念
-程序(program)
+### 程序(program)
 
->是为完成特定的任务、用某种语言编写的一组指令的集合。即指一段静态的代码
+是为完成特定的任务、用某种语言编写的一组指令的集合。即指一段静态的代码
 
-进程(process)
+### 进程(process)
 
->是程序的一次执行过程，或是正在运行的一个程序。动态过程：有它自身的产生、存在和消亡的过程
+是程序的一次执行过程，或是正在运行的一个程序。动态过程：有它自身的产生、存在和消亡的过程
 
-线程(thread)
->进程可以进一步细化为线程，是一个进程内部的一条执行路径  
-若一个程序可以在同一时间执行多个线程，就是支持多线程的
-每个java程序都有一个隐含的主线程：main()方法
+### 线程(thread)
+
+进程可以进一步细化为线程，是一个进程内部的一条执行路径。若一个程序可以在同一时间执行多个线程，就是支持多线程的。每个java程序都有一个隐含的主线程：main()方法
 
 
 
@@ -67,105 +66,104 @@ Thread类的特点
 
 
 
-### Thread构造器
+### 构造器
 
-Thread()
-
->Allocates a new Thread object. 分配一个新的线程对象
+```JAVA
+//Allocates a new Thread object. 分配一个新的线程对象
 Thread(Runnable target) 
 
->Allocates a new Thread object. 
+//Allocates a new Thread object. 
 Thread(Runnable target, String name)
 
->Allocates a new Thread object.
+//Allocates a new Thread object.
 Thread(String name)
 
->Allocates a new Thread object.
+//Allocates a new Thread object.
 Thread(ThreadGroup group, Runnable target)
 
->Allocates a new Thread object.
+//Allocates a new Thread object.
 Thread(ThreadGroup group, Runnable target, String name)
 
->Allocates a new Thread object so that it has target as its run object, has the specified name as its name, and belongs to the thread group referred to by group.
+//Allocates a new Thread object so that it has target as its run object, has the specified name as its name, and belongs to the thread group referred to by group.
 Thread(ThreadGroup group, Runnable target, String name, long stackSize)
 
->Allocates a new Thread object so that it has target as its run object, has the specified name as its name, and belongs to the thread group referred to by group, and has the specified stack size.
+//Allocates a new Thread object so that it has target as its run object, has the specified name as its name, and belongs to the thread group referred to by group, and has the specified stack size.
 Thread(ThreadGroup group, String name)
 
->Allocates a new Thread object.
+//Allocates a new Thread object.
+Thread()
+```
 
 
 
-### Thread常用方法
+### 常用方法
 
-* void start() 启动这个线程；调用该线程里的run()方法
+```JAVA
+void start() //启动这个线程；调用该线程里的run()方法
 
-* void run() 子线程要执行的代码放入run()方法中
+void run() //子线程要执行的代码放入run()方法中
 
-* void stop() // Deprecated 停止当前线程，本质上是不安全的
+void stop() // Deprecated 停止当前线程，本质上是不安全的
 
-* void stop(Throwable obj) // Deprecated
+void stop(Throwable obj) // Deprecated
 
-* static void sleep(long millis) 显式的让当前线程休眠millis毫秒
+static void sleep(long millis) //显式的让当前线程休眠millis毫秒
 
-* static void sleep(long millis, int nanos) 让当前线程休眠millis毫秒加nanos纳秒
+static void sleep(long millis, int nanos) //让当前线程休眠millis毫秒加nanos纳秒
 
-* void setDeamon(boolean on) 将此线程标记为守护进程线程或用户线程
+void setDeamon(boolean on) //将此线程标记为守护进程线程或用户线程
 
-* boolean isAlive() 测试此线程是否存活
+boolean isAlive() //测试此线程是否存活
 
-* boolean isDaemon() 测试此线程是否为守护线程
+boolean isDaemon() //测试此线程是否为守护线程
 
-* String getName() 返回线程名
+String getName() //返回线程名
 
-* int getPriority() 返回线程的优先级
+int getPriority() //返回线程的优先级
 
-* void setName(String name) 设置此线程的名字
+void setName(String name) //设置此线程的名字
 
-* void setPriority(int newPriority) 设置此线程的优先级，优先级范围[1-10]，值越大越优先，默认值5，优先级大的线程抢到CPU执行权概率要大，不是绝对的
+void setPriority(int newPriority) //设置此线程的优先级，优先级范围[1-10]，值越大越优先，默认值5，优先级大的线程抢到CPU执行权概率要大，不是绝对的
 
-* static void yield() 调用此方法的线程释放当前CPU的执行权
-    >暂停当前正在执行的线程，把执行机会让给优先级相同或更高的线程  
-    若队列中没有同优先级的线程，忽略此方法
-    
-* void join() 等待这个线程执行到结束
-    
-    > 在A线程中调用B线程的join()方法，则当前线程到此线程方法时（被阻塞），A线程暂停执行，
-    > 直到B线程执行完毕，A线程再接着B.join()之后的代码
-    
-* void join(long millis) 最多等millis毫秒来等待这个线程执行结束
+static void yield() //调用此方法的线程释放当前CPU的执行权, 暂停当前正在执行的线程，把执行机会让给优先级相同或更高的线程, 若队列中没有同优先级的线程，忽略此方法
 
-* void 	join(long millis, int nanos) 最多等millis毫秒加nanos纳秒来等待这个线程执行结束
+void join() //等待这个线程执行到结束
+//在A线程中调用B线程的join()方法，则当前线程到此线程方法时（被阻塞），A线程暂停执行，
+//直到B线程执行完毕，A线程再接着B.join()之后的代码
 
-* Thread.State getState() 返回此线程的状态
+void join(long millis) //最多等millis毫秒来等待这个线程执行结束
 
-* static Thread currentThread() // 返回当前正在执行的线程对象的引用(即当前线程对象)，调用当前的线程
+void 	join(long millis, int nanos) //最多等millis毫秒加nanos纳秒来等待这个线程执行结束
 
+Thread.State getState() //返回此线程的状态
 
-* static int activeCount() 返回当前线程组及其子级中活动线程数的估计值
-* void checkAccess()
-* protected Object clone()
-* int countStackFrames() // Deprecated
-* void destroy()
-* static void dumpStack()
-* static int enumerate(Thread[] tarray)
-* static Map<Thread,StackTraceElement[]> getAllStackTraces()
-* ClassLoader getContextClassLoader()
-* static Thread.UncaughtExceptionHandler getDefaultUncaughtExceptionHandler()
-* long getId()
-* StackTraceElement[] getStackTrace()
-* ThreadGroup getThreadGroup()
-* Thread.UncaughtExceptionHandler getUncaughtExceptionHandler()
-* static boolean holdsLock(Object obj)
-* void interrupt()
-* static boolean interrupted()
-* boolean isInterrupted()
-* void resume() // Deprecated
-* void setContextClassLoader(ClassLoader cl)
-* static void setDefaultUncaughtExceptionHandler(Thread.UncaughtExceptionHandler eh)
-* void setUncaughtExceptionHandler(Thread.UncaughtExceptionHandler eh)
-* void suspend() // Deprecated
-* String toString()
+static Thread currentThread() // 返回当前正在执行的线程对象的引用(即当前线程对象)，调用当前的线程
+
+static int activeCount() //返回当前线程组及其子级中活动线程数的估计值
+void checkAccess()
+protected Object clone()
+int countStackFrames() // Deprecated
+void destroy()
+static void dumpStack()
+static int enumerate(Thread[] tarray)
+static Map<Thread,StackTraceElement[]> getAllStackTraces()
+ClassLoader getContextClassLoader()
+static Thread.UncaughtExceptionHandler getDefaultUncaughtExceptionHandler()
+long getId()
+StackTraceElement[] getStackTrace()
+ThreadGroup getThreadGroup()
+Thread.UncaughtExceptionHandler getUncaughtExceptionHandler()
+static boolean holdsLock(Object obj)
+void interrupt()
+static boolean interrupted()
+boolean isInterrupted()
+void resume() // Deprecated
+void setContextClassLoader(ClassLoader cl)
+static void setDefaultUncaughtExceptionHandler(Thread.UncaughtExceptionHandler eh)
+void setUncaughtExceptionHandler(Thread.UncaughtExceptionHandler eh)
+void suspend() // Deprecated
+String toString()
+```
 
 
 
@@ -241,16 +239,14 @@ JDK中用Thread.State枚举类表示了线程的几种状态, 要想创建多线
 * 多个线程执行的不确定性引起执行结果的不稳定
 * 多个线程对共享数据的操作，会造成操作的不完整性，会破坏数据，出现不正常的结果
 
-* 多线程出现安全问题原因
->一个线程有多条语句在操作同一个共享数据时，当多条语句只执行了部分，还没有执行完，
-另外一个线程参与进行执行。导致共享数据的错误
-* 解决方法
->对多条操作共享数据的语句，同一时间只能让一个线程多条语句都执行完，在执行过程中，  
-其他线程不能参与执行
+* 多线程出现安全问题原因: 一个线程有多条语句在操作同一个共享数据时，当多条语句只执行了部分，还没有执行完，
+  另外一个线程参与进行执行。导致共享数据的错误
+* 解决方法: 对多条操作共享数据的语句，同一时间只能让一个线程多条语句都执行完，在执行过程中，  
+  其他线程不能参与执行
 
 
 
-## 10. synchronized线程同步使用方法
+## 10. synchronized
 
 java对于多线程的安全问题提供了专门的解决方式：同步机制，关键字synchronized
 
@@ -264,7 +260,7 @@ synchronized(obj) {
     // 需要被同步的代码，即操作共享数据的代码
 }
 
-
+/*
     1. 共享数据：多个线程共同操作的同一个数据（变量）
     2. 同步监视器：有任意一个类的对象来充当。哪个线程获取到此监视器，谁就执行{ } 内被同步的代码。俗称：锁
     3. 要求所有的线程共用一把锁，
@@ -272,7 +268,7 @@ synchronized(obj) {
     注意：在实现的多线程方式中，线程同步，可以使用this充当锁。但是在继承的方式慎用this，要考虑对象只有一个
 
     静态方法中：可以使用类本身充当锁（类.class）
-
+*/
 ```
 
 
@@ -310,8 +306,8 @@ java中引入了对象互斥锁的概念，用来保证共享数据操作的完�
 ## 12. 释放锁的操作
 
 * 当前线程的同步代码、同步方法块执行结束
-* 当前线程在同步代码块、同步方法中遇到break、return终止了该代码块、该方法的继续执行
-* 当前线程在同步代码块、同步方法中出现了Error或未处理的Exception，导致异常结束
+* 当前线程在同步代码块、**同步方法中遇到break、return终止了该代码块、该方法的继续执行**
+* 当前线程在同步代码块、**同步方法中出现了Error或未处理的Exception，导致异常结束**
 * 当前线程在同步代码块、同步方法中执行了线程对象的wait()方法，当前线程暂停，并释放锁
 
 
