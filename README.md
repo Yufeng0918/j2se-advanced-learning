@@ -226,7 +226,7 @@
 
     
 
-## [day18 java常用类](./day18/README.md "java常用类")
+## [day18 常用类](./day18/README.md "java常用类")
 
 * [String类](./day18/README.md#String类)
 * [StringBuffer类](./day18/README.md#StringBuffer类)
@@ -242,7 +242,7 @@
 
 
 
-## [day19 java反射机制](./day19/README.md "java反射机制")
+## [day19 反射机制](./day19/README.md "java反射机制")
 
 * [java reflection](./day19/README.md#java-reflection)
 * [JAVA类加载过程](./day19/README.md#JAVA类加载过程)
