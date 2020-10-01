@@ -143,7 +143,7 @@
 
 
 
-## [day13 java 集合](./day13/README.md "day13")
+## [day13 集合](./day13/README.md "day13")
 
 * [java集合概述](./day13/README.md#1-java集合概述)
 * [Collection接口](./day13/README.md#2-Collection接口)
@@ -243,7 +243,7 @@
 
 
 
-## [day19 java反射机制](./day19/README.md "java反射机制")
+## [day19 反射机制](./day19/README.md "java反射机制")
 
 * [java reflection](./day19/README.md#java-reflection)
 * [JAVA类加载过程](./day19/README.md#JAVA类加载过程)
