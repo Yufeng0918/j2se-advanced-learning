@@ -2,21 +2,20 @@ java异常类层次
 ==
 
 # 层次结构
-```text
+```java
 Object
     Throwable
         Error
         Exception
             编译时异常
             运行时异常（RuntimeException）
-
 ```
 
 # Object
 
 ## Throwable
 ### Error
-```text
+```java
 AnnotationFormatError,
 AssertionError,
 AWTError,
@@ -34,7 +33,7 @@ VirtualMachineError
 
 ### Exception
 #### 编译时异常
-```text
+```java
 AclNotFoundException,
 ActivationException,
 AlreadyBoundException,
@@ -109,10 +108,10 @@ XMLParseException,
 XMLSignatureException,
 XMLStreamException,
 XPathException
-```  
+```
 
 #### 运行时异常
-```text
+```java
 AnnotationTypeMismatchException,
 ArithmeticException,
 ArrayStoreException,
@@ -166,4 +165,4 @@ UnmodifiableSetException,
 UnsupportedOperationException,
 WebServiceException,
 WrongMethodTypeException
-``` 
+```

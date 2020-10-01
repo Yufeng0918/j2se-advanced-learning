@@ -150,6 +150,8 @@ public class ChannelTest {
                 // 4. 读取缓冲区中数据写入out通道
                 // 需要先将缓冲区切换到 数据读取模式
                 byteBuffer.flip();
+                System.out.println(new String(byteBuffer.array()));
+
                 outChannel.write(byteBuffer);
                 // 每次读取完缓冲区数据后，做清空处理
                 byteBuffer.clear();

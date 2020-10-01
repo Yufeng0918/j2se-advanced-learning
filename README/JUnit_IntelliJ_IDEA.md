@@ -1,10 +1,13 @@
 JUnit单元测试 -- InterliJ IDEA
 ==
 
-# 为什么要用JUnit
+## 为什么要用JUnit
 一个@Test装饰方法就像main方法一样，这样就不写太多的main()方法也能像在main()方法中操作一样，提供了一个方便入口
 
-# 环境配置
+
+
+## 环境配置
+
 * 安装JUnit插件
 >File > Settings > Plugins  
 要求安装JUnit（默认已经安装）、JUnitGenerator V2.0
@@ -56,7 +59,7 @@ C:\Program Files\JetBrains\IntelliJ IDEA 2019.1.1\lib\hamcrest-core-1.3.jar
 
 
 修改退格，如下
-```text
+```java
 ######################################################################################## 
 ## 
 ## Available variables: 
@@ -151,7 +154,9 @@ public class $testClass {
 ![](./images/JUnit/test_class_file.png)  
 
 
-# 单元测试
+
+## 单元测试
+
 ```java
 import org.junit.Test;
 
@@ -162,7 +167,7 @@ import org.junit.Test;
     }
 
 ```
-## 注意事项
+### 注意事项
 * 测试方法上面必须使用@Test注解进行修饰
 * 测试方法必须使用public void修饰，不能带有任何参数，即没有返回值。
 * 可以声明抛出异常，如：public void test() throws Exception { }
@@ -174,7 +179,7 @@ import org.junit.Test;
 * 测试方法使用test作为访求名的前缀（非必须）
 
 * JUnit测试方法使用与Scanner、System.in相关的要输入时停止不动解决方法
-```test
+```shell
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000556544-Why-can-t-I-input-anything-from-console-when-i-run-unit-test-with-JUNIT
 编辑 .vmoptions配置文件，选择相应位数的文件
 位置：{IntelliJ IDEA根目录}/bin/idea64.exe.vmoptions
@@ -195,12 +200,12 @@ https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000556544-Why
 
 ```
 
-## 错误解析
+### 错误解析
 * Failure 一般是单元测试使用的断言方法判断失败引起，说明预期结果和程序运行结果不一致。
 * error 是有代码异常引起的，他产生于测试代码本身中的Bug。
 * 测试用例是不是用来证明你是对的，而是用来证明你没有错。
-    
-## 测试流程
+  
+### 测试流程
 代码demo
 ```java
 @BeforeClass
@@ -227,13 +232,13 @@ https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000556544-Why
 * @AfterClass所修饰的方法在所有方法执行完毕之后执行，通常用来进行资源清理，例如关闭数据库连接。
 * @Before和@After在每个测试方法执行前都会执行一次。
 
-## 常用注解
+### 常用注解
 * @Test(excepted=XX.class) 在运行时忽略某个异常。
 * @Test(timeout=毫秒) 允许程序运行的时间。
 * @Ignore 所修饰的方法被测试器忽略。
 * RunWith 可以修改测试运行器 org.junit.runner.Runner
 
-## 测试套件
+### 测试套件
 测试套件是组织测试类一起运行的测试类
 
 代码demo
@@ -250,7 +255,7 @@ https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000556544-Why
 * 更改测试运行器Suite.class
 * 将需要运行的测试类放入Suite.SuiteClasses({ })的数组中
 
-## 参数化设置
+### 参数化设置
 需要测试的仅仅是测试数据，代码结构是不变的，只需要更改测试数据
 
 代码demo

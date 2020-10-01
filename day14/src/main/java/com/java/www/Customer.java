@@ -7,7 +7,7 @@
 
 package com.java.www;
 
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -95,7 +95,7 @@ public class Customer<T> {
     }
 
     // 声明泛型方法
-    public <E> List<E> arrayToList(@NotNull E[] e) { // e不能为null
+    public <E> List<E> arrayToList(E[] e) { // e不能为null
         /*
         数组转换成List并返回
         * */

@@ -9,10 +9,13 @@ day13 集合
 java集合类可以用于数量不等的多个对象，还可以用于保存具有映射关系的关联数组。
 
 java集合分为Collection和Map两种体系
-* Collection接口
-    - Set：元素无序、不可重复的集合
-    - List：元素有序，可以重复 -- 动态数组
-* Map接口：具有映射关系"key-value"对的集合
+
+**Collection接口**
+
+- Set：元素无序、不可重复的集合
+- List：元素有序，可以重复 -- 动态数组
+
+**Map接口**：具有映射关系"key-value"对的集合
 
 
 
@@ -130,85 +133,84 @@ List容器中的元素都有一个整数的索引记录在容器中的位置，�
 JDK API中List接口的实现类常用的有：ArrayList、LinkedList、Vector
 
 在集合Collection类的基础上添加下面的方法
-* Object get(int index) // 获取指定下标元素
-* void add(int index, Object ele) // 指定下标插入一个元素
-* boolean addAll(int index, Collection eles) // 把一个集合所有元素插入指定下标处
-* Object remove(int index) // 移除指定下标的元素
-* Object set(int index, Object ele) // 重置指定下标元素值(更新)
-* int indexOf(Object obj) // 给定对象首次出现的下标位置，没有则返回 -1
-* int lastIndexOf(Object obj) // 给定对象最后一次出现的下标位置，没有则返回 -1
-* List subList(int fromIndex, int toIndex) // List切片处理，截取[开始下标，结束下标)为新的List，注意是左闭右开，相当于取一个子集
+
+```JAVA
+Object get(int index) // 获取指定下标元素
+void add(int index, Object ele) // 指定下标插入一个元素
+boolean addAll(int index, Collection eles) // 把一个集合所有元素插入指定下标处
+Object remove(int index) // 移除指定下标的元素
+Object set(int index, Object ele) // 重置指定下标元素值(更新)
+int indexOf(Object obj) // 给定对象首次出现的下标位置，没有则返回 -1
+int lastIndexOf(Object obj) // 给定对象最后一次出现的下标位置，没有则返回 -1
+List subList(int fromIndex, int toIndex) // List切片处理，截取[开始下标，结束下标)为新的List，注意是左闭右开，相当于取一个子集
+```
 
 
 
-### List接口实现类之一：ArrayList
+### 实现类之一：ArrayList
 ArrayList时List接口的典型实现类， ArrayList本质上是对象引用的一个变长数组
 
 * ArrayList时线程不安全的，Vector时线程安全的（不推荐使用，效率低）
-* Arrays.asList(Object...) 方法返回的List集合既不是ArrayList实例也不是Vector实例。Arrays.asList(Object...) 返回值是一个固定长度的List集合
+* Arrays.asList(Object...) 方法返回的**List集合既不是ArrayList实例也不是Vector实例**, 返回值是一个**固定长度的List集合**
 
 
 
-### List实现类之二：LinkedList
+### 实现类之二：LinkedList
 对于频繁插入或删除元素操作的List，建议使用LinkedList，效率高，遍历时也有不错的效率
 
-* boolean add(E e) // 在最后一个位置插入一个元素，成功则返回true,否则返回false
+```java
+boolean add(E e) // 在最后一个位置插入一个元素，成功则返回true,否则返回false
+void add(int index, E element) // 在指定位置插入给定元素
+void addFirst(E e) // 在第一个位置插入一个元素
+void addLast(E e) // 在最后一个位置插入一个元素
+E remove(int index) // 移除指定下标的元素，并返回该元素
+E removeFirst() // 移除第一个元素，并返回该元素
+E removeLast() // 移除最后一个元素，并返回该元素
+E set(int index, E element) // 更新指定位置的元素，并返回该元素(未更新之前的)
+E get(int index) // 获取下标元素
+E getFirst() // 获取第一个元素
+E getLast() // 获取最后一个元素
+Object clone() // 深度克隆当前集合，但集合元素的内部并未克隆，Returns a shallow copy of this {@code LinkedList}. (The elements themselves are not cloned.)
+```
 
-* void add(int index, E element) // 在指定位置插入给定元素
 
-* void addFirst(E e) // 在第一个位置插入一个元素
 
-* void addLast(E e) // 在最后一个位置插入一个元素
-
-* E remove(int index) // 移除指定下标的元素，并返回该元素
-
-* E removeFirst() // 移除第一个元素，并返回该元素
-
-* E removeLast() // 移除最后一个元素，并返回该元素
-
-* E set(int index, E element) // 更新指定位置的元素，并返回该元素(未更新之前的)
-
-* E get(int index) // 获取下标元素
-
-* E getFirst() // 获取第一个元素
-
-* E getLast() // 获取最后一个元素
-
-* Object clone() // 深度克隆当前集合，但集合元素的内部并未克隆，Returns a shallow copy of this {@code LinkedList}. (The elements themselves are not cloned.)
-
-  
-
-### List实现类之三：Vector
+### 实现类之三：Vector
 Vector是一个古老的集合，JDK1.0就有了。大多数操作与ArrayList相同，区别之处就是Vector是线程线程安全的，但效率低
 
 在各种List中，最好把ArrayList作为缺省选择。当插入、删除频繁时，使用LinkedList；Vector比ArrayList慢很多，尽量避免使用
 
-* void addElement(Object obj)
-* void insertElementAt(Object obj,int index)
-* void setElementAt(Object obj,int index)
-* void removeElement(Object obj)
-* void removeAllElements()
+```JAVA
+void addElement(Object obj)
+void insertElementAt(Object obj,int index)
+void setElementAt(Object obj,int index)
+void removeElement(Object obj)
+void removeAllElements()
+```
 
 
 
 ### ListIterator接口
 
 List额外提供了一个listIterato()方法，该方法返回一个ListItera对象，ListIte继承了Iterator接口，提供专门操作List的方法
-* void add()
-* boolean hasPrevios()
-* Object prevois()
-* boolean hasNext()
-* Object next()
-* int nextIndex()
-* int previousIndex()
-* void remove()
-* void set(E e)
-* void add(E e)
+
+```java
+void add()
+boolean hasPrevios()
+Object prevois()
+boolean hasNext()
+Object next()
+int nextIndex()
+int previousIndex()
+void remove()
+void set(E e)
+void add(E e)
+```
 
 
 
 ### Iterator与ListIterator主要区别
-都有hasNext()、next()方法，可以实现顺序遍历。**但ListIterator有boolean hasPrevios()、Object prevois()。可以实现逆向遍历。**
+都有hasNext()、next()方法，可以实现顺序遍历。**但ListIterator有boolean hasPrevios(), Object prevois()。可以实现逆向遍历。**
 
 ListIterator可以定位当前元素的索引尾椎，方法int nextIndex()、int previousIndex()，Iterator无此功能
 
@@ -241,13 +243,13 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 
 
-### Set实现类之一：HashSet
+### 实现类之一：HashSet
 
 * HashSet时Set接口的主要实现类，大多数时候都是使用这种
 * 使用Hash算法来存储集合中的元素，具有较好的存取、查找性能
 * 存储顺序、遍历顺序与元素插入顺序不同
 * 线程不安全
-* 集合元素可以是null
+* **集合元素可以是null**
 * 当向 HashSet 集合中存入一个元素时，HashSet 会调用该对象的 hashCode() 方法来得到该对象的 hashCode 值，然后根据 hashCode 值决定该对象在 HashSet 中的存储位置
 * HashSet 集合判断两个元素相等的标准：**两个对象通过int hashCode()方法比较相等，并且两个对象的boolean equals() 方法返回值也相等**
 
@@ -264,7 +266,7 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 
 
-### Set实现类之二：LinkedHashSet
+### 实现类之二：LinkedHashSet
 
 适用场景：频繁的遍历，较少的插入、删除
 * LinkedHashSet是HashSet的子类
@@ -276,39 +278,42 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 
 
-### Set实现类之三：TreeSet
+### 实现类之三：TreeSet
 TreeSet是SortedSet接口的实现类，TreeSet可以确保集合中元素处于排序状态
 
 向TreeSet集合中添加的元素必须是同一种类型的数据,不包含自动转换的过来的数据
 
-常用方法
-* Comparator comparator() 返回对象的comparator方法
-* Object first() 获取第一个元素
-* Object last() 获取最后一个元素
-* Object lower(Object e) 返回此 set 中严格小于给定元素的最大元素；如果不存在这样的元素，则返回null。 
-* Object higher(Object e) 返回此 set 中严格大于给定元素的最小元素；如果不存在这样的元素，则返回null
-* SortedSet subSet(fromElement, toElement) 返回此 set 的部分视图，其元素从fromElement（包括）到toElement（不包括），范围：[fromElement, toElement)
-* SortedSet headSet(toElement) 返回此 set 的部分视图，其元素严格小于toElement
-* SortedSet tailSet(fromElement) 返回此 set 的部分视图，其元素大于等于fromElement
+```JAVA
+Comparator comparator() //返回对象的comparator方法
+Object first() //获取第一个元素
+Object last() //获取最后一个元素
+Object lower(Object e) //返回此 set 中严格小于给定元素的最大元素；如果不存在这样的元素，则返回null。 
+Object higher(Object e) //返回此 set 中严格大于给定元素的最小元素；如果不存在这样的元素，则返回null
+SortedSet subSet(fromElement, toElement) //返回此 set 的部分视图，其元素从fromElement（包括）到toElement（不包括），范围：[fromElement, toElement)
+SortedSet headSet(toElement) //返回此 set 的部分视图，其元素严格小于toElement
+SortedSet tailSet(fromElement) //返回此 set 的部分视图，其元素大于等于fromElement
+```
 
 TreeSet 两种排序方法：自然排序和定制排序。默认情况下，TreeSet 采用自然排序
 
-自然排序(使用compareTo方法进行比较是否相同)
-* 如果试图把一个对象添加到使用自然排序的 TreeSet 时，则该对象的类必须实现 Comparable 接口，
-* String、int、float、long等已经重写int compareTo(Object o)方法,这些类型数据组成的TreeSet默认从小到大排序
-* 自定义的来要 实现java.lang.Comparable接口并重写int compareTo(Object o)方法,compareTo()方法返回值为0时,表示这两个对象相同
-    在此方法中,指定该类按照哪些属性排序.
-* 向TreeSet集合中添加元素时,首先调用对象的int compareTo(Object o)方法进行比较,若返回值为0,则认为这两个对象是相同的.
-    这通情况下该元素就添加不进来
+**自然排序(使用compareTo方法进行比较是否相同)**
+
+* 如果试图把一个对象添加到使用自然排序的 TreeSet 时，**则该对象的类必须实现 Comparable 接口**
+* String、int、float、long等已经重写**int compareTo(Object o)方法**,这些类型数据组成的TreeSet默认从小到大排序
+* 自定义的来要实现java.lang.Comparable接口并重写int compareTo(Object o)方法,compareTo()方法返回值为0时,表示这两个对象相同在此方法中,指定该类按照哪些属性排序.
+* 向TreeSet集合中添加元素时,首先调用对象的int compareTo(Object o)方法进行比较,**若返回值为0,则认为这两个对象是相同的.这通情况下该元素就添加不进来**
 * 对于 TreeSet 集合而言，它判断两个对象是否相等的唯一标准是：两个对象通过 compareTo(Object obj) 方法比较返回值
 * int compareTo(Object o)、int hashCode()、boolean equals()三个方法取值方向要求同时一致,
 
-定制排序(使用与不能更改类的场景)
-* set1:创建一个实现了Comparator接口的对象,重写int compare(Object o1, Object o2)方法
-* 利用int compare(T o1,T o2)方法，比较o1和o2的大小：如果方法返回正整数，则表示o1大于o2；如果返回0，表示相等；返回负整数，表示o1小于o2。
+**定制排序(使用与不能更改类的场景)**
+
+* **创建一个实现了Comparator接口的对象,重写int compare(Object o1, Object o2)方法**
+* 利用int compare(T o1,T o2)方法，比较o1和o2的大小
+  * 如果方法返回正整数，则表示o1大于o2
+  * 如果返回0，表示相等
+  * 返回负整数，表示o1小于o2。
 * int compare(Object o1, Object o2)、int hashCode()、boolean equals()三个方法取值方向要求同时一致
-* set2:把set1中创建的comparator实例以形参传入TreeSet构造器
-* 此时，仍然只能向TreeSet中添加类型相同的对象。否则发生ClassCastException异常
+* set2:把set1中创建的comparator实例以形参传入TreeSet构造器。此时，仍然只能向TreeSet中添加类型相同的对象。否则发生ClassCastException异常
 * 使用定制排序是不需要实现自定义类的Comparable接口,如果有实现,则定制排序优先
 * 使用定制排序判断两个元素相等的标准是：通过Comparator比较两个元素返回了0
 
@@ -322,55 +327,52 @@ Set接口是Collection的子接口，Set接口没有提供额外的方法，而[
 
 
 ## 5. Map接口
-Map与Collection并列存在。用于保存具有映射关系的数据:Key-Value，称为entry
+**Map与Collection并列存在**。用于保存具有映射关系的数据:Key-Value，称为entry
 
 Map 中的 key 和  value 都可以是任何引用类型的数据
 
 Map 中的 key 用Set来存放，不允许重复，即同一个 Map 对象所对应的类，须重写hashCode()和equals()方法
-
-常用String类作为Map的"键"
 
 key 和 value 之间存在单向一对一关系，即通过指定的 key 总能找到唯一的、确定的 value
 
 ### Map常用方法
 
 ```java
-### 添加、删除操作方法
-Object put(Object key, Object value)  添加、或更新一个元素到HashMap中
-Object remove(Object key) 删除指定key的元素
-void putAll(Map t) 把Map t中所有元素添加到当前Map中
-void clear() 清除当前map中所有元素
+//添加、删除操作方法
+Object put(Object key, Object value)  //添加、或更新一个元素到HashMap中
+Object remove(Object key) //删除指定key的元素
+void putAll(Map t) //把Map t中所有元素添加到当前Map中
+void clear() //清除当前map中所有元素
 
 
-### 元素查询操作方法
-Object get(Object key) 获取指定key的元素，若key不存在则返回null
-boolean containsKey(Object key) 当前map所有的key中是否包含指定key，是返回true,否则false
-boolean containsValue(Object value) 当前map所有的value中是否包含指定的value，是返回true,否则false
-int size() 返回map元素个数
-boolean isEmpty() 当前map是否为空，是返回true,否则false
-boolean equals(Object obj) 当前map与指定的obj map是否相等，即所有entry相等
+//元素查询操作方法
+Object get(Object key) //获取指定key的元素，若key不存在则返回null
+boolean containsKey(Object key) //当前map所有的key中是否包含指定key，是返回true,否则false
+boolean containsValue(Object value) //当前map所有的value中是否包含指定的value，是返回true,否则false
+int size() //返回map元素个数
+boolean isEmpty() //当前map是否为空，是返回true,否则false
+boolean equals(Object obj) //当前map与指定的obj map是否相等，即所有entry相等
 
 
-### 元视图操作方法
-Set keySet() 获取当前map所有的key，值为Set
-Collection values() 获取当前map所有的value，值为Collection
-Set entrySet() 获取当前map所有的entry，值为Set
+//元视图操作方法
+Set keySet() //获取当前map所有的key，值为Set
+Collection values() //获取当前map所有的value，值为Collection
+Set entrySet() //获取当前map所有的entry，值为Set
 ```
 
 
 ### Map特点
-* Map的key、value都可以为null
+* **Map的key, value都可以为null**
 * key、entry使用Set存储，不可重复，value使用Collection存储，可以重复
 * put()添加元素到map时，如果前面已经存在一个相同的key，那么新的key对应的value将覆盖旧的value
 * Map接口的常用实现类：HashMap、LinkedHashMap、TreeMap、Properties
 
 
 
-### Map接口实现类之一：HashMap
+### 实现类之一：HashMap
 
 * entry顺序存储顺序与key的hash值有关，与put添加的顺序无关
 * HashMap是 Map 接口使用频率最高的实现类
-* 允许使用null键和null值，与HashSet一样，不保证映射的顺序
 * HashMap 判断两个 key 相等的标准是：两个 key 通过 equals() 方法返回 true，hashCode 值也相等
 * HashMap 判断两个 value相等的标准是：两个 value 通过 equals() 方法返回 true
 
@@ -388,13 +390,13 @@ HashMap hmap = new HashMap() {
 
 
 
-### Map接口实现类之二：LinkedHashMap
+### 实现类之二：LinkedHashMap
 * LinkedHashMap 是 HashMap 的子类
 * 与LinkedHashSet类似，LinkedHashMap 可以维护 Map 的迭代顺序（使用链表）：迭代顺序与 Key-Value 对的插入顺序一致
 
 
 
-### Map接口实现类之三：TreeMap
+### 实现类之三：TreeMap
 TreeMap存储 Key-Value 对时，需要根据 key-value 对进行排序。TreeMap 可以保证所有的 Key-Value 对处于有序状态
 
 TreeMap 的 Key 的排序:自然排序、定制排序
@@ -407,7 +409,7 @@ TreeMap 的 Key 的排序:自然排序、定制排序
 
 
 
-### Map接口实现类之四：Hashtable
+### 实现类之四：Hashtable
 Hashtable是个古老的 Map 实现类，**线程安全。**
 
 与HashMap不同，**Hashtable 不允许使用 null 作为 key 和 value**， 与HashMap一样，Hashtable 也不能保证其中 Key-Value 对的顺序
@@ -433,24 +435,23 @@ Collections 中提供了一系列静态的方法对集合元素进行排序、�
 **Collections常用方法（均为static方法）**
 
 ```java
+//排序操作
+void reverse(List l) //反转List l中元素的顺序
+void shuffle(List l) //对List l集合元素进行随机排序
+void sort(List l) //根据元素的自然顺序对指定List l集合元素按升序排序
+void sort(List l, Comparator c) //根据指定的Comparator c生产的顺序对List l集合元素进行排序
+void swap(List l, int i, int j) //将指定List l集合中i与j处的元素进行交换
 
-## 排序操作
-reverse(List l) 反转List l中元素的顺序
-shuffle(List l) 对List l集合元素进行随机排序
-sort(List l) 根据元素的自然顺序对指定List l集合元素按升序排序
-sort(List l, Comparator c) 根据指定的Comparator c生产的顺序对List l集合元素进行排序
-swap(List l, int i, int j) 将指定List l集合中i与j处的元素进行交换
+// 查找、替换
+Object max(Collection c) //根据元素的自然顺序，返回给定集合中位置最大的元素
+Object max(Collection c, Comparator com) //根据Comparator com指定的顺序，返回给定集合中位置最大的元素
+Object min(Collection) //根据元素的自然顺序返，回给定集合中位置最小的元素
+Object min(Collection c, Comparator com) //根据Comparator com指定的顺序，返回给定集合中位置最小的元素
+int frequency(Collection c, Object o) //返回指定命令中指定元素出现的次数
+void copy(List dest, List src) //List src中的元素复制到 List dest中，dest的长度必须>= src的长度
+boolean replaceAll(List l, Object oldVal, Object newVal) //使用新值newVal替换List l中所旧值oldVal
 
-## 查找、替换
-Object max(Collection c) 根据元素的自然顺序，返回给定集合中位置最大的元素
-Object max(Collection c, Comparator com) 根据Comparator com指定的顺序，返回给定集合中位置最大的元素
-Object min(Collection) 根据元素的自然顺序返，回给定集合中位置最小的元素
-Object min(Collection c, Comparator com) 根据Comparator com指定的顺序，返回给定集合中位置最小的元素
-int frequency(Collection c, Object o) 返回指定命令中指定元素出现的次数
-void copy(List dest, List src) 将List src中的元素复制到 List dest中，dest的长度必须>= src的长度
-boolean replaceAll(List l, Object oldVal, Object newVal) 使用新值newVal替换List l中所旧值oldVal
-
-## 同步控制，可以解决多线程并发访问集合时的线程安全问题
+// 同步控制，可以解决多线程并发访问集合时的线程安全问题
 static<T> Collection<> synchronizedCollection(Collection<T> c)
 static<T> List<> synchronizedList(List<T> l)
 static<T> Map<K,V> synchronizedMap(Map<K,V> m)
@@ -462,15 +463,7 @@ static<T> SortedSet<T> synchronizedSortedSet(SortedSet<T> s)
 
 
 
-
-
-## 7. Enumeration迭代器
-
-是Iterator迭代器的古老版本
-
-
-
-## 8. 其他
+## 7. 其他
 
 ### List与Set互转
 
@@ -501,7 +494,7 @@ String[] sArr = set.toArray();
 
 
 
-## 9 Queue列队
+## 8. Queue列队
 
 队列(Queue)是一种经常使用的集合。 Queue实际上是实现了一个先进先出（FIFO：First In First Out）的有序表。 它和List的区别在于，List可以在任意位置添加和删除元素， 而Queue只有两个操作：
 
@@ -509,22 +502,15 @@ String[] sArr = set.toArray();
 - 从队列头部取出元素
 - 生活例子：超市的收银台就是一个队列
 
- ![img](file:///Users/daiyu/dev/idea/courses/j2se-advanced-learning/day13/images/%E8%B6%85%E5%B8%82%E6%8E%92%E9%98%9F%E4%B9%B0%E5%8D%95.jpg?lastModify=1599352588)  
-
-
-
 ### 特点
 
 元素只能一头进，一头出， 元素先进入的先取出，是顺序的， 在Java的标准库中，队列接口Queue定义了以下几个方法
 
 ```java
-int size()：获取队列长度；
-
-boolean add(E)/boolean offer(E)：添加元素到队尾；
-
-E remove()/E poll()：获取队首元素并从队列中删除；
-
-E element()/E peek()：获取队首元素但不从队列中删除。
+int size()//获取队列长度；
+boolean add(E)//boolean offer(E)：添加元素到队尾；
+E remove()//E poll()：获取队首元素并从队列中删除；
+E element()//E peek()：获取队首元素但不从队列中删除。
 ```
 
 Queue方法比较
@@ -589,62 +575,8 @@ public class QueueTest {
 ```
 
 
-示例1: 假设我们有一个队列，对它做一个添加操作，**如果调用add()方法，当添加失败时（可能超过了队列的容量），它会抛出异常**
 
-```java
-Queue<String> q = ...
-try {
-    q.add("Apple");
-    System.out.println("添加成功");
-} catch(IllegalStateException e) {
-    System.out.println("添加失败");
-}
-```
-
-
-
-示例2:如果我们调用**offer()方法来添加元素，当添加失败时，它不会抛异常**，而是返回false
-
-```java
-Queue<String> q = ...
-if (q.offer("Apple")) {
-    System.out.println("添加成功");
-} else {
-    System.out.println("添加失败");
-}
-```
-
-
-
-示例3：当我们需要从Queue中取出队首元素时，**如果当前Queue是一个空队列，调用remove()方法，它会抛出异常**
-
-```java
-Queue<String> q = ...
-try {
-    String s = q.remove();
-    System.out.println("获取成功");
-} catch(IllegalStateException e) {
-    System.out.println("获取失败");
-}
-```
-
-
-
-如果我们调用poll()方法来取出队首元素，**当获取失败时，它不会抛异常，而是返回null**
-
-```java
-Queue<String> q = ...
-String s = q.poll();
-if (s != null) {
-    System.out.println("获取成功");
-} else {
-    System.out.println("获取失败");
-}
-```
-
-
-
-10. PriorityQueue
+9. PriorityQueue
 --
 
 Queue是一个先进先出（FIFO）的队列。在银行柜台办业务时，我们假设只有一个柜台在办理业务，但是办理业务的人很多，怎么办？可以每个人先取一个号，例如：A1、A2、A3……然后，按照号码顺序依次办理，实际上这就是一个Queue。如果这时来了一个VIP客户，他的号码是V1，虽然当前排队的是A10、A11、A12……但是柜台下一个呼叫的客户号码却是V1。
@@ -773,12 +705,10 @@ class UserComparator implements Comparator<User> {
 
 
 
-11. Deque
+10. Deque
 --
 
 Queue队列，元素只能一头进，另一头出。元素允许两头都进，两头都出，这种队列叫双端队列（Double Ended Queue），即Deque接口实际上扩展自Queue
-
-
 
 ### 特点
 
@@ -830,7 +760,7 @@ public class DequeTest {
 
 
 
-12. Stack栈
+11. Stack栈
 --
 
 栈(Stack)是一种后进先出（LIFO：Last In First Out）的数据结构。
