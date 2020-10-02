@@ -10,24 +10,15 @@ day10高级类特性
 解决的问题：使得一个类只能够创建一个对象
 
 
-
 ### 饿汉式单例模式
 
+在类的内部创建一个私有静态的该类的对象
+
+定义一个private 空参构造器
+
+定义一个public静态方法回返上面定义的实例
+
 ```java
-/*
-饿汉式单例
-建议使用饿汉式单例模式
-
-# 单例的设计模式
-* 解决的问题：使得一个类只能够创建一个对象
-* 实现
-    * 在类的内部创建一个私有静态的该类的对象
-    * 定义一个private 空参构造器
-    * 定义一个public静态方法回返上面定义的实例
-* */
-
-package com.java.www;
-
 public class Singleton {
     // 类变量
     private static Singleton instance = new Singleton();
@@ -46,13 +37,11 @@ public class Singleton {
 
 ### 懒汉式单例模式
 
-```java
-/*
-懒汉式单例
-可能在线程安全问题。学了多线程时可修复此问题
-* */
-package com.java.www;
+定义私有静态的该类的对象实例为null
 
+定义公共静态的方法返回实例，并判断实例是否为null，为null时新建该实例
+
+```java
 public class SingletonLazybones {
     // 类变量
     // 定义私有静态的该类的对象实例为null
@@ -62,7 +51,6 @@ public class SingletonLazybones {
     // 定义私有的空参构造器
     private SingletonLazybones() {}
 
-    // 方法
     // 定义公共静态的方法返回实例，并判断实例是否为null，为null时新建该实例
     public static SingletonLazybones getInstance() {
         if (instance == null) {
@@ -81,9 +69,6 @@ public class SingletonLazybones {
 ```java
 public class MainTest {
     public static void main(String[] args) {
-        for (int i = 0; i < args.length; ++i) {
-            System.out.printf("args[%d]: %s\n", i, args[i]);
-        }
     }
 }
 ```
@@ -98,10 +83,9 @@ public class MainTest {
 
 ### 静态代码块 
 
-+ static { }
++ static { }, { }内可以有输出语句
 
-* { }内可以有输出语句
-* 随着类的加载而加载，且只能被加载一次，内存中同样只有一份
+* **随着类的加载而加载，且只能被加载一次**，内存中同样只有一份
 * 一个类中可以有多个静态代码块，多个代码块之间按照顺序结构执行
 * **静态代码块要早于构造器执行**
 * **静态代码块中只能执行静态的结构（静态的属性、静态的方法）**
@@ -111,12 +95,11 @@ public class MainTest {
 
 ### 非静态代码块
 
-+ { }
++ { }, 里面可以有输出语句
 
-* 可以对类的属性(静态的、非静态的)进行初始化操作，同时也可以田勇本类中的方法(静态、非静态的)
-* 里面可以有输出语句
+* 可以对类的属性(静态的、非静态的)进行初始化操作，同时也可以用本类中的方法(静态、非静态的)
 * **一个类可以有多个非静态的代码块，多个代码块之间按照顺序结构执行**
-* 创建一个类的对象，非静态代码块就加载一次
+* **创建一个类的对象，非静态代码块就加载一次**
 * **非静态代码块的执行要早于构造器**
 
 
@@ -224,24 +207,26 @@ class Order {
 final  （最终的）可以修饰类、属性、方法。不能修饰构造器  
 目的：禁止被修改、被继承  
 
-### final修饰的类
+### 修饰类
 
 这个类不能被继承。如String、StringBuffer、System类
 
-### final修饰的方法。
+
+
+### 修饰方法。
 
 **不能被重写**, 功能确定不变的，就定义为final方法，如Object类中的getClass。 final于访问权限修饰符顺序可先可后，建议先权限修饰符，再final。如：public static void walk() { }
 
-### final修饰的属性
+
+
+### 修饰属性
 
 此属性就是常量。建议常量名字母全大写。常量一旦初始化，就不能修改。
 
 赋值：**可以显示的赋值、代码块、构造器，没有默认值。且必须先赋值才能使用**
 
 ```java
-
-public class finalTest {
-}
+public class finalTest {}
 
 final class Nvwa {
     private String color;
@@ -327,38 +312,37 @@ class Other {
 
 
 
-## 5. 抽象类(abstract class)
+## 5. Abstract 抽象类
 
 随着继承层次中一个个新子类的定义，类变得越来越具体，而父类则更一般，更通用。类的设计应该保证父类和子类能够共享特征。有时将一个父类设计得非常抽象，以至于它没有具体的实例，这样的类叫做抽象类。**只能修饰类、方法  目的：让继承的子类去实现(重写方法)**
 
 
 
-### abstract修饰类
+### 修饰类
 
 * 不能被实例化
 * 抽象类有构造器（凡是类都有构造器）
-* 有抽象方法的类一定是抽象类
+* **有抽象方法的类一定是抽象类**
 * **抽象类可以没有抽象方法**
 * abstract于访问权限修饰符顺序可先可后，建议先权限修饰符，再abstract。如：public abstract class aa { }
 
 
 
-### abstract修饰方法
+### 修饰方法
 
 * 格式：没有方法体，包括{ }也不能有，即没有{}块。如：public abstract void walk();
 * 抽象方法只保留方法的功能，具体的执行交给继承该抽象的子类去实现，实现方法：子类重写抽象方法
 * 有抽象方法的抽象类的子类，必须实现（重写）所有的抽象方法，才能实例化。未全部重写的类只能定义为抽象类
 * 抽象类的子类，可以为抽象类，可以只实现一部分抽象方法，还可以再添加新的抽象方法。那么子类必须实现多层父类的抽象方法
 
+
+
 **注意事项**
 
-* abstract不能于private、final、static修饰符公用
+* **abstract不能于private、final、static修饰符公用**
 * 不能修饰属性、构造器
 
-示例
 ```java
-package com.java.www;
-
 public class AbstractTest {
     public static void main(String[] args) {
 //        Person p1 = new Person();
@@ -557,7 +541,7 @@ class MySort extends Template {
 接口用途：被实现类去实现接口定义的功能（面向接口编程）
 * interface是与类等级平级的一个概念
 * 接口可以看做是一个特殊的抽象类。
-* 接口是常量、抽象方法的集合，只能有常量和抽象方法，不能包含变量、一般的方法
+* **接口是常量, 抽象方法的集合，只能有常量和抽象方法，不能包含变量, 一般的方法**
 * 没有构造器，也就不能实例化
 * 接口定义的是一种功能。此功能可以被类实现（implements）
 * **接口里所有的常量都是被  public static final 修饰。不写也会默认加上**
@@ -566,12 +550,10 @@ class MySort extends Template {
 * 类可以同时实现多个接口。相当于多重继承。类的继承是单个多层继承的
 * 接口可以被接口继承，接口允许多重多层继承，如：interface GG extends AA, DD { }
 * 一个类可以同时承继父类、实现接口，必须先写extends，后写implements，如：class EE extends FF implements AA, DD { }
-* 接口与实现类之间存在多态性
+* **接口与实现类之间存在多态性**
 
 
 ```java
-package com.java.www;
-
 public class InterfaceTest {
     public static void main(String[] args) {
         Audi a1 = new Audi("奥迪R8 V10 Spyder", 229.98);
@@ -758,9 +740,3 @@ class Duck implements runner, swimer, flier {
 * 通过接口可以实现不相关类的相同行为，而不需要考虑这些类之间的层次关系
 * 通过接口可以指明类需要实现的多个方法，一般用于定义对象的扩张功能
 * 接口主要用来定义规范。解除耦合关系
-
-
-
-### java8接口的改进
-
-[java8接口的改进](../java8_new_features/README.md#java8接口的改进)
