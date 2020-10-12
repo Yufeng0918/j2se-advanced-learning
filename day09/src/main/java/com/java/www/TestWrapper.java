@@ -1,7 +1,5 @@
 /*
 
-* °ü×°Àà£º8ÖÖ»ù±¾Êı¾İÀàĞÍ·Ö±ğ¶ÔÓ¦×ÅÒ»¸öÀà£¬´ËÀàÎª °ü×°Àà
-* »ù±¾Êı¾İÀàĞÍ¡¢°ü×°Àà¡¢StringÈıÕßÖ®¼äµÄÏà»¥×ª»»
 
 * */
 
@@ -14,34 +12,31 @@ public class TestWrapper {
     public void test1() {
         int i = 10;
         System.out.println(i);
-//        System.out.println(i.toString()); // »ù±¾Êı¾İÀàĞÍÃ»ÓĞtoString()·½·¨
         boolean b18 = false;
 
-        // »ù±¾Êı¾İÀàĞÍ -> °ü×°Àà£¬µ÷ÓÃ°ü×°ÀàµÄ¹¹ÔìÆ÷
         Integer i21 = new Integer(i);
         System.out.println(i21.toString());
 
         Float f = new Float("12.6F");
         System.out.println(f);
 
-//        int i27 = new Integer("11ab"); // ±àÒë±¨java.lang.NumberFormatException: For input string: "11ab"
+//        int i27 = new Integer("11ab"); // ï¿½ï¿½ï¿½ë±¨java.lang.NumberFormatException: For input string: "11ab"
 //        System.out.println(i27);
 
         Boolean b1 = new Boolean("true"); // true
         System.out.println(b1);
         Boolean b2 = new Boolean(false);
         System.out.println(b2);
-        Boolean b3 = new Boolean("true100"); // false£¬Ö»ÒªĞ´µÄ²»ÊÇtrue£¬Ôò¶¼ÊÇfalse,ÄÜÕı³£±àÒëºÍÔËĞĞ
+        Boolean b3 = new Boolean("true100"); // falseï¿½ï¿½Ö»ÒªĞ´ï¿½Ä²ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½false,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         System.out.println(b3);
 
         Order o1 = new Order();
-        System.out.println(o1.status); // null£¬ÒòÎªÕâÊÇÒ»¸öÀàÁË
+        System.out.println(o1.status); // nullï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     }
 
     @Test
     public void test2() {
-        // °ü×°Àà -> »ù±¾Êı¾İÀàĞÍ£¬µ÷ÓÃ°ü×°Àà¶ÔÏó.xxxValue()·½·¨
         Integer i44 = new Integer(208);
         int i45 = i44.intValue();
         System.out.println(i45);
@@ -57,24 +52,22 @@ public class TestWrapper {
 
     @Test
     public void test3() {
-        // JDK 1.5ºó£¬×Ô¶¯×°Ïä¡¢²ğÏä
         int i61 = 18;
-        Integer i62 = i61; // ×Ô¶¯×°Ïä
+        Integer i62 = i61;
         System.out.println(i62.toString());
         Boolean b63 = false;
 
         Integer i66 = new Integer(15);
-        int i67 = i66; // ×Ô¶¯²ğÏä
+        int i67 = i66;
         System.out.println(i66);
 
     }
 
     @Test
     public void test4() {
-        //  »ù±¾Êı¾İ¡¢°ü×°Àà -> StringStringÀà£ºµ÷ÓÃString.valueOf(Xxx x)·½·¨
         int i75 = 22;
         String s76 = i75 + ""; // "22"
-        Float f77 = 24.0F; // ×Ô¶¯×°Ïä
+        Float f77 = 24.0F;
         String s78 = String.valueOf(f77);
         System.out.println(s78);
         String s80 = String.valueOf(true); // "true"
@@ -84,10 +77,9 @@ public class TestWrapper {
 
     @Test
     public void test5() {
-        // StringÀà -> »ù±¾Êı¾İÀàĞÍ¡¢°ü×°Àà£ºµ÷ÓÃ°ü×°ÀàµÄparseXxx(String str)·½·¨
         int i88 = Integer.parseInt("33");
         System.out.println(i88);
-        boolean b90 = Boolean.parseBoolean("1"); // ·Ç"true"¶¼½âÎöÎªfalse
+        boolean b90 = Boolean.parseBoolean("1");
         System.out.println(b90);
         boolean b92 = Boolean.parseBoolean("true");
         System.out.println(b92);
