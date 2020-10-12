@@ -1,6 +1,5 @@
 /*
 
-
 * */
 
 package com.java.www;
@@ -12,7 +11,7 @@ public class TestWrapper {
     public void test1() {
         int i = 10;
         System.out.println(i);
-        boolean b18 = false;
+       boolean b18 = false;
 
         Integer i21 = new Integer(i);
         System.out.println(i21.toString());
@@ -20,18 +19,15 @@ public class TestWrapper {
         Float f = new Float("12.6F");
         System.out.println(f);
 
-//        int i27 = new Integer("11ab"); // ���뱨java.lang.NumberFormatException: For input string: "11ab"
-//        System.out.println(i27);
-
         Boolean b1 = new Boolean("true"); // true
         System.out.println(b1);
         Boolean b2 = new Boolean(false);
         System.out.println(b2);
-        Boolean b3 = new Boolean("true100"); // false��ֻҪд�Ĳ���true������false,���������������
+        Boolean b3 = new Boolean("true100");
         System.out.println(b3);
 
         Order o1 = new Order();
-        System.out.println(o1.status); // null����Ϊ����һ������
+        System.out.println(o1.status);
 
     }
 
@@ -65,9 +61,10 @@ public class TestWrapper {
 
     @Test
     public void test4() {
+        //  �������ݡ���װ�� -> StringString�ࣺ����String.valueOf(Xxx x)����
         int i75 = 22;
         String s76 = i75 + ""; // "22"
-        Float f77 = 24.0F;
+        Float f77 = 24.0F; // �Զ�װ��
         String s78 = String.valueOf(f77);
         System.out.println(s78);
         String s80 = String.valueOf(true); // "true"
@@ -77,9 +74,10 @@ public class TestWrapper {
 
     @Test
     public void test5() {
+        // String�� -> �����������͡���װ�ࣺ���ð�װ���parseXxx(String str)����
         int i88 = Integer.parseInt("33");
         System.out.println(i88);
-        boolean b90 = Boolean.parseBoolean("1");
+        boolean b90 = Boolean.parseBoolean("1"); // ��"true"������Ϊfalse
         System.out.println(b90);
         boolean b92 = Boolean.parseBoolean("true");
         System.out.println(b92);
