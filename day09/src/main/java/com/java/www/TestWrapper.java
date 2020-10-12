@@ -61,10 +61,9 @@ public class TestWrapper {
 
     @Test
     public void test4() {
-        //  �������ݡ���װ�� -> StringString�ࣺ����String.valueOf(Xxx x)����
         int i75 = 22;
         String s76 = i75 + ""; // "22"
-        Float f77 = 24.0F; // �Զ�װ��
+        Float f77 = 24.0F;
         String s78 = String.valueOf(f77);
         System.out.println(s78);
         String s80 = String.valueOf(true); // "true"
@@ -74,10 +73,9 @@ public class TestWrapper {
 
     @Test
     public void test5() {
-        // String�� -> �����������͡���װ�ࣺ���ð�װ���parseXxx(String str)����
         int i88 = Integer.parseInt("33");
         System.out.println(i88);
-        boolean b90 = Boolean.parseBoolean("1"); // ��"true"������Ϊfalse
+        boolean b90 = Boolean.parseBoolean("1");
         System.out.println(b90);
         boolean b92 = Boolean.parseBoolean("true");
         System.out.println(b92);
