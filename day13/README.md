@@ -4,7 +4,7 @@ day13 集合
 
 
 ## 1. 集合概述
-一方面，面向对象语言对事物的体现都是以对象的形式，为了方便对多个对象的操作，就要对对象进行存储。 另一方面，使用Array数组存储对方具有一些弊端，而java集合就像一种容器，可以动态的把多个对象的引用放入容器中。
+一方面，面向对象语言对事物的体现都是以对象的形式，为了方便对多个对象的操作，就要用对象进行存储。 另一方面，使用Array数组存储对方具有一些弊端，而java集合就像一种容器，可以动态的把多个对象的引用放入容器中。
 
 java集合类可以用于数量不等的多个对象，还可以用于保存具有映射关系的关联数组。
 
@@ -77,42 +77,40 @@ java 5之前，java集合会丢失所有对象的数据类型，把所有对象�
 
 ### Collection接口方法
 
-* int size() 返回集合中元素的个数
-* boolean add(E e) 向集合中添加一个元素
-* boolean addAll(Collection coll) 将一个集合所有元素添加到当前集合中
-* 查看所有元素 System.out.println(Collection实例);
-* boolean isEmpty() 判断集合是否为空，是返回true，否则false
-* void clear() 清空合集所有元素
-* boolean contains(Object obj) 判断集合中是否包含指定的元素obj，如果包含返回true，否则false。
->判断方法：用到了类中的equals(Object o)方法。若使用了自定义类要重写equals()方法
-* boolean containsAll(Collection coll) 判断当前集合是否包含coll集合中所有的元素。即判断一个集合是否为当前集合的子集
-* boolean retainAll(Collectoin coll) 先求集合coll与当前集合的交集，再清空当前集合所有元素，最后把交集集合添加到当前集合中
-  
-    >即 当前集合 = 当前集合 ∩ coll集合
-* boolean remove(Object obj) 删除集合中的obj元素。若删除成功返回true,否则返回false
-* booeanl removeAll(Collection coll) 从当前集合中删除与另外一个集合coll的交集所有元素。即 当前集合 - coll集合的差集。
-* boolean equals(Object obj) 判断一个集合obj与当前集合两者所有的元素是否都相等。
-* int hashCode() 获取当前集合的hash值
-* Object[] toArray() 将集合转化成数组
-* Iterator<E> iterator() 返回一个Iterator接口实现类对象，可用于遍历集合。该方法返回的对象类型为Iterator，有boolean hasNext()、Object next()方法
+```JAVA
+int size() //返回集合中元素的个数
+boolean add(E e) //向集合中添加一个元素
+boolean addAll(Collection coll) //将一个集合所有元素添加到当前集合中
+boolean isEmpty() //判断集合是否为空，是返回true，否则false
+void clear() //清空合集所有元素
+boolean contains(Object obj) //判断集合中是否包含指定的元素obj，如果包含返回true，否则false。
+//判断方法：用到了类中的equals(Object o)方法。若使用了自定义类要重写equals()方法
+boolean containsAll(Collection coll) //判断当前集合是否包含coll集合中所有的元素。即判断一个集合是否为当前集合的子集
+boolean retainAll(Collectoin coll) //先求集合coll与当前集合的交集，再清空当前集合所有元素，最后把交集集合添加到当前集合中, 即 当前集合 = 当前集合 ∩ coll集合
+boolean remove(Object obj) //删除集合中的obj元素。若删除成功返回true,否则返回false
+boolean removeAll(Collection coll) //从当前集合中删除与另外一个集合coll的交集所有元素。即 当前集合 - coll集合的差集。
+boolean equals(Object obj) //判断一个集合obj与当前集合两者所有的元素是否都相等。
+int hashCode() //获取当前集合的hash值
+Object[] toArray() //将集合转化成数组
+Iterator<E> iterator() //返回一个Iterator接口实现类对象，可用于遍历集合。该方法返回的对象类型为Iterator，有boolean hasNext()、Object next()方法
+```
 
 
 
+### Iterator遍历集合
+Iterator对象称为迭代器（设计模式的一种），主要用于遍历Collection集合元素
 
+所有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了Iterator接口的对象，该对象有boolean hasNext()，E next()、void remove()方法，E格式泛型
 
-### 使用Iterator接口遍历集合元素
-* Iterator对象称为迭代器（设计模式的一种），主要用于遍历Collection集合元素
-* 所有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了Iterator接口的对象，该对象有boolean hasNext()，E next()、void remove()方法，E格式泛型
-* Iterator仅用于遍历集合，Iterator本身并没有提供承装对象的能力。如果需要创建Iterator对象，
-必须有一个别迭代的集合
+Iterator仅用于遍历集合，Iterator本身并没有提供承装对象的能力。如果需要创建Iterator对象，必须有一个别迭代的集合
+
+**在调用it.next()方法之前必须要调用it.hasNext()进行检测。若不调用，且下一条记录无效，**直接调用it.next()会抛出NoSuchElementException异常
 
 方法|方法描述
 :---|---
 boolean hasNext() |iteration迭代器中还有元素则返回true,否则false
 E next() |返回iteration迭代器中的下一个元素
 void remove() |从集合中移除迭代器返回的最后一个元素（可选操作）
-
-* 在调用it.next()方法之前必须要调用it.hasNext()进行检测。若不调用，且下一条记录无效，直接调用it.next()会抛出NoSuchElementException异常
 
 
 
@@ -147,7 +145,7 @@ List subList(int fromIndex, int toIndex) // List切片处理，截取[开始下�
 
 
 
-### 实现类之一：ArrayList
+### 实现类1：ArrayList
 ArrayList时List接口的典型实现类， ArrayList本质上是对象引用的一个变长数组
 
 * ArrayList时线程不安全的，Vector时线程安全的（不推荐使用，效率低）
@@ -155,7 +153,7 @@ ArrayList时List接口的典型实现类， ArrayList本质上是对象引用的
 
 
 
-### 实现类之二：LinkedList
+### 实现类2：LinkedList
 对于频繁插入或删除元素操作的List，建议使用LinkedList，效率高，遍历时也有不错的效率
 
 ```java
@@ -175,7 +173,7 @@ Object clone() // 深度克隆当前集合，但集合元素的内部并未克�
 
 
 
-### 实现类之三：Vector
+### 实现类3：Vector
 Vector是一个古老的集合，JDK1.0就有了。大多数操作与ArrayList相同，区别之处就是Vector是线程线程安全的，但效率低
 
 在各种List中，最好把ArrayList作为缺省选择。当插入、删除频繁时，使用LinkedList；Vector比ArrayList慢很多，尽量避免使用
@@ -209,14 +207,14 @@ void add(E e)
 
 
 
-### Iterator与ListIterator主要区别
+### Iterator vs ListIterator
 都有hasNext()、next()方法，可以实现顺序遍历。**但ListIterator有boolean hasPrevios(), Object prevois()。可以实现逆向遍历。**
 
 ListIterator可以定位当前元素的索引尾椎，方法int nextIndex()、int previousIndex()，Iterator无此功能
 
 ListIterator有add()方法，可以向List中插入元素，Iterator无此方法
 
-都可以删除元素，当ListIterator可以用 set(Object e) 修改元素对象，因为ListIterator的这些功能，可以实现对LinkedList等List数据结构的操作。
+当ListIterator可以用 set(Object e) 修改元素对象，因为ListIterator的这些功能，可以实现对LinkedList等List数据结构的操作。
 
 
 
@@ -243,7 +241,18 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 
 
-### 实现类之一：HashSet
+### hashCode()方法
+
+* 如果两个元素的 equals() 方法返回 true，但它们的 hashCode() 返回值不相等，hashSet 将会把它们存储在不同的位置，但依然可以添加成功。
+* 对于存放在Set容器中的对象，对应的类一定要重写equals()和hashCode(Object obj)方法，以实现对象相等规则
+* 重写 hashCode() 方法的基本原则
+  * 在程序运行时，同一个对象多次调用 hashCode() 方法应该返回相同的值
+  * 当两个对象的 equals() 方法比较返回 true 时，这两个对象的 hashCode() 方法的返回值也应相等
+  * 对象中用作 equals() 方法比较的 Field，都应该用来计算 hashCode 值
+
+
+
+### 实现类1：HashSet
 
 * HashSet时Set接口的主要实现类，大多数时候都是使用这种
 * 使用Hash算法来存储集合中的元素，具有较好的存取、查找性能
@@ -255,18 +264,7 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 
 
-### hashCode()方法
-
-* 如果两个元素的 equals() 方法返回 true，但它们的 hashCode() 返回值不相等，hashSet 将会把它们存储在不同的位置，但依然可以添加成功。
-* 对于存放在Set容器中的对象，对应的类一定要重写equals()和hashCode(Object obj)方法，以实现对象相等规则
-* 重写 hashCode() 方法的基本原则
-    * 在程序运行时，同一个对象多次调用 hashCode() 方法应该返回相同的值
-    * 当两个对象的 equals() 方法比较返回 true 时，这两个对象的 hashCode() 方法的返回值也应相等
-    * 对象中用作 equals() 方法比较的 Field，都应该用来计算 hashCode 值
-
-
-
-### 实现类之二：LinkedHashSet
+### 实现类2：LinkedHashSet
 
 适用场景：频繁的遍历，较少的插入、删除
 * LinkedHashSet是HashSet的子类
@@ -278,7 +276,7 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 
 
-### 实现类之三：TreeSet
+### 实现类3：TreeSet
 TreeSet是SortedSet接口的实现类，TreeSet可以确保集合中元素处于排序状态
 
 向TreeSet集合中添加的元素必须是同一种类型的数据,不包含自动转换的过来的数据
@@ -299,11 +297,11 @@ TreeSet 两种排序方法：自然排序和定制排序。默认情况下，Tre
 **自然排序(使用compareTo方法进行比较是否相同)**
 
 * 如果试图把一个对象添加到使用自然排序的 TreeSet 时，**则该对象的类必须实现 Comparable 接口**
-* String、int、float、long等已经重写**int compareTo(Object o)方法**,这些类型数据组成的TreeSet默认从小到大排序
-* 自定义的来要实现java.lang.Comparable接口并重写int compareTo(Object o)方法,compareTo()方法返回值为0时,表示这两个对象相同在此方法中,指定该类按照哪些属性排序.
-* 向TreeSet集合中添加元素时,首先调用对象的int compareTo(Object o)方法进行比较,**若返回值为0,则认为这两个对象是相同的.这通情况下该元素就添加不进来**
+* String，int，float，long等已经重写**int compareTo(Object o)方法**，这些类型数据组成的TreeSet默认从小到大排序
+* 自定义的来要实现java.lang.Comparable接口并重写int compareTo(Object o)方法,compareTo()方法返回值为0时,表示这两个对象相同在此方法中,指定该类按照哪些属性排序。
+* 向TreeSet集合中添加元素时,首先调用对象的int compareTo(Object o)方法进行比较,**若返回值为0，则认为这两个对象是相同的.这通情况下该元素就添加不进来**
 * 对于 TreeSet 集合而言，它判断两个对象是否相等的唯一标准是：两个对象通过 compareTo(Object obj) 方法比较返回值
-* int compareTo(Object o)、int hashCode()、boolean equals()三个方法取值方向要求同时一致,
+* int compareTo(Object o)，int hashCode()，boolean equals()三个方法取值方向要求同时一致
 
 **定制排序(使用与不能更改类的场景)**
 
@@ -312,7 +310,7 @@ TreeSet 两种排序方法：自然排序和定制排序。默认情况下，Tre
   * 如果方法返回正整数，则表示o1大于o2
   * 如果返回0，表示相等
   * 返回负整数，表示o1小于o2。
-* int compare(Object o1, Object o2)、int hashCode()、boolean equals()三个方法取值方向要求同时一致
+* int compare(Object o1, Object o2)，int hashCode()，boolean equals()三个方法取值方向要求同时一致
 * set2:把set1中创建的comparator实例以形参传入TreeSet构造器。此时，仍然只能向TreeSet中添加类型相同的对象。否则发生ClassCastException异常
 * 使用定制排序是不需要实现自定义类的Comparable接口,如果有实现,则定制排序优先
 * 使用定制排序判断两个元素相等的标准是：通过Comparator比较两个元素返回了0
@@ -335,7 +333,7 @@ Map 中的 key 用Set来存放，不允许重复，即同一个 Map 对象所对
 
 key 和 value 之间存在单向一对一关系，即通过指定的 key 总能找到唯一的、确定的 value
 
-### Map常用方法
+### 常用方法
 
 ```java
 //添加、删除操作方法
@@ -343,7 +341,6 @@ Object put(Object key, Object value)  //添加、或更新一个元素到HashMap
 Object remove(Object key) //删除指定key的元素
 void putAll(Map t) //把Map t中所有元素添加到当前Map中
 void clear() //清除当前map中所有元素
-
 
 //元素查询操作方法
 Object get(Object key) //获取指定key的元素，若key不存在则返回null
@@ -353,7 +350,6 @@ int size() //返回map元素个数
 boolean isEmpty() //当前map是否为空，是返回true,否则false
 boolean equals(Object obj) //当前map与指定的obj map是否相等，即所有entry相等
 
-
 //元视图操作方法
 Set keySet() //获取当前map所有的key，值为Set
 Collection values() //获取当前map所有的value，值为Collection
@@ -361,7 +357,7 @@ Set entrySet() //获取当前map所有的entry，值为Set
 ```
 
 
-### Map特点
+### 特点
 * **Map的key, value都可以为null**
 * key、entry使用Set存储，不可重复，value使用Collection存储，可以重复
 * put()添加元素到map时，如果前面已经存在一个相同的key，那么新的key对应的value将覆盖旧的value
@@ -369,12 +365,12 @@ Set entrySet() //获取当前map所有的entry，值为Set
 
 
 
-### 实现类之一：HashMap
+### 实现类1：HashMap
 
 * entry顺序存储顺序与key的hash值有关，与put添加的顺序无关
 * HashMap是 Map 接口使用频率最高的实现类
-* HashMap 判断两个 key 相等的标准是：两个 key 通过 equals() 方法返回 true，hashCode 值也相等
-* HashMap 判断两个 value相等的标准是：两个 value 通过 equals() 方法返回 true
+* HashMap判断两个 key 相等的标准是：两个 key 通过 equals() 方法返回 true，hashCode 值也相等
+* HashMap判断两个 value相等的标准是：两个 value 通过 equals() 方法返回 true
 
 ```java
 // 其他类型的Map类也类似
@@ -390,13 +386,13 @@ HashMap hmap = new HashMap() {
 
 
 
-### 实现类之二：LinkedHashMap
+### 实现类2：LinkedHashMap
 * LinkedHashMap 是 HashMap 的子类
-* 与LinkedHashSet类似，LinkedHashMap 可以维护 Map 的迭代顺序（使用链表）：迭代顺序与 Key-Value 对的插入顺序一致
+* LinkedHashSet类似，LinkedHashMap 可以维护 Map 的迭代顺序（使用链表）：迭代顺序与 Key-Value 对的插入顺序一致
 
 
 
-### 实现类之三：TreeMap
+### 实现类3：TreeMap
 TreeMap存储 Key-Value 对时，需要根据 key-value 对进行排序。TreeMap 可以保证所有的 Key-Value 对处于有序状态
 
 TreeMap 的 Key 的排序:自然排序、定制排序
@@ -405,11 +401,9 @@ TreeMap 的 Key 的排序:自然排序、定制排序
 
 使用自定义类作为TreeMap的key，所属类需要重写equals()和hashCode()方法，且equals()方法返回true时，compareTo()方法应返回0
 
-若使用自定义类作为TreeMap的key，所属类需要重写equals()和hashCode()方法，且equals()方法返回true时，compareTo()方法应返回0
 
 
-
-### 实现类之四：Hashtable
+### 实现类4：Hashtable
 Hashtable是个古老的 Map 实现类，**线程安全。**
 
 与HashMap不同，**Hashtable 不允许使用 null 作为 key 和 value**， 与HashMap一样，Hashtable 也不能保证其中 Key-Value 对的顺序
@@ -418,15 +412,17 @@ Hashtable判断两个key相等、两个value相等的标准，与hashMap一致
 
 
 
-### Map接口实现类之五：Properties
+### 实现类5：Properties
 
-* Properties 类是 Hashtable 的子类，该对象用于处理属性文件
-* 由于属性文件里的 key、value 都是字符串类型，所以 Properties 里的 key 和 value 都是字符串类型
-* 存取数据时，建议使用setProperty(String key,String value)方法和getProperty(String key)方法
+Properties 类是 Hashtable 的子类，该对象用于处理属性文件
+
+由于属性文件里的 key、value 都是字符串类型，所以 Properties 里的 key 和 value 都是字符串类型
+
+存取数据时，建议使用setProperty(String key,String value)方法和getProperty(String key)方法
 
 
 
-## 6. 操作集合的工具类：Collections
+## 6. 工具类：Collections
 
 Collections时一个操作List、Set、Map等集合的工具类
 
@@ -458,28 +454,22 @@ static<T> Map<K,V> synchronizedMap(Map<K,V> m)
 static<T> Set<T> synchronizedSet(Set<T> s)
 static<T> SortedMap<K,V> synchronizedSortedMap(SortedMap<K,V> m)
 static<T> SortedSet<T> synchronizedSortedSet(SortedSet<T> s)
-
 ```
 
 
 
-## 7. 其他
+## 7. 互转
 
-### List与Set互转
-
-因为List和Set都实现了Collection接口，且addAll(Collection<? extends E> c);方法，因此可以采用addAll()方法将List和Set互相转换；
-
-另外，List和Set也提供了Collection<? extends E> c作为参数的构造函数，因此通常采用构造函数的形式完成互相转化。
+### List/Set互转
 
 ```java
 //List转Set
 Set<String> set = new HashSet<>(list);
-
 //Set转List
 List<String> list1 = new ArrayList<>(set);
 ```
 
-### Array与Set互转
+### Array/Set互转
 ```java
 //array转set
 String[] s = new String[]{"A", "B", "C", "D","E"};
@@ -489,8 +479,6 @@ System.out.println("set: " + set);
 //set转array
 String[] sArr = set.toArray();
 ```
-
-上述列出的互相转换离不开Arrays.asList()和Collection.toArray()两个重要的方法
 
 
 
@@ -504,7 +492,7 @@ String[] sArr = set.toArray();
 
 ### 特点
 
-元素只能一头进，一头出， 元素先进入的先取出，是顺序的， 在Java的标准库中，队列接口Queue定义了以下几个方法
+元素一头进一头出， 元素先进入的先取出，是顺序的， 在Java的标准库中，队列接口Queue定义了以下几个方法
 
 ```java
 int size()//获取队列长度；
@@ -579,9 +567,9 @@ public class QueueTest {
 9. PriorityQueue
 --
 
-Queue是一个先进先出（FIFO）的队列。在银行柜台办业务时，我们假设只有一个柜台在办理业务，但是办理业务的人很多，怎么办？可以每个人先取一个号，例如：A1、A2、A3……然后，按照号码顺序依次办理，实际上这就是一个Queue。如果这时来了一个VIP客户，他的号码是V1，虽然当前排队的是A10、A11、A12……但是柜台下一个呼叫的客户号码却是V1。
+在银行柜台办业务时，我们假设只有一个柜台在办理业务，但是办理业务的人很多。可以每个人先取一个号，例如：A1、A2、A3……然后，按照号码顺序依次办理，实际上这就是一个Queue。如果这时来了一个VIP客户，他的号码是V1，虽然当前排队的是A10、A11、A12……但是柜台下一个呼叫的客户号码却是V1。
 
-这个时候，**要实现“VIP插队”的业务**，用Queue就不行了，因为Queue会严格按FIFO的原则取出队首元素。我们需要的是优先队列：PriorityQueue
+**要实现“VIP插队”的业务**，用Queue就不行了，因为Queue会严格按FIFO的原则取出队首元素。需要的是优先队列：PriorityQueue
 
 
 
@@ -589,17 +577,15 @@ Queue是一个先进先出（FIFO）的队列。在银行柜台办业务时，�
 
 * PriorityQueue和Queue的区别在于，它的出队顺序只与元素的优先级有关，与插入顺序无关
 
-* 对PriorityQueue调用remove()或poll()方法，返回的总是优先级最高的元素
+* PriorityQueue调用remove()或poll()方法，返回的总是优先级最高的元素
 
-* 放入PriorityQueue的元素，必须实现Comparable接口，PriorityQueue会根据元素的排序顺序决定出队的优先级
+* PriorityQueue的元素，必须实现Comparable接口，PriorityQueue会根据元素的排序顺序决定出队的优先级
 
-* 放入PriorityQueue的元素所性类未实现Comparable，则需要通过Comparator自定义排序算法
+* PriorityQueue的元素所性类未实现Comparable，则需要通过Comparator自定义排序算法
 
 
 
 ### 示例
-
-示例1
 
 ```java
 import org.junit.Test;
@@ -630,10 +616,6 @@ public class PriorityQueueTest {
     }
 }
 ```
-
-
-
-示例2:模拟银行办理业务排队
 
 ```java
 import org.junit.Test;
@@ -708,7 +690,7 @@ class UserComparator implements Comparator<User> {
 10. Deque
 --
 
-Queue队列，元素只能一头进，另一头出。元素允许两头都进，两头都出，这种队列叫双端队列（Double Ended Queue），即Deque接口实际上扩展自Queue
+Deque元素允许两头都进，两头都出，这种队列叫双端队列（Double Ended Queue），即Deque接口实际上扩展自Queue
 
 ### 特点
 
@@ -765,8 +747,6 @@ public class DequeTest {
 
 栈(Stack)是一种后进先出（LIFO：Last In First Out）的数据结构。
 
-
-
 ### 方法
 
 * 把元素压栈：push(E e)
@@ -781,19 +761,15 @@ public class DequeTest {
 
 当我们把Deque作为Stack使用时，注意只调用push()/pop()/peek()方法，不要调用addFirst()/removeFirst()/peekFirst()方法，这样代码更加清晰
 
-
-
 ### Deque代替Stack方法
 
 * 把元素压栈：push(E e) /addFirst(E e)
 * 把栈顶的元素"弹出"：E pop() /E removeFirst()
 * 取栈顶元素但不弹出：E peek() /E peekFirst()
 
-
-
 ### 示例
 
-示例1, Stack在计算机中使用非常广泛，JVM在处理Java方法调用的时候就会通过栈这种数据结构维护方法调用的层次
+**示例1：**Stack在计算机中使用非常广泛，JVM在处理Java方法调用的时候就会通过栈这种数据结构维护方法调用的层次
 
 ```java
 static void main(String[] args) {
@@ -827,7 +803,7 @@ public class Main {
 }
 ```
 
-示例2：利用栈对整数进行进制的转换。把一个int整数12500转换为十六进制表示的字符串
+**示例2：**利用栈对整数进行进制的转换。把一个int整数12500转换为十六进制表示的字符串
 
 首先我们准备一个空栈
 
@@ -903,14 +879,12 @@ public class Main {
 
 
 
-示例3：计算中缀表达式
+**示例2：**计算中缀表达式
 
 在编写程序的时候，我们使用的带括号的数学表达式实际上是中缀表达式，即运算符在中间，
 例如：1 + 2 * (9 - 5)。
 
 但是计算机执行表达式的时候，它并不能直接计算中缀表达式，而是通过编译器把中缀表达式转换为后缀表达式，例如：1 2 9 5 - * +
-
-
 
 首先准备一个空的栈
 
