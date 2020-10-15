@@ -1,7 +1,7 @@
 # J2SE
 
 
-## [day01 语言概述与基本语法](./day01/README.md "day01")
+## [day01 概述与语法](./day01/README.md "day01")
 
 * [JAVA语言概述](./day01/README.md#1-JAVA语言概述)
 * [关键字](./day01/README.md#2-关键字)

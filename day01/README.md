@@ -1,4 +1,4 @@
-day01 JAVA语言概述与基本语法
+day01 概述与语法
 ==
 
 
@@ -82,8 +82,6 @@ java源文件的字符集与环境的字符集不一样时，这里javac 可指�
 
 
 
-
-
 ## 2. 关键字
 定义：被Java语言赋予了特殊含义，用做专门用途的字符串（单词）
 特点：关键字中所有字母都为小写
@@ -92,118 +90,140 @@ java源文件的字符集与环境的字符集不一样时，这里javac 可指�
 
 ### 数据类型
 
-* class
-* interface
-* enum
-* byte
-* short
-* int
-* long
-* float
-* bouble
-* char
-* boolean
-* void
+```JAVA
+class
+interface
+enum
+byte
+short
+int
+long
+float
+bouble
+char
+boolean
+void
+```
 
 
 
 ### 数据类型值
 
-* true
-* false
-* null
+```JAVA
+true
+false
+null
+```
 
 
 
 ### 流程控制
 
-* if
-* else
-* switch
-* case
-* default
-* while
-* do
-* for
-* break
-* continue
-* return
+```JAVA
+if
+else
+switch
+case
+default
+while
+do
+for
+break
+continue
+return
+```
 
 
 
 ### 权限修饰符
 
-* private
-* protected
-* public
+```JAVA
+private
+protected
+public
+```
 
 
 
 ### 类, 函数, 变量修饰符
 
-* abstract
-* final
-* static
-* synchronized
+```JAVA
+abstract
+final
+static
+synchronized
+```
 
 
 
 ### 类与类之间关系
 
-* extends
-* implements
+```JAVA
+extends
+implements
+```
 
 
 
-### 建立实例, 引用实例，判断实例
+### 建立实例, 引用实例, 判断实例
 
-* new
-* this
-* super
-* instanceof
+```JAVA
+new
+this
+super
+instanceof
+```
 
 
 
 ### 异常处理
 
-* try
-* catch
-* finally
-* throw
-* throws
+```JAVA
+try
+catch
+finally
+throw
+throws
+```
 
 
 
 ### 包
 
-* package
-* import
+```JAVA
+package
+import
+```
 
 
 
-### 其他修饰符关键字
+### 修饰符关键字
 
-* native
-* strictfp
-* transient
-* volatile
-* assert
+```JAVA
+native
+strictfp
+transient
+volatile
+assert
+```
 
 
 
 ### 保留字
 
-* byValue
-* cast
-* future
-* generic
-* inner
-* operator
-* outer
-* rest
-* var
-* goto
-* const
+```JAVA
+byValue
+cast
+future
+generic
+inner
+operator
+outer
+rest
+var
+goto
+const
+```
 
 
 
@@ -232,7 +252,7 @@ java对各种变量, 方法和类等要素命名时使用的**字符序列称为
 
 ## 5. 变量的声明与使用
 ### 变量
-变量概念, 内存中的一个存储区域, 该区域有自己的名称(变量名)和类型(数据类型), java中每个变量必须先声明，后使用。该区域的数据可以在同一个类型范围内不断变化
+变量概念, 内存中的一个存储区域, 该区域有自己的变量名和数据类型, java中每个变量必须先声明，后使用。该区域的数据可以在同一个类型范围内不断变化
 
 
 
@@ -281,7 +301,7 @@ java对各种变量, 方法和类等要素命名时使用的**字符序列称为
 
 ### 整数型
 
-java各整数类型有固定的表数范围和字段长度，不受具体OS的影响，以保证java程序的可移植性。
+java各整数类型有固定的表数范围和字段长度，不受具体OS的影响。
 
 java的整形常量默认是int型，**声明long型常量须后加"l" 或"L"** 
 
@@ -302,11 +322,10 @@ java浮点型也有固定的表数范围和字段长度，不受具体OS的影�
 
 java的浮点型常量默认为double型，**声明float型常量，须后加"f" 或 "F"**
 
-浮点型常量有两种表示形式：
+浮点型常量有两种表示形式
 
->十进制数形式，如5.12,  512.0f,  .512 (必须有小数点)
-
->科学计数法形式，如 5.12e2, 512E2, 100E-2
++ 十进制数形式，如5.12,  512.0f,  .512， **必须有小数点**
++ 科学计数法形式，如 5.12e2, 512E2, 100E-2，**E代表10的次方**
 
 |类型 |占用存储空间 |表数范围| 默认类型 |末尾加标识 |示例 |
 |:---|:---|:---|:---|:---|:---|
@@ -317,7 +336,11 @@ java的浮点型常量默认为double型，**声明float型常量，须后加"f"
 
 ### 字符型
 
-char 型数据用来表示通常意义上的"字符"(2个字节), 字符型常量的三种表现形式: **单个字符，转义字符，unicode**
+char 型数据用来表示通常意义上的"字符"(2个字节), 字符型常量的三种表现形式: 
+
++ 单个字符
++ 转义字符
++ unicode
 
 ```java
 //字符常量是用单引号('')括起来的单个字符，使用双引号将报错，涵盖世界上所有书面语的字符。
@@ -345,7 +368,7 @@ boolean类型适用于逻辑运算，一般用于程序流程控制
 
 |类型 |占用存储空间 |表数范围| 默认类型 |末尾加标识 |示例 |
 |:---|:---|:---|:---|:---|:---|
-|boolean |1字节 或4字节 <br>**一个基本类型的变量：4字节**，是用int类型来代替的 <br>**一个数组类型时：每个元素1个字节** |只能取值true或false，不能为null | | | |
+|boolean |**一个基本类型的变量：4字节**，是用int类型来代替的 <br>**一个数组类型时：每个元素1个字节** |只能取值true或false，不能为null | | | |
 
 
 
@@ -355,7 +378,7 @@ boolean类型适用于逻辑运算，一般用于程序流程控制
 
 容量小的数据类型与容量大的数据类型做**运算时，容量小的会自动转换为容量大的数据类型**：char, byte, short => int => long => float => double
 
-**char, byte, short之间做运算时，默认的结果为int类型。** 即使short和short之间运算，结果也是int
+**char, byte, short之间做运算时，默认的结果为int类型。**
 
 
 
@@ -369,7 +392,7 @@ boolean类型适用于逻辑运算，一般用于程序流程控制
 
 #### 字符连接
 
-String 字符串也是一种数据类型，属于引用数据类型。字符串与基本数据类型之间的运算：只能是连接运算：+ 得到的结果仍为一个字符串
+String 字符串也是一种数据类型，属于引用数据类型。字符串与基本数据类型之间的运算，结果仍为一个字符串
 
 String类属于引用类型，可用null赋值
 
@@ -477,11 +500,11 @@ D = b\*2<sup>n-1</sup> + b\*2<sup>n-2</sup> + ... + b\*2<sup>0</sup> + b\*2<sup>
 
 ### 10进制内置方法
 
-转二进制字符串：Integer.toBinaryString(int i)
+转2进制字符串：Integer.toBinaryString(int i)
 
-转八进制字符串：Integer.toOctalString(int i)
+转8进制字符串：Integer.toOctalString(int i)
 
-转十六进制字符串：Integer.toHexString(int i)
+转16进制字符串：Integer.toHexString(int i)
 
 
 
