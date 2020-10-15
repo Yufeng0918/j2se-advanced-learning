@@ -89,14 +89,14 @@ Person.Dog d1 = new Person.Dog("皮卡丘", "yello");
 ### 区分调用外部类, 内部类的变量
 
 - 内部类的变量：this.xx,
-- 外部类的变量：外部类.this.xx
+- 外部类的变量：**外部类.this.xx**
 
 
 
 ### 局部内部类的使用
 
 * Inner class的名字不能与包含它的类名相同
-* 非static的内部类中的成员不能声明为static的，只有在外部类或static的内部类中才可声明static成员
+* 非static的内部类中的成员不能声明为static的，**只有在外部类或static的内部类中才可声明static成员**
 
 
 
