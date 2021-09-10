@@ -1,7 +1,7 @@
 # J2SE
 
 
-## [day01 语言概述与基本语法](./day01/README.md "day01")
+## [day01 概述与语法](./day01/README.md "day01")
 
 * [JAVA语言概述](./day01/README.md#1-JAVA语言概述)
 * [关键字](./day01/README.md#2-关键字)
@@ -49,7 +49,7 @@
 
 ## [day05 面向对象编程](./day05/README.md "day05")
 
-* [三条主线](./day05/README.md#1-学习面向对象内容的三条主线)
+* [主线](./day05/README.md#1-学习面向对象内容的三条主线)
 * [面向对象与面向过程](./day05/README.md#2-面向对象与面向过程)
 * [面向对象的思想概述](./day05/README.md#3-面向对象的思想概述)
 * [class类结构](./day05/README.md#4-class类结构)

@@ -10,7 +10,7 @@ day04 数组
 
 
 ## 1. 数组声明与初始化
-静态初始化
+### 静态初始化
 
 ```java
 32int[] ii;
@@ -23,7 +23,7 @@ byte[] bb = byte[]{127, 1, 5}; // 推荐使用这种格式
 byte bb[] = byte[]{127, 1, 5}; // 也可以是这种格式，不推荐
 ```
 
-动态初始化
+### 动态初始化
 
 ```java
 String[] strs = new String[4];
@@ -81,7 +81,6 @@ names[3][1] = "狗子";
 //        names2[1] = new String[5];
 //        names2[3] = new String[2];
 
-
 String[][] obj = names2;
 // 每一层的数组都有length属性
 for (int i = 0; i < obj.length; ++i) {
@@ -94,7 +93,7 @@ for (int i = 0; i < obj.length; ++i) {
 }
 ```
 
-### 书写格式
+### 格式
 ```java
 // 声明数组变量（一维数组、二维数组），建议把数组的维度都写类型这
 
