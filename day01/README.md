@@ -36,7 +36,7 @@ java虚拟机(Java Virtal Machine)
 每个语句都要以;结尾
 
 ```shell
-//编译，生效多个.class字节码文件
+//编译生成多个.class字节码文件
 javac -encoding utf8 源文件名
 
 java 类名
