@@ -39,6 +39,8 @@ public class TestPerson {
         // 虚拟方法的调用，通过父类的引用指向子类的对象实体，当调用方法时，实际执行的是子类重写父类的方法
         p3.walk();
         p3.watchtTv();
+        System.out.println("p3: " + p3.id);
+
 //        p3.showMoustache(); // 不能调用，编译时就不通过
         Person p4 = new Woman("杨采诗", 23, "空气刘海");
         p4.walk();
