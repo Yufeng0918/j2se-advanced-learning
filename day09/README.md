@@ -3,7 +3,7 @@ day09 高级特性
 
 
 
-## 1. toString()方法
+## 1. toString
 
 toString()方法在Object类中定义，其返回值是String类型，**返回类名和它的引用地址**。
 
@@ -26,8 +26,6 @@ System.out.println(s1); // 相当于System.out.println(s1.toString());
 
 ​    
 ## 2. 包装类
-针对8种基本定义相应的引用类型
-
 基本数据类型 |包装类 
 :--- |--- 
 boolean |Boolean 
@@ -43,13 +41,9 @@ double |Double
 
 基本数据类型包装成包装类，叫做 装箱
 
-*  通过包装类的构造器实现
 ```java
 int i = 500;
 Integer t = new Integer(i);
-````
-* 通过字符串参数构造器包装类对象
-```java
 Float f = new Float("4.56");
 Float f2 = new Float(3.14);
 Long l = new Long("abc") // 编译时报NumberFormatException
@@ -65,8 +59,6 @@ System.out.println(b3);
 ### 拆箱
 
 获得包装类对象中包装的基本类型变量，叫做拆箱
-
-+ 调用包装类对象的.xxValue()方法
 
 ```java
 Boolean obj = new Boolean(true);
@@ -110,11 +102,6 @@ String ftr = String.valueOf(2.34F);
 String intString = 5 + "";
 ```
 
-
-
-
-### 基本数据类型, 包装类, String类三者之间的互转
-
 ![](./images/基本数据类型、包装类、String类互转2.png)
 
 String变量在内存的结构  
@@ -141,6 +128,6 @@ String变量在内存的结构
 
 * 类方法在类在加载时一起加载
 * 可以通过"类.类方法" 调用，也可以"对象.类方法"，建议使用第一种
-* 静态方法可以可以调用静态属性和静态方法，**但不能调用非静态的属性和非静态的方法**
+* 静态方法可以可以调用静态属性和静态方法，**不能调用非静态的属性和非静态的方法**
 * **重载**的方法需要同时为static或者非static
 * **静态的结构(static的属性、方法、代码块、内部类)的生命周期要早于非静态的结构，被回收的时间要晚于非静态的结构静态方法**里不能有this、super关键字

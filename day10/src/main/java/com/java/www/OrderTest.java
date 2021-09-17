@@ -35,7 +35,7 @@ public class OrderTest {
 
 class Order {
     // 实例变量
-    private int orderId = 100;
+
     private String orderName;
 
     // 类变量（静态属性）
@@ -48,6 +48,7 @@ class Order {
         System.out.println("我是非静态初始化块1");
     }
 
+
     // 非静态代码块
     {
         System.out.println("我是非静态初始化块2");
@@ -56,9 +57,13 @@ class Order {
     // 构造器
     public Order() {
         super();
-        orderId = 600;
+//        orderId = 600;
         System.out.println("我是空参构造器");
     }
+
+
+    private int orderId = 100;
+
 
     public Order(int orderId, String orderName) {
         this.orderId = orderId;
@@ -99,6 +104,7 @@ class Order {
         this.orderName = orderName;
     }
 
+    @Override
     public String toString() {
         return "Order{ orderId=" + orderId +
                 ", orderName='" + orderName + "'" +

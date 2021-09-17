@@ -72,6 +72,7 @@ class Person {
     }
 
     // 方法
+    @Override
     public String toString() {
         return "Person{ " +
                 "name=" + name +
@@ -173,6 +174,8 @@ class OutClass {
         class InnerClass {
 
         }
+
+        InnerClass a = new InnerClass();
     }
 
     // 常用方法：使其返回值为某个类或接口的对象。这个类或接口在方法内部创建
