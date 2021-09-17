@@ -27,8 +27,6 @@ public class YangHuiTriangle {
         int[][] triangle = new int[10][]; // 行数
         for (int i = 0; i < triangle.length; ++i) {
             triangle[i] = new int[i + 1]; // 每行的元素个数
-
-
         }
 
         for (int i = 0; i < triangle.length; ++i) {
@@ -42,9 +40,7 @@ public class YangHuiTriangle {
                     triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j];
                 }
             }
-
         }
-
 
 
         // 遍历杨辉三角数组
