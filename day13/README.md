@@ -128,7 +128,7 @@ List集合类中元素 有序，不可重复，集合中的每个 元素都有�
 
 List容器中的元素都有一个整数的索引记录在容器中的位置，可根据索引获取该元素
 
-JDK API中List接口的实现类常用的有：ArrayList、LinkedList、Vector
+JDK API中List接口的实现类常用的有：ArrayList, LinkedList, Vector
 
 在集合Collection类的基础上添加下面的方法
 
@@ -208,9 +208,9 @@ void add(E e)
 
 
 ### Iterator vs ListIterator
-都有hasNext()、next()方法，可以实现顺序遍历。**但ListIterator有boolean hasPrevios(), Object prevois()。可以实现逆向遍历。**
+都有hasNext(), next()方法，可以实现顺序遍历。**但ListIterator有boolean hasPrevios(), Object prevois()。可以实现逆向遍历。**
 
-ListIterator可以定位当前元素的索引尾椎，方法int nextIndex()、int previousIndex()，Iterator无此功能
+ListIterator可以定位当前元素的索引尾椎，方法nextIndex(), previousIndex()，Iterator无此功能
 
 ListIterator有add()方法，可以向List中插入元素，Iterator无此方法
 
@@ -222,11 +222,11 @@ ListIterator有add()方法，可以向List中插入元素，Iterator无此方法
 
 Set接口是Collection的子接口，Set接口没有提供额外的方法
 
-存储的元素是无序,不可重复的.
+存储的元素是无序, 不可重复的.
 
-无序性:不是随机性,是指元素在底层存储的位置是无序,按照一定的方法来确定顺序的.
+无序性: 不是随机性, 是指元素在底层存储的位置是无序, 按照一定的方法来确定顺序的.
 
-不可重复性:不能像Set中添加相同的元素,也添加不进去
+不可重复性: 不能像Set中添加相同的元素, 也添加不进去
 
 Set判断两个对象是否相同，不是使用==运算符，而是根据对象的boolean equals()方法判断
 
@@ -247,10 +247,10 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 * 如果两个元素的 equals() 方法返回 true，但它们的 hashCode() 返回值不相等，hashSet 将会把它们存储在不同的位置，但依然可以添加成功。
 * 对于存放在Set容器中的对象，对应的类一定要重写equals()和hashCode(Object obj)方法，以实现对象相等规则
-* 重写 hashCode() 方法的基本原则
-  * 在程序运行时，同一个对象多次调用 hashCode() 方法应该返回相同的值
-  * 当两个对象的 equals() 方法比较返回 true 时，这两个对象的 hashCode() 方法的返回值也应相等
-  * 对象中用作 equals() 方法比较的 Field，都应该用来计算 hashCode 值
+* **重写 hashCode() 方法的基本原则**
+  * **同一个对象多次调用 hashCode() 方法应该返回相同的值**
+  * **当两个对象的 equals() 方法比较返回 true 时，这两个对象的 hashCode() 方法的返回值也应相等**
+  * **对象中用作 equals() 方法比较的 Field，都应该用来计算 hashCode 值**
 
 
 
