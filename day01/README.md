@@ -426,8 +426,7 @@ String类属于引用类型，可用null赋值
 * 原码、反码、补码中的符号位都不变，即相同
 
 
-![原码、反码、补码](./images/原码,反码,补码.png)
-![](https://raw.githubusercontent.com/Yufeng0918/j2se-advanced-learning/master/day01/images/%E5%8E%9F%E7%A0%81%2C%E5%8F%8D%E7%A0%81%2C%E8%A1%A5%E7%A0%81.png)
+![原码、反码、补码](./images/原码,反码,补码.png, https://raw.githubusercontent.com/Yufeng0918/j2se-advanced-learning/master/day01/images/%E5%8E%9F%E7%A0%81%2C%E5%8F%8D%E7%A0%81%2C%E8%A1%A5%E7%A0%81.png)
 ![原码、反码、补码2](./images/原码,反码,补码2.png)
 
 负数补码推算其十进制值
