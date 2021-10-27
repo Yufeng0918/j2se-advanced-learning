@@ -83,8 +83,8 @@ finall 是可选的
 try 块内声明的变量为局部变量。出了try { }就不能被调用了
 
 catch 语句内对异常的处理
-- getMessage()    -- 返回String关键错误信息
-- printStackTrace()    -- 打印异常类名和异常信息，以及异常出现在程序中的位置。返回值void
+- getMessage(): 返回String关键错误信息
+- printStackTrace(): 打印异常类名和异常信息，以及异常出现在程序中的位置。返回值void
 
 可以多个catch语句，try中抛出的异常类对象从上往下匹配catch中的异常类的类型，一旦匹配就执行catch中的代码。执行完就跳出后面的catch语句。如果异常处理了，其后的代码继续执行
 

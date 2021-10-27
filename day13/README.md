@@ -4,7 +4,9 @@ day13 集合
 
 
 ## 1. 集合概述
-一方面，面向对象语言对事物的体现都是以对象的形式，为了方便对多个对象的操作，就要用对象进行存储。 另一方面，使用Array数组存储对方具有一些弊端，而java集合就像一种容器，可以动态的把多个对象的引用放入容器中。
+面向对象语言对事物的体现都是以对象的形式，为了方便对多个对象的操作，就要用对象进行存储。
+
+使用Array数组存储对方具有一些弊端，而java集合就像一种容器，可以动态的把多个对象的引用放入容器中。
 
 java集合类可以用于数量不等的多个对象，还可以用于保存具有映射关系的关联数组。
 
@@ -61,13 +63,13 @@ Map key-value键值对，或叫entry，key不能重复，value可以重复
 - SortedMap， TreeMap key必须为同一个类的，  entry存储顺序由Set keySet()决定，同与TreeSet。其实TreeSet可用看成所有value为空的特殊TreeMap
     		
 
-Map中的key、value在添加、修改是都会把类型转为Object，所以获取出来的类型也是Object，如果要操作获取出来的数据，需要进行一次类型强转
+Map中的key/value在添加、修改是都会把类型转为Object，所以获取出来的类型也是Object，如果要操作获取出来的数据，需要进行一次类型强转
 
 
 
 ## 2. Collection接口
 
-Collection是List、Set、Queue接口的父类，该接口定义的方法可以操作List、Set、Queue集合
+Collection是List, Set, Queue接口的父类，该接口定义的方法可以操作List, Set, Queue集合
 
 该接口不提供任何实现，有具体的子接口实现
 
@@ -122,13 +124,11 @@ java 5提供了foreach迭代访问集合，同时也可用遍历数组
 
 
 ## 3. List接口
-用数组存储数据有局限性，数组长度不可变，存放数据个数不确定
-
-List集合类中元素 有序、不可重复，集合中的每个 元素都有一个对应的顺序索引
+List集合类中元素 有序，不可重复，集合中的每个 元素都有一个对应的顺序索引
 
 List容器中的元素都有一个整数的索引记录在容器中的位置，可根据索引获取该元素
 
-JDK API中List接口的实现类常用的有：ArrayList、LinkedList、Vector
+JDK API中List接口的实现类常用的有：ArrayList, LinkedList, Vector
 
 在集合Collection类的基础上添加下面的方法
 
@@ -208,25 +208,22 @@ void add(E e)
 
 
 ### Iterator vs ListIterator
-都有hasNext()、next()方法，可以实现顺序遍历。**但ListIterator有boolean hasPrevios(), Object prevois()。可以实现逆向遍历。**
-
-ListIterator可以定位当前元素的索引尾椎，方法int nextIndex()、int previousIndex()，Iterator无此功能
-
-ListIterator有add()方法，可以向List中插入元素，Iterator无此方法
-
-当ListIterator可以用 set(Object e) 修改元素对象，因为ListIterator的这些功能，可以实现对LinkedList等List数据结构的操作。
++ 都有hasNext(), next()方法，可以实现顺序遍历
++ **ListIterator有boolean hasPrevios(), Object prevois()。可以逆向遍历。**
++ ListIterator可以定位当前元素的索引，方法nextIndex(), previousIndex()，Iterator无此功能
++ ListIterator有add()方法，可以向List中插入元素，Iterator无此方法
 
 
 
 ## 4. Set接口
 
-Set接口是Collection的子接口，Set接口没有提供额外的方法
+Set接口是Collection的子接口
 
-存储的元素是无序,不可重复的.
+存储的元素是无序, 不可重复的.
 
-无序性:不是随机性,是指元素在底层存储的位置是无序,按照一定的方法来确定顺序的.
+无序性: 不是随机性, 是指元素在底层存储的位置是无序, 按照一定的方法来确定顺序的.
 
-不可重复性:不能像Set中添加相同的元素,也添加不进去
+不可重复性: 不能像Set中添加相同的元素, 也添加不进去
 
 Set判断两个对象是否相同，不是使用==运算符，而是根据对象的boolean equals()方法判断
 
@@ -234,9 +231,11 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 ### Set要求
 
-包括HashSet、LinkedHashSet、TreeSet
-* 添加到Set中的元素所在类,一定要重写equals()、hashCode()方法
-* 当向Set添加元素时,首先调用此对象所在类的hashCode()方法,计算此对象的哈希值,此哈希值决定了此对象在Set中的存储位置.若此位置还没有存储对象,则此对象直接存储到这个位置. **若这个位置有存储了对象,那么在通过调用该对象的equals()方法比较这两个对象是否相同,如果equals()返回false则添加后面这个元素到Set中,否则不添加**
+包括HashSet, LinkedHashSet, TreeSet
+* 添加到Set中的元素所在类, **一定要重写equals()和hashCode()方法**
+* 当向Set添加元素时
+  * 调用此对象所在类的hashCode()方法。计算此对象的哈希值,此哈希值决定了此对象在Set中的存储位置。若此位置还没有存储对象,则此对象直接存储到这个位置。
+  * **若这个位置有存储了对象,那么在通过调用该对象的equals()方法比较这两个对象是否相同。如果equals()返回false则添加后面这个元素到Set中，否则不添加**
 * hashCode()方法与equals()方法返回值方向要求一致.即返回表示相同或是不相同
 
 
@@ -245,10 +244,10 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 * 如果两个元素的 equals() 方法返回 true，但它们的 hashCode() 返回值不相等，hashSet 将会把它们存储在不同的位置，但依然可以添加成功。
 * 对于存放在Set容器中的对象，对应的类一定要重写equals()和hashCode(Object obj)方法，以实现对象相等规则
-* 重写 hashCode() 方法的基本原则
-  * 在程序运行时，同一个对象多次调用 hashCode() 方法应该返回相同的值
-  * 当两个对象的 equals() 方法比较返回 true 时，这两个对象的 hashCode() 方法的返回值也应相等
-  * 对象中用作 equals() 方法比较的 Field，都应该用来计算 hashCode 值
+* **重写 hashCode() 方法的基本原则**
+  * **同一个对象多次调用 hashCode() 方法应该返回相同的值**
+  * **当两个对象的 equals() 方法比较返回 true 时，这两个对象的 hashCode() 方法的返回值也应相等**
+  * **对象中用作 equals() 方法比较的 Field，都应该用来计算 hashCode 值**
 
 
 
@@ -266,7 +265,8 @@ Set判断两个对象是否相同，不是使用==运算符，而是根据对象
 
 ### 实现类2：LinkedHashSet
 
-适用场景：频繁的遍历，较少的插入、删除
++ 适用场景：频繁的遍历，较少的插入、删除
+
 * LinkedHashSet是HashSet的子类
 * LinkedHashSet 根据元素的 hashCode 值来决定元素的存储位置，但它同时使用链表维护元素的次序，这使得元素看起来是以插入顺序保存的
 * LinkedHashSet插入性能略低于 HashSet，但在迭代访问 Set 里的全部元素时有很好的性能
@@ -301,7 +301,7 @@ TreeSet 两种排序方法：自然排序和定制排序。默认情况下，Tre
 * 自定义的来要实现java.lang.Comparable接口并重写int compareTo(Object o)方法,compareTo()方法返回值为0时,表示这两个对象相同在此方法中,指定该类按照哪些属性排序。
 * 向TreeSet集合中添加元素时,首先调用对象的int compareTo(Object o)方法进行比较,**若返回值为0，则认为这两个对象是相同的.这通情况下该元素就添加不进来**
 * 对于 TreeSet 集合而言，它判断两个对象是否相等的唯一标准是：两个对象通过 compareTo(Object obj) 方法比较返回值
-* int compareTo(Object o)，int hashCode()，boolean equals()三个方法取值方向要求同时一致
+* **如果 compareTo(Object o) == 0**， 那么hashcode()必定相等， equals()必定返回True
 
 **定制排序(使用与不能更改类的场景)**
 
@@ -310,7 +310,7 @@ TreeSet 两种排序方法：自然排序和定制排序。默认情况下，Tre
   * 如果方法返回正整数，则表示o1大于o2
   * 如果返回0，表示相等
   * 返回负整数，表示o1小于o2。
-* int compare(Object o1, Object o2)，int hashCode()，boolean equals()三个方法取值方向要求同时一致
+* **int compare(Object o1, Object o2)，int hashCode()，boolean equals()三个方法取值方向要求同时一致**
 * set2:把set1中创建的comparator实例以形参传入TreeSet构造器。此时，仍然只能向TreeSet中添加类型相同的对象。否则发生ClassCastException异常
 * 使用定制排序是不需要实现自定义类的Comparable接口,如果有实现,则定制排序优先
 * 使用定制排序判断两个元素相等的标准是：通过Comparator比较两个元素返回了0
@@ -319,7 +319,11 @@ TreeSet 两种排序方法：自然排序和定制排序。默认情况下，Tre
 
 
 ### Set交集, 并集, 差集运算
-Set接口是Collection的子接口，Set接口没有提供额外的方法，而[Collection](#Collection接口方法)也没有提供直接取交集、并集、差集的方法，这里就用Collection原有的方法来组合出交集、并集、差集的效果
+交集：retainAll
+
+并集： allAll
+
+差集： SetA - SetA.retailAll(SetB)
 
 
 
@@ -369,7 +373,7 @@ Set entrySet() //获取当前map所有的entry，值为Set
 
 * entry顺序存储顺序与key的hash值有关，与put添加的顺序无关
 * HashMap是 Map 接口使用频率最高的实现类
-* HashMap判断两个 key 相等的标准是：两个 key 通过 equals() 方法返回 true，hashCode 值也相等
+* **HashMap判断两个 key 相等的标准是：两个 key 通过 equals() 方法返回 true，hashCode 值也相等**
 * HashMap判断两个 value相等的标准是：两个 value 通过 equals() 方法返回 true
 
 ```java
@@ -397,7 +401,7 @@ TreeMap存储 Key-Value 对时，需要根据 key-value 对进行排序。TreeMa
 
 TreeMap 的 Key 的排序:自然排序、定制排序
 * 自然排序：TreeMap 的所有的 Key 必须实现 Comparable 接口并重写int compareTo(Object obj)方法，而且所有的 Key 应该是同一个类的对象，否则将会抛出 ClasssCastException
-* 定制排序：创建 TreeMap 时，传入一个 Comparator 对象，要求重写Comparator接口中的int compare(Object o1, Object o2)，该对象负责对 TreeMap 中的所有 key 进行排序。此时不需要 Map 的 Key 实现 Comparable 接口
+* 定制排序：创建 TreeMap 时，传入一个 Comparator 对象，要求重写Comparator接口中的int compare(Object o1, Object o2)，该对象负责对 TreeMap 中的所有 key 进行排序。**此时不需要 Map 的 Key 实现 Comparable 接口**
 
 使用自定义类作为TreeMap的key，所属类需要重写equals()和hashCode()方法，且equals()方法返回true时，compareTo()方法应返回0
 
@@ -406,7 +410,7 @@ TreeMap 的 Key 的排序:自然排序、定制排序
 ### 实现类4：Hashtable
 Hashtable是个古老的 Map 实现类，**线程安全。**
 
-与HashMap不同，**Hashtable 不允许使用 null 作为 key 和 value**， 与HashMap一样，Hashtable 也不能保证其中 Key-Value 对的顺序
+**Hashtable 不允许使用 null 作为 key 和 value**， 与HashMap一样，Hashtable 也不能保证其中 Key-Value 对的顺序
 
 Hashtable判断两个key相等、两个value相等的标准，与hashMap一致
 
@@ -484,7 +488,7 @@ String[] sArr = set.toArray();
 
 ## 8. Queue列队
 
-队列(Queue)是一种经常使用的集合。 Queue实际上是实现了一个先进先出（FIFO：First In First Out）的有序表。 它和List的区别在于，List可以在任意位置添加和删除元素， 而Queue只有两个操作：
+**Queue实际上是实现了一个先进先出（FIFO：First In First Out）的有序表**。 List可以在任意位置添加和删除元素， 而Queue只有两个操作：
 
 - 把元素添加到队列末尾
 - 从队列头部取出元素
@@ -515,7 +519,11 @@ Queue方法比较
 
 ### 示例
 
-poll()方法取队列首元素、使用peek()方法取队列首元素对比
+**poll**: 取出首元素
+
+**peek**: 获取首元素对
+
+**offer**: 把元素
 
 ```java
 import org.junit.Test;
@@ -567,21 +575,17 @@ public class QueueTest {
 9. PriorityQueue
 --
 
-在银行柜台办业务时，我们假设只有一个柜台在办理业务，但是办理业务的人很多。可以每个人先取一个号，例如：A1、A2、A3……然后，按照号码顺序依次办理，实际上这就是一个Queue。如果这时来了一个VIP客户，他的号码是V1，虽然当前排队的是A10、A11、A12……但是柜台下一个呼叫的客户号码却是V1。
-
-**要实现“VIP插队”的业务**，用Queue就不行了，因为Queue会严格按FIFO的原则取出队首元素。需要的是优先队列：PriorityQueue
+因为Queue会严格按FIFO的原则取出队首元素。需要的是优先队列：**PriorityQueue实现队列的调整和插队需求。**
 
 
 
 ### 特点
 
 * PriorityQueue和Queue的区别在于，它的出队顺序只与元素的优先级有关，与插入顺序无关
-
 * PriorityQueue调用remove()或poll()方法，返回的总是优先级最高的元素
-
-* PriorityQueue的元素，必须实现Comparable接口，PriorityQueue会根据元素的排序顺序决定出队的优先级
-
-* PriorityQueue的元素所性类未实现Comparable，则需要通过Comparator自定义排序算法
+* PriorityQueue的元素两种排序方法
+  * 元素实现Comparable接口，PriorityQueue会根据元素的排序顺序决定出队的优先级
+  * PriorityQueue通过Comparator自定义排序算法
 
 
 
@@ -663,7 +667,7 @@ class User {
 }
 
 /**
- * 银行用户排队排序比较器
+ * UserComparator总是把V开头的号码优先返回，只有在开头相同的时候，才比较号码大小。
  */
 class UserComparator implements Comparator<User> {
     @Override
@@ -682,8 +686,6 @@ class UserComparator implements Comparator<User> {
     }
 }
 ```
-
-实现PriorityQueue的关键在于提供的UserComparator对象，它负责比较两个元素的大小（较小的在前）。UserComparator总是把V开头的号码优先返回，只有在开头相同的时候，才比较号码大小。
 
 
 
@@ -755,11 +757,9 @@ public class DequeTest {
 * 判断栈是否为空：boolean empty()
 * 搜索指定元素在栈中的索引：int search(Object o)
 
-为什么Java的集合类没有单独的Stack接口呢？因为有个遗留类名字就叫Stack，出于兼容性考虑，Stack也可以使用，它继承了Vector类
-
 **建议不要使用遗留类Stack。所以没办法创建Stack接口，只能用Deque接口来“模拟”一个Stack了.**
 
-当我们把Deque作为Stack使用时，注意只调用push()/pop()/peek()方法，不要调用addFirst()/removeFirst()/peekFirst()方法，这样代码更加清晰
+
 
 ### Deque代替Stack方法
 
@@ -771,21 +771,7 @@ public class DequeTest {
 
 **示例1：**Stack在计算机中使用非常广泛，JVM在处理Java方法调用的时候就会通过栈这种数据结构维护方法调用的层次
 
-```java
-static void main(String[] args) {
-    foo(123);
-}
-
-static String foo(x) {
-    return "F-" + bar(x + 1);
-}
-
-static int bar(int x) {
-    return x << 2;
-}
-```
-
-JVM会创建方法调用栈，每调用一个方法时，先将参数压栈，然后执行对应的方法；当方法返回时，返回值压栈，调用方法通过出栈操作获得方法返回值。
+JVM会创建方法调用栈，**每调用一个方法时，先将参数压栈，然后执行对应的方法；当方法返回时，返回值压栈，调用方法通过出栈操作获得方法返回值。**
 
 因为方法调用栈有容量限制，嵌套调用过多会造成栈溢出，即引发StackOverflowError：
 
@@ -884,7 +870,7 @@ public class Main {
 在编写程序的时候，我们使用的带括号的数学表达式实际上是中缀表达式，即运算符在中间，
 例如：1 + 2 * (9 - 5)。
 
-但是计算机执行表达式的时候，它并不能直接计算中缀表达式，而是通过编译器把中缀表达式转换为后缀表达式，例如：1 2 9 5 - * +
+但是计算机执行表达式的时候，是通过编译器把中缀表达式转换为**后缀表达式**，例如：1 2 9 5 - * +
 
 首先准备一个空的栈
 

@@ -6,7 +6,7 @@ day14 高级类特性
 1. 泛型
 --
 
-泛型将接口的概念进一步延伸，"泛型"字面意思就是广泛的类型，类、接口和方法代码可以应用于非常广泛的类型, 代码与它们能够操作的数据类型不再绑定在一起，同一套代码，可以用于多种数据类型，  不仅可以复用代码，降低耦合，同时，还可以提高代码的可读性和安全性。
+"泛型"字面意思就是广泛的类型，类, 接口和方法代码可以应用于非常广泛的类型。 代**码与它们能够操作的数据类型不再绑定在一起**，**同一套代码，可以用于多种数据类型，  不仅可以复用代码，降低耦合**，同时，还可以提高代码的可读性和安全性。
 
 泛型作用
 * 把集合中元素, 类, 接口的内容限制为指定的数据类型，但未使用之前又不能确定是哪种数据类型，在实例化时指定数据类型
@@ -43,10 +43,10 @@ Iterator<Customer> iterator = customer.iterator();
 
 ### 规则
 
-* 泛型类对象实例化时不指定泛型，默认类型为 Object
+* **泛型类对象实例化时不指定泛型，默认类型为 Object**
 * 泛型不同的引用不能相互赋值
 * 加入集合中的对象类型必须与指定的泛型类型一致
-* 静态方法中不能使用类的泛型，因为静态方法在类加载时就确定了
+* **静态方法中不能使用类的泛型，因为静态方法在类加载时就确定了**
 * catch的异常类型不能为泛型
 * 构造器中不能使用泛型
 
@@ -106,7 +106,7 @@ public class DAO {
 
 * **<? super A>  只能存放A及其父类**
 
-* <? extends Comparable> 只允许泛型为实现Comparable接口的实现类的引用调用
+* **<? extends Comparable> 只允许泛型为实现Comparable接口的实现类的引用调用**
 
 * 不能向声明为通配符的集合中添加、修改元素(当元素为null除外)，但可以获取、删除元素
 
@@ -189,7 +189,7 @@ JDK 1.5新增enum关键字用于定义枚举类
 
 * 格式：public @interface MyAnnotation { }
 * 定义新的 Annotation 类型使用 @interface 关键字
-* Annotation 的成员变量在 Annotation 定义中以无参数方法的形式来声明. **其方法名和返回值定义了该成员的名字和类型.**
+* **Annotation 的成员变量在 Annotation 定义中以无参数方法的形式来声明**. **其方法名和返回值定义了该成员的名字和类型.**
 * 可以在定义 Annotation 的成员变量时为其指定初始值, 指定成员变量的初始值可使用 default 关键字
 * **没有成员定义的 Annotation 称为标记**
 
@@ -205,7 +205,7 @@ public @interface MyAnnotation{
 
 JDK 的元注解 用于修饰其他注解 定义 4个元注解
 
-@Retention 指定注解的生命周期，可以保留到哪个阶段，  
+**@Retention 指定注解的生命周期**
 
 ```JAVA
 //编译器直接丢弃这种策略的注释
@@ -220,7 +220,7 @@ JDK 的元注解 用于修饰其他注解 定义 4个元注解
 
 
 
-@Target 用于修饰 Annotation 定义, 用于指定被修饰的 Annotation 能用于修饰哪些程序元素。@Target(value) value可选值
+**@Target 用于修饰 Annotation 作用于的元素**。@Target(value) value可选值
 
 ```JAVA
 TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, ANNOTATION_TYPE, PACKAGE, TYPE_PARAMETER, TYPE_USE, MODULE
@@ -228,7 +228,7 @@ TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, ANNOTATION_TYPE, PA
 
 
 
-@Documented 用于指定被该元 Annotation 修饰的 Annotation 类将被 javadoc 工具提取成文档。**定义为Documented的注解必须设置Retention值为RUNTIME**
+**@Documented 用于指定被该元 Annotation 修饰的 Annotation 类将被 javadoc 工具提取成文档**。定义为Documented的注解必须设置**Retention值为RUNTIME**
 
 @Inherited 被它修饰的 Annotation 将具有继承性.如果某个类使用了被 @Inherited 修饰的 Annotation, 则其子类将自动具有该注解
 

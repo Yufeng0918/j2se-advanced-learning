@@ -9,7 +9,7 @@
 * [Java中名称命名规范](./day01/README.md#4-命名规范)
 * [java中变量的声明与使用](./day01/README.md#5-变量的声明与使用)
 * [4种整数表达方式](./day01/README.md#6-4种整数表达方式)
-* [原码、反码、补码](./day01/README.md#7-原码反码补码)
+* [原码/反码/补码](./day01/README.md#7-原码反码补码)
 * [进制之间转换](./day01/README.md#8-进制之间转换)
 * [编码与字符集](./day01/README.md#9-编码与字符集)
 
@@ -106,29 +106,20 @@
 
 ## [day10 高级类特性](./day10/README.md "day10")
 
-* [单例设计模式(Singleton)](./day10/README.md#1-单例设计模式)
-* [main方法](./day10/README.md#2-main方法)
-* [初始化块](./day10/README.md#3-初始化块)
-* [final关键字](./day10/README.md#4-final关键字)
-* [抽象类(abstract class)](./day10/README.md#5-抽象类abstract-class)
-* [模板方法设计模式](./day10/README.md#6-模板方法设计模式)
-* [interfacer接口](./day10/README.md#7-interfacer接口)
-
-    
+* [main方法](./day10/README.md#1-main方法)
+* [初始化块](./day10/README.md#2-初始化块)
+* [final关键字](./day10/README.md#3-final关键字)
+* [抽象类(abstract class)](./day10/README.md#4-抽象类abstract-class)
+* [interfacer接口](./day10/README.md#5-interfacer接口)
 
 
 
 ## [day11 高级类特性](./day11/README.md "day11")
 
-* [工厂方法设计模式](./day11/README.md#1-工厂方法)
-* [代理模式](./day11/README.md#2-代理模式)
-* [接口和抽象类的关系](./day11/README.md#3-接口和抽象类的关系)
-* [类的成员之五：内部类](./day11/README.md#4-类的成员之五内部类)
-* [匿名内部类](./day11/README.md#5-匿名内部类)
+* [接口和抽象类的关系](./day11/README.md#1-接口和抽象类的关系)
+* [类的成员之五：内部类](./day11/README.md#2-类的成员之五内部类)
 
     
-
-
 
 ## [day12 异常处理](./day12/README.md "day12")
 
@@ -138,8 +129,6 @@
 * [异常处理方式二：声明抛出异常](./day12/README.md#4-异常处理方式二声明抛出异常)
 * [手动抛出异常](./day12/README.md#5-手动抛出异常)
 * [自定义异常类](./day12/README.md#6-自定义异常类)
-
-
 
 
 

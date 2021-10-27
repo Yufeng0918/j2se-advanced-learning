@@ -3,68 +3,7 @@ day10高级类特性
 
 
 
-## 1. 单例设计模式
-
-概念：采取一定的方法保证在整个的软件系统中，对某个类只能存在一个对象实例，并且该类只提供一个取得其对象实例的方法。
-
-解决的问题：使得一个类只能够创建一个对象
-
-
-### 饿汉式单例模式
-
-在类的内部创建一个私有静态的该类的对象
-
-定义一个private 空参构造器
-
-定义一个public静态方法回返上面定义的实例
-
-```java
-public class Singleton {
-    // 类变量
-    private static Singleton instance = new Singleton();
-
-    // 构造器
-    private Singleton() {
-        super();
-    }
-
-    // 方法
-    public static Singleton getInstance() {
-        return instance;
-    }
-}
-```
-
-### 懒汉式单例模式
-
-定义私有静态的该类的对象实例为null
-
-定义公共静态的方法返回实例，并判断实例是否为null，为null时新建该实例
-
-```java
-public class SingletonLazybones {
-    // 类变量
-    // 定义私有静态的该类的对象实例为null
-    private static SingletonLazybones instance = null;
-
-    // 构造器
-    // 定义私有的空参构造器
-    private SingletonLazybones() {}
-
-    // 定义公共静态的方法返回实例，并判断实例是否为null，为null时新建该实例
-    public static SingletonLazybones getInstance() {
-        if (instance == null) {
-            instance = new SingletonLazybones();
-        }
-        System.out.println(instance);
-        return instance;
-    }
-}
-```
-
-
-
-## 2. main方法
+## 1. main方法
 
 ```java
 public class MainTest {
@@ -75,7 +14,7 @@ public class MainTest {
 
 
 
-## 3. 初始化块
+## 2. 初始化块
 
 初始化块(代码块)作用, 对java对象进行初始化。 代码块修饰符只能是空或static
 
@@ -83,12 +22,12 @@ public class MainTest {
 
 ### 静态代码块 
 
-+ static { }, { }内可以有输出语句
++ static { }
 
 * **随着类的加载而加载，且只能被加载一次**，内存中同样只有一份
 * 一个类中可以有多个静态代码块，多个代码块之间按照顺序结构执行
 * **静态代码块要早于构造器执行**
-* **静态代码块中只能执行静态的结构（静态的属性、静态的方法）**
+* **静态代码块中只能执行静态的属性或者静态的方法**
 * 静态的要早于非静态执行
 
 
@@ -106,8 +45,9 @@ public class MainTest {
 
 ### 属性赋值顺序  
 
-+ 默认的初始化  
-+ 显示初始化，代码块初始化  
++ 默认初始化 
++ 静态代码块
++ 显式初始化/代码块初始化（顺序）
 + 构造器中赋值  
 + 通过方法对对象的属性进行修改  
 
@@ -170,22 +110,6 @@ class Order {
         System.out.println("我是静态代码块2");
     }
 
-    // 方法
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
-    public String getOrderName() {
-        return orderName;
-    }
-
-    public void setOrderName(String orderName) {
-        this.orderName = orderName;
-    }
 
     public String toString() {
         return "Order{ orderId=" + orderId +
@@ -202,28 +126,24 @@ class Order {
 
 
 
-## 4. final关键字
+## 3. final关键字
 
-final  （最终的）可以修饰类、属性、方法。不能修饰构造器  
+**final可以修饰类，属性，方法**。不能修饰构造器 
 目的：禁止被修改、被继承  
 
 ### 修饰类
 
-这个类不能被继承。如String、StringBuffer、System类
+这个类不能被继承。如String，StringBuffer，System类
 
-
-
-### 修饰方法。
+### 修饰方法
 
 **不能被重写**, 功能确定不变的，就定义为final方法，如Object类中的getClass。 final于访问权限修饰符顺序可先可后，建议先权限修饰符，再final。如：public static void walk() { }
-
-
 
 ### 修饰属性
 
 此属性就是常量。建议常量名字母全大写。常量一旦初始化，就不能修改。
 
-赋值：**可以显示的赋值、代码块、构造器，没有默认值。且必须先赋值才能使用**
+赋值：**可以显示的赋值，代码块，构造器，没有默认值。且必须先赋值才能使用**
 
 ```java
 public class finalTest {}
@@ -312,11 +232,9 @@ class Other {
 
 
 
-## 5. Abstract 抽象类
+## 4. Abstract 抽象类
 
-随着继承层次中一个个新子类的定义，类变得越来越具体，而父类则更一般，更通用。类的设计应该保证父类和子类能够共享特征。有时将一个父类设计得非常抽象，以至于它没有具体的实例，这样的类叫做抽象类。**只能修饰类、方法  目的：让继承的子类去实现(重写方法)**
-
-
+类的设计应该保证父类和子类能够共享特征。有时将一个父类设计得非常抽象，以至于它没有具体的实例，这样的类叫做抽象类。**只能修饰类、方法  目的：让继承的子类去实现(重写方法)**
 
 ### 修饰类
 
@@ -326,13 +244,11 @@ class Other {
 * **抽象类可以没有抽象方法**
 * abstract于访问权限修饰符顺序可先可后，建议先权限修饰符，再abstract。如：public abstract class aa { }
 
-
-
 ### 修饰方法
 
-* 格式：没有方法体，包括{ }也不能有，即没有{}块。如：public abstract void walk();
+* 格式：没有方法体。如：public abstract void walk();
 * 抽象方法只保留方法的功能，具体的执行交给继承该抽象的子类去实现，实现方法：子类重写抽象方法
-* 有抽象方法的抽象类的子类，必须实现（重写）所有的抽象方法，才能实例化。未全部重写的类只能定义为抽象类
+* 有抽象方法的抽象类的**子类**，必须实现所有的抽象方法，才能实例化。**未全部重写的类只能定义为抽象类**
 * 抽象类的子类，可以为抽象类，可以只实现一部分抽象方法，还可以再添加新的抽象方法。那么子类必须实现多层父类的抽象方法
 
 
@@ -466,82 +382,12 @@ class Driver extends Man {
 
 
 
-## 6. 模板方法设计模式
-
-抽象类体现的就是一种模板模式的设计，抽象类作为多个子类的通用模板，子类在抽象类的基础上进行扩展、改造，但子类总体上会保留抽象类的行为方式。
-
-- 当功能内部一部分实现是确定，一部分实现是不确定的。这时可以把不确定的部分暴露出去，让子类去实现。
-- 编写一个抽象父类，父类提供了多个子类的通用方法，并把一个或多个方法留给其子类实现，就是一种模板模式。
-
-
-```java
-public class TemplateTest {
-    public static void main(String[] args) {
-        MySort s1 = new MySort(1000);
-        s1.spendTime();
-    }
-}
-
-abstract class Template {
-    abstract void code();
-
-    public void spendTime() {
-        long start = System.currentTimeMillis();
-        code();
-        long end = System.currentTimeMillis();
-        System.out.printf("spend time: %ds\n", end - start);
-    }
-}
-
-class MySort extends Template {
-    private int num;
-
-    // 构造器
-    public MySort() {
-        super();
-    }
-
-    public MySort(int num) {
-        this.num = num;
-    }
-
-    // 方法
-    public void code() {
-        /*
-        求给定数的范围内所有的质数
-        * */
-        for (int i = 2; i <= num; ++i) {
-            boolean flag = true;
-            for (int j = 2; j < Math.pow(i, 1.0/2); ++j) {  // Math.pow(num, 1.0/2) 根号2
-                if (i % j == 0) {
-                    flag = false;
-                }
-            }
-            if (flag) {
-                System.out.println(i);
-            }
-        }
-    }
-
-    public int getNum() {
-        return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
-    }
-}
-
-```
-
-
-
-## 7. interfacer接口
+## 5. interfacer接口
 
 接口用途：被实现类去实现接口定义的功能（面向接口编程）
 * interface是与类等级平级的一个概念
 * 接口可以看做是一个特殊的抽象类。
-* **接口是常量, 抽象方法的集合，只能有常量和抽象方法，不能包含变量, 一般的方法**
+* **接口是常量, 抽象方法的集合，只能有常量和抽象方法，不能包含变量和非default方法**
 * 没有构造器，也就不能实例化
 * 接口定义的是一种功能。此功能可以被类实现（implements）
 * **接口里所有的常量都是被  public static final 修饰。不写也会默认加上**

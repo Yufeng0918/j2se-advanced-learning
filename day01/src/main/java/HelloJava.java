@@ -6,7 +6,7 @@
  */
 
 
-/*
+/**
 * 1.源文件后缀.java
 * 2.源文件中可以有多个class声明的类
 * 3.类中可以有主方法（即main()方法），其格式是固定的：public static void main(String[] args) {}
