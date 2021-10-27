@@ -3,3 +3,5 @@
 */build
 .gradle
 **/out
+/day15/quanxue.txt
+/day15/quanxue2.txt

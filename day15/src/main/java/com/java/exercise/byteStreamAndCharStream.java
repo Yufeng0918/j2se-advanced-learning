@@ -68,15 +68,22 @@ public class byteStreamAndCharStream {
     }
 
     @Test
-    public void test1() {
+    public void test1() throws IOException {
         String s = "    君子曰：学不可以已。\n" +
                 "\n" +
                 "    青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴，不复挺者，輮使之然也。\n" +
                 "故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。";
-        String f1 = "E:\\dev\\java_2019\\day15\\testLab\\lab1\\quanxue.txt";
-        String f2 = "E:\\dev\\java_2019\\day15\\testLab\\lab1\\quanxue2.txt";
+        String f1 = "./quanxue.txt";
+        String f2 = "./quanxue2.txt";
         stringToFile1(s, f1);
         stringToFile2(s, f2);
+
+        FileInputStream fs = new FileInputStream(new File(f1));
+        byte[] data = new byte[1024];
+        int len = 0;
+        while ((len = fs.read(data)) != -1) {
+            System.out.print(new String(data, 0, len));
+        }
     }
 
     // 2.1 字节流 读取文件到控制台
@@ -85,7 +92,6 @@ public class byteStreamAndCharStream {
         try {
             FileInputStream fis = new FileInputStream(new File(filePath));
             br = new BufferedInputStream(fis);
-
             // byte[] 转 char[] 方法一
 //            byte[] b = br.readAllBytes();
 //            Charset cs = Charset.forName("UTF-8");
