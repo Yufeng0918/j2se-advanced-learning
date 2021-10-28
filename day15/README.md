@@ -105,16 +105,16 @@ IO流用来处理设备之间的数据传输, **数据的输入/输出操作以�
 分类 |字节输入流(byte) |字节输出流(byte) |字符输入流(char) |字符输出流(char) 
 :--- |--- |--- |--- |--- 
 抽象基类 |InputStream |OutputStream |Reader |Writer
-访问文件 |FileInputStream <br>int read()是阻塞的 |FileOutputStream |FileReader |FileWriter
+访问文件 |FileInputStream |FileOutputStream |FileReader |FileWriter
 访问数组 |ByteArrayInputStream |ByteArrayOutputStream |CharArrayReader |CharArrayWriter
 访问管道 |PipedInputStream |PipedOutputStream |PipedReader |PipedWriter
 访问字符串 | | |StringReader |StringWriter
 缓冲流 |BufferedInputStream <br>int read()非阻塞的 |BufferedOutputStream <br>flush() 每次写入后执行一次，保证最后的缓冲内容也被写入 |BufferedReader <br>String readLine() 读取的内容不包括行尾的换行符 |BufferedWriter <br> flush() 每次写入后执行一次，保证最后的缓冲内容也被写入
 转换流 | | |InputStreamReader |OutputStreamWriter
-对象流 |ObjectInputStream |ObjectOutputStream | | 
+对象流 |ObjectInputStream |ObjectOutputStream | |
 打印流(输出) | |PrintStream | |PrintWriter
-推回输入流 |PushbackInputStream | |PushbackReader | 
-数据流(特殊流) |DataInputStream |DataOutputStream | | 
+推回输入流 |PushbackInputStream | |PushbackReader |
+数据流(特殊流) |DataInputStream |DataOutputStream | |
 
 
 
@@ -200,19 +200,19 @@ void close()
 
 转换流提供了在字节流和字符流之间的转换
 
-* InputStreamReader 字节流 转换成字符流，解码过程
+**InputStreamReader 字节流转换成字符流**，解码过程
 
-  ```java
-  public InputStreamReader(InputStream in)
-  public InputStreamReader(InputStream, String chasetName)
-  ```
+```java
+public InputStreamReader(InputStream in)
+public InputStreamReader(InputStream, String chasetName)
+```
 
-* OutputStreamWriter 字符流 转换成 字节流，编码过程
+**OutputStreamWriter 字符流转换成字节流**，编码过程
 
-  ```java
-  public OutputStreamWriter(OutputStream out)
-  public OutputStreamWriter(OutputStream out, String charsetName)
-  ```
+```java
+public OutputStreamWriter(OutputStream out)
+public OutputStreamWriter(OutputStream out, String charsetName)
+```
 
 
 
@@ -237,58 +237,54 @@ PrintStream和PrintWriter，不会抛出异常且有自动flush
 
 
 
-
-
 ### 数据流
 
 方便操作java语言的基本数据类型的数据，可以使用数据流
 
-* **DataInputStream 数据输入流**，套接在InputStream 节点流上
+**DataInputStream 数据输入流**，套接在InputStream 节点流上
 
-  ```java
-  boolean readBoolean()
-  char readChar()
-  double readDouble()
-  long readLong()
-  String readUTF()
-  byte readByte()
-  float readFloat()
-  short readShort()
-  int readInt()
-  void readFully(byte[] b)
-  ```
+```java
+boolean readBoolean()
+char readChar()
+double readDouble()
+long readLong()
+String readUTF()
+byte readByte()
+float readFloat()
+short readShort()
+int readInt()
+void readFully(byte[] b)
+```
 
-* **DataOutputStream 数据输出流**，套接在OutputStream 节点流上
+**DataOutputStream 数据输出流**，套接在OutputStream 节点流上
 
-  ```java
-  void writeBoolean(boolean v)
-  void writeChar(int v)
-  void writeDouble(double v)
-  void writeLong(long v)
-  void writeByte(int v)
-  void writeFloat(float v)
-  void wirteInt(int v)
-  void writeBytes(String s)
-  void writeChars(String s)
-  void write(byte b[], int off, int len)
-  void write(int b)
-  void flush()
-  ```
+```java
+void writeBoolean(boolean v)
+void writeChar(int v)
+void writeDouble(double v)
+void writeLong(long v)
+void writeByte(int v)
+void writeFloat(float v)
+void wirteInt(int v)
+void writeBytes(String s)
+void writeChars(String s)
+void write(byte b[], int off, int len)
+void write(int b)
+void flush()
+```
 
-  
+
 
 
 ### 对象流
 
-ObjectInputStream, ObjectOutputStream,用于存储和读取对象的处理流，它的强大之处是可以把对象写入到存储设备中，也能把对象从外部设备中读取出来
+ObjectInputStream, ObjectOutputStream用于存储和读取对象的处理流，可以把对象写入到存储设备中，也能把对象从外部设备中读取出来
 
 #### java.io.EOFException异常
 
-new ObjectOutputStream(new FileOutputStream("file.txt"))一创建对象流，file.txt文件内容就被替换成4个字节的内容，准备后续的写入。  
-
 如果同时开了 **ObjectInputStream, ObjectOutputStream，ObjectInputStream的实例化和操作必须放在ObjectOutputStream的实例化和操作的前面，才能保证正常的读取文件内容, 否则内容已经被替换成4个字节内容，所有就报EOFException异常了**。 
 
-建议不同时打开ObjectInputStream, ObjectOutputStream，对象输入流读取操作完后，关闭对象输入流，再打开对象输出流操作
+**建议不同时打开ObjectInputStream, ObjectOutputStream**，对象输入流读取操作完后，关闭对象输入流，再打开对象输出流操作
 
 #### 对象的序列化
 
@@ -343,7 +339,7 @@ UTF-8：最多用三个字节来表示一个字符。
 
 ## 8. RandomAccessFile类
 
-这里的随机指：可任意位置读写文件， 即可以充当输入流，又可以充当输出流
+**可任意位置读写文件， 即可以充当输入流，又可以充当输出流**
 
 若输出的文件不存在，则创建；若存在，则覆盖内容
 

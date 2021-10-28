@@ -158,21 +158,6 @@
 
 ## [day15 IO流](./day15/README.md "IO流")
 
-* [File类](./day15/README.md#File类)
-* [JAVA IO原理](./day15/README.md#java-io原理)
-* [流的分类](./day15/README.md#流的分类)
-* [InputStream, Reader](./day15/README.md#inputstreamreader)
-* [OutputStream, Writer](./day15/README.md#outputstreamwriter)
-* [处理流之一：缓冲流](./day15/README.md#处理流之一缓冲流)
-* [处理流之二：转换流](./day15/README.md#处理流之二转换流)
-* [字符集](./day15/README.md#字符集)
-* [处理之三：标准输入输出流](./day15/README.md#处理之三标准输入输出流)
-* [处理流之四：打印流](./day15/README.md#处理流之四打印流)
-* [处理流之五：数据流](./day15/README.md#处理流之五数据流DataInputStreamDataOutputStream)
-* [处理流之六：对象流](./day15/README.md#处理流之六对象流)
-* [RandomAccessFile类](./day15/README.md#RandomAccessFile类)
-* [流的基本应用小总结](./day15/README.md#流的基本应用小总结)
-
 
 
 ## [NIO](./NIO/README.md)

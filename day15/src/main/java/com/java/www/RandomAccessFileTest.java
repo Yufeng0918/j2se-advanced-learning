@@ -49,20 +49,19 @@ public class RandomAccessFileTest {
                 e.printStackTrace();
             }
         }
-
     }
 
     @Test
     public void test1() {
-        String s1 = "E:\\dev\\java_2019\\day15\\testLab\\lab8\\xh.txt",
-                s2 = "E:\\dev\\java_2019\\day15\\testLab\\lab8\\xh_2.txt";
+        String s1 = "./xh.txt",
+                s2 = "./xh_2.txt";
         copyFile(s1, s2);
     }
 
     @Test
     public void test2() {
         // 在指定位置开始写入(覆盖)
-        File file = new File("E:\\dev\\java_2019\\day15\\testLab\\lab8\\random.txt");
+        File file = new File("./readme.txt");
         RandomAccessFile raf = null;
         try {
             raf = new RandomAccessFile(file, "rw");
@@ -78,10 +77,8 @@ public class RandomAccessFileTest {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
         }
-
     }
 
 
@@ -166,7 +163,4 @@ public class RandomAccessFileTest {
         String s = "我是插入的内容";
         fileInsert(filePath, s, 4);
     }
-
-
-
 }
