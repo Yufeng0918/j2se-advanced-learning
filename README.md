@@ -3,47 +3,17 @@
 
 ## [day01 概述与语法](./day01/README.md "day01")
 
-* [JAVA语言概述](./day01/README.md#1-JAVA语言概述)
-* [关键字](./day01/README.md#2-关键字)
-* [标识符](./day01/README.md#3-标识符)
-* [Java中名称命名规范](./day01/README.md#4-命名规范)
-* [java中变量的声明与使用](./day01/README.md#5-变量的声明与使用)
-* [4种整数表达方式](./day01/README.md#6-4种整数表达方式)
-* [原码/反码/补码](./day01/README.md#7-原码反码补码)
-* [进制之间转换](./day01/README.md#8-进制之间转换)
-* [编码与字符集](./day01/README.md#9-编码与字符集)
-
 
 
 ## [day02 基本语法](./day02/README.md "day02")
-
-* [算术运算符](./day02/README.md#1-算术运算)
-* [赋值运算符](./day02/README.md#2-赋值运算符)
-* [比较运算符](./day02/README.md#3-比较运算符)
-* [逻辑运算符](./day02/README.md#4-逻辑运算符)
-* [位运算符](./day02/README.md#5-位运算符)
-* [三元运算符](./day02/README.md#6-三元运算符)
-* [运算符的优先级](./day02/README.md#7-运算符的优先级)
-* [10进制数转16进制格式](./day02/README.md#8-10进制数转16进制)
 
 
 
 ## [day03 程序流程控制](./day03/README.md "day03")
 
-+ [结构类型](./day03/README.md#1-结构类型)
-+ [分支结构](./day03/README.md#2-分支结构)
-+ [循环结构](./day03/README.md#2-循环结构)
-
 
 
 ## [day04 数组](./day04/README.md "day04")
-
-* [数组](./day04/README.md#数组)
-* [数组声明与初始化](./day04/README.md#数组声明与初始化)
-* [数组元素的默认值](./day04/README.md#数组元素的默认值)
-* [java数据的内存基本结构](./day04/README.md#java数据的内存基本结构)
-* [多维数组](./day04/README.md#多维数组)
-* [Arrays数组操作类](./day04/README.md#Arrays数组操作类)
 
 
 
@@ -312,30 +282,12 @@
 
 
 
-## [java 12新特性](./java12_features/README.md)
-
-* [新特性官方介绍](./java12_features/README.md)
-* 新增Shenandoah低暂停时间垃圾回收器算法(实验性功能)
-* 添加一个基本的microbenchmark套件
-* 增强switch表达式(预览功能)
-* 引入JVM常量API
-* 只保留一个64位AARCH64端口
-* 64位平台上使用默认CDS存档
-* 增强G1垃圾回收器，可中止混合集合
-* 增强G1垃圾回收器，使其能自动返回未用堆内存给操作系统
-* 添加一个基本的microbenchmark套件  
+## [java 12新特性](./java12_features/README.md)  
 
 
 
 
 ## [java 13新特性](./java13_features/README.md)
-
-* 新特性官方说明
-* 动态CDS归档
-* 增强ZGC垃圾回收器，不提交未使用的内存
-* 重新实现Socket API
-* 增强switch表达式(预览功能)
-* 文本块(预览功能)
 
 
 
