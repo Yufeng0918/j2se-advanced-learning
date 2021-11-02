@@ -3,36 +3,13 @@
 
 ## [day01 概述与语法](./day01/README.md "day01")
 
-* [JAVA语言概述](./day01/README.md#1-JAVA语言概述)
-* [关键字](./day01/README.md#2-关键字)
-* [标识符](./day01/README.md#3-标识符)
-* [Java中名称命名规范](./day01/README.md#4-命名规范)
-* [java中变量的声明与使用](./day01/README.md#5-变量的声明与使用)
-* [4种整数表达方式](./day01/README.md#6-4种整数表达方式)
-* [原码/反码/补码](./day01/README.md#7-原码反码补码)
-* [进制之间转换](./day01/README.md#8-进制之间转换)
-* [编码与字符集](./day01/README.md#9-编码与字符集)
-
 
 
 ## [day02 基本语法](./day02/README.md "day02")
 
-* [算术运算符](./day02/README.md#1-算术运算)
-* [赋值运算符](./day02/README.md#2-赋值运算符)
-* [比较运算符](./day02/README.md#3-比较运算符)
-* [逻辑运算符](./day02/README.md#4-逻辑运算符)
-* [位运算符](./day02/README.md#5-位运算符)
-* [三元运算符](./day02/README.md#6-三元运算符)
-* [运算符的优先级](./day02/README.md#7-运算符的优先级)
-* [10进制数转16进制格式](./day02/README.md#8-10进制数转16进制)
-
 
 
 ## [day03 程序流程控制](./day03/README.md "day03")
-
-+ [结构类型](./day03/README.md#1-结构类型)
-+ [分支结构](./day03/README.md#2-分支结构)
-+ [循环结构](./day03/README.md#2-循环结构)
 
 
 
