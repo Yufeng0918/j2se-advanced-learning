@@ -15,13 +15,6 @@
 
 ## [day04 数组](./day04/README.md "day04")
 
-* [数组](./day04/README.md#数组)
-* [数组声明与初始化](./day04/README.md#数组声明与初始化)
-* [数组元素的默认值](./day04/README.md#数组元素的默认值)
-* [java数据的内存基本结构](./day04/README.md#java数据的内存基本结构)
-* [多维数组](./day04/README.md#多维数组)
-* [Arrays数组操作类](./day04/README.md#Arrays数组操作类)
-
 
 
 ## [day05 面向对象编程](./day05/README.md "day05")
@@ -274,30 +267,12 @@
 
 
 
-## [java 12新特性](./java12_features/README.md)
-
-* [新特性官方介绍](./java12_features/README.md)
-* 新增Shenandoah低暂停时间垃圾回收器算法(实验性功能)
-* 添加一个基本的microbenchmark套件
-* 增强switch表达式(预览功能)
-* 引入JVM常量API
-* 只保留一个64位AARCH64端口
-* 64位平台上使用默认CDS存档
-* 增强G1垃圾回收器，可中止混合集合
-* 增强G1垃圾回收器，使其能自动返回未用堆内存给操作系统
-* 添加一个基本的microbenchmark套件  
+## [java 12新特性](./java12_features/README.md)  
 
 
 
 
 ## [java 13新特性](./java13_features/README.md)
-
-* 新特性官方说明
-* 动态CDS归档
-* 增强ZGC垃圾回收器，不提交未使用的内存
-* 重新实现Socket API
-* 增强switch表达式(预览功能)
-* 文本块(预览功能)
 
 
 

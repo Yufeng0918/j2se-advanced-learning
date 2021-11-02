@@ -1,13 +1,13 @@
 Arrays类
 ==
 
-# 基本信息
+## 基本信息
 位于java.util包下
 
-# 构造器
+## 构造器
 只有一个私有的构造器
 
-# 方法
+## 方法
 ```java
 static <T> List<T> asList​(T... a) 
 Returns a fixed-size list backed by the specified array.

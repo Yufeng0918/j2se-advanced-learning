@@ -64,7 +64,6 @@ java 类名
  * 文档注释
  * @author  Lee Boynton
  * @since   1.0
- * @jls     15.18.1 String Concatenation Operator +
  */
 ```
 
@@ -74,7 +73,7 @@ java 类名
 
 ```shell
 javadoc -encoding utf8 -d mydoc -author -version HelloJava.java
--d: 输出文件的目标目录
+# -d: 输出文件的目标目录
 ```
 java源文件的字符集与环境的字符集不一样时，这里javac 可指定字符集，如：javac encoding utf8 .java源文件
 
@@ -277,16 +276,16 @@ java对各种变量, 方法和类等要素命名时使用的**字符序列称为
 #### 基本数据类型
 
 数值型
-+ 整数类型: byte, short, int, long
-+ 浮点类型: float, double
++ 整数类型: byte - 1, short - 2, int - 4, long - 8
++ 浮点类型: float - 4, double - 8
 
-字符型: char
+字符型: char - 2
 
-布尔型: boolean
+布尔型: boolean - 4
 
 #### 引用数据类型
 
-类(class) -- 字符串在这里，String[] 
+类(class) - 字符串在这里，String[] 
 
 接口(interface)
 
@@ -350,7 +349,7 @@ char c5 = '\uXXXX';
 
 |类型 |占用存储空间 |表数范围| 默认类型 |末尾加标识 |示例 |
 |:---|:---|:---|:---|:---|:---|
-|char <br>用单引号括起来 |2字节 |任何一个字符 <br>转义字符 <br>Unicode值| | |char c1 = 'a'; <br>char c2 = '字'; <br>char c3 = '$'; <br>char c4 = '\n'; <br>char c5 = '\u000a' |
+|char <br>用单引号括起来 |**2字节** |任何一个字符 <br>转义字符 <br>Unicode值| | |char c1 = 'a'; <br>char c2 = '字'; <br>char c3 = '$'; <br>char c4 = '\n'; <br>char c5 = '\u000a' |
 
 
 
@@ -433,8 +432,7 @@ String类属于引用类型，可用null赋值
 
 ### 10转2
 
-除2取余，逆序排列
-![十进制转二进制](./images/十进制转二进制.png)  
+除2取余，逆序排列  
 
 整数部分：十进制整数转换成二进制整数采用**"除以2取余数"**
 
@@ -529,7 +527,7 @@ ASCII码：上个世纪60年代，美国制定了一套字符编码，对英语�
 
 UTF-8编码规则
 
-**对于单字节的UTF-8编码**，该字节的最高位为0，其余7位用来对应字符进行编码（**等同ASCII码）**
+**对于单字节的UTF-8编码**，**该字节的最高位为0**，其余7位用来对应字符进行编码（**等同ASCII码）**
 
 **对于多字节的UTF-8编码**，如果编码包含n个字节，
 
