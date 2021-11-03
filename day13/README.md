@@ -4,18 +4,7 @@ day13 集合
 
 
 ## 1. 集合概述
-java集合类可以用于数量不等的多个对象，还可以用于保存具有映射关系的关联数组。
-
-java集合分为Collection和Map两种体系
-
-**Collection接口**
-
-- Set：元素无序、不可重复的集合
-- List：元素有序，可以重复 -- 动态数组
-
-**Map接口**：具有映射关系"key-value"对的集合
-
-
+java集合分为**Collection和Map两种体系**
 
 ### Collection接口继承树
 
@@ -38,12 +27,7 @@ java集合分为Collection和Map两种体系
 * SortedSet 
 * TreeSet 元素必须为同一个类的，自然排序：有对象的int compareTo(Object o)决定；定制排序：创建一个实现了Comparator接口的对象,重写int compare(Object o1, Object o2)方法，把该对象传入TreeSet构造器；比较两个元素是否相同的方法同HashSet，线程不安全
 
-List、Set元素在添加、修改是都会把类型转为Object，所以获取出来的类型也是Object，如果要操作获取出来的数据，需要进行一次类型强
-
-**对象排序接口**
-
-* Comparable
-* Comparator
+List，Set元素在添加、修改是都会把类型转为Object，所以获取出来的类型也是Object，如果要操作获取出来的数据，需要进行一次类型强
 
 ### Map接口继承树
 ![](./images/Map接口继承树.png)
@@ -95,7 +79,7 @@ Iterator<E> iterator() //返回一个Iterator接口实现类对象，可用于�
 ### Iterator遍历集合
 Iterator对象称为迭代器，主要用于遍历Collection集合元素
 
-所有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了Iterator接口的对象，该对象有boolean hasNext()，E next()、void remove()方法，E格式泛型
+所有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了Iterator接口的对象，该对象有boolean hasNext()，E next()，void remove()方法，E格式泛型
 
 Iterator仅用于遍历集合，Iterator本身并没有提供承装对象的能力。如果需要创建Iterator对象，必须有一个别迭代的集合
 
@@ -280,9 +264,6 @@ Object first() //获取第一个元素
 Object last() //获取最后一个元素
 Object lower(Object e) //返回此 set 中严格小于给定元素的最大元素；如果不存在这样的元素，则返回null。 
 Object higher(Object e) //返回此 set 中严格大于给定元素的最小元素；如果不存在这样的元素，则返回null
-SortedSet subSet(fromElement, toElement) //返回此 set 的部分视图，其元素从fromElement（包括）到toElement（不包括），范围：[fromElement, toElement)
-SortedSet headSet(toElement) //返回此 set 的部分视图，其元素严格小于toElement
-SortedSet tailSet(fromElement) //返回此 set 的部分视图，其元素大于等于fromElement
 ```
 
 TreeSet 两种排序方法：自然排序和定制排序。默认情况下，TreeSet 采用自然排序
@@ -355,11 +336,12 @@ Set entrySet() //获取当前map所有的entry，值为Set
 
 ### 特点
 * **Map的key, value都可以为null**
-* key、entry使用Set存储，不可重复，value使用Collection存储，可以重复
+
+* key, entry使用Set存储，不可重复，value使用Collection存储，可以重复
+
 * put 添加元素到map时，如果前面已经存在一个相同的key，那么新的key对应的value将覆盖旧的value
-* Map接口的常用实现类：HashMap、LinkedHashMap、TreeMap、Properties
 
-
+  
 
 ### 实现类1：HashMap
 
@@ -383,12 +365,12 @@ HashMap hmap = new HashMap() {
 
 ### 实现类2：LinkedHashMap
 * LinkedHashMap 是 HashMap 的子类
-* LinkedHashSet类似，LinkedHashMap 可以维护 Map 的迭代顺序（使用链表）：迭代顺序与 Key-Value 对的插入顺序一致
+* LinkedHashSet类似，LinkedHashMap使用链表, 可以维护 Map 的迭代顺序
 
 
 
 ### 实现类3：TreeMap
-TreeMap存储 Key-Value 对时，需要根据 key-value 对进行排序。TreeMap 可以保证所有的 Key-Value 对处于有序状态
+需要根据 key-value 对进行排序。TreeMap 可以保证所有的 Key-Value 对处于有序状态
 
 TreeMap 的 Key 的排序:自然排序、定制排序
 * **自然排序**：TreeMap 的所有的 Key 必须实现 **Comparable 接口**并重写int compareTo(Object obj)方法，而且所有的 Key 应该是同一个类的对象，否则将会抛出 ClasssCastException
@@ -561,19 +543,13 @@ public class QueueTest {
 
 * PriorityQueue和Queue的区别在于，它的出队顺序只与元素的优先级有关，与插入顺序无关
 * PriorityQueue调用remove()或poll()方法，返回的总是优先级最高的元素
-* PriorityQueue的元素两种排序方法
-  * 元素实现Comparable接口，PriorityQueue会根据元素的排序顺序决定出队的优先级
-  * PriorityQueue通过Comparator自定义排序算法
+* PriorityQueue的元素**两种排序方法**
+  * **元素实现Comparable接口，PriorityQueue会根据元素的排序顺序决定出队的优先级**
+  * **PriorityQueue通过Comparator自定义排序算法**
 
 ### 示例
 
 ```java
-import org.junit.Test;
-
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.Queue;
-
 public class PriorityQueueTest {
     @Test
     public void test1() {
