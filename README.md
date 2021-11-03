@@ -71,18 +71,6 @@
 
 ## [day13 集合](./day13/README.md "day13")
 
-* [java集合概述](./day13/README.md#1-java集合概述)
-* [Collection接口](./day13/README.md#2-Collection接口)
-* [List接口](./day13/README.md#3-List接口)
-* [Set接口](./day13/README.md#4-Set接口)
-* [Map接口](./day13/README.md#5-Map接口)
-* [操作集合的工具类：Collections](./day13/README.md#6-操作集合的工具类Collections)
-* [其他](./day13/README.md#其他)
-* [Queue队列](./day13/README.md)
-* [PriorityQueue优先权队列](./day13/README.md)
-* [Deque双端队列](./day13/README.md)
-* [Stack栈](./day13/README.md)
-
 
 
 ## [day14 高级类特性](./day14/README.md "泛型")
