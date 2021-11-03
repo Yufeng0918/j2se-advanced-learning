@@ -17,52 +17,19 @@
 
 
 
-## [day05 面向对象编程](./day05/README.md "day05")
-
-* [主线](./day05/README.md#1-学习面向对象内容的三条主线)
-* [面向对象与面向过程](./day05/README.md#2-面向对象与面向过程)
-* [面向对象的思想概述](./day05/README.md#3-面向对象的思想概述)
-* [class类结构](./day05/README.md#4-class类结构)
-* [创建java自定义类](./day05/README.md#5-创建java自定义类)
-* [内存划分的结构](./day05/README.md#6-内存划分的结构)
-* [方法的参数传递](./day05/README.md#7-方法的参数传递)
-* [面向对象特征之一：封装和隐藏](./day05/README.md#面向对象特征之一封装和隐藏)
-
-    
-
-## [day06 构造器](./day06/README.md "day06")
-
-* [特征](./day06/README.md#1-特征)
-* [作用](./day06/README.md#2-作用)
-* [语法格式](./day06/README.md#3-语法格式)
-* [规则](./day06/README.md#4-规则)
-* [重载](./day06/README.md#5-重载)
-
-
-
-## [day07 高级类特性](./day07/README.md "day07")
-
-* [this](./day07/README.md#1-this)
-* [JavaBean](./day07/README.md#2-JavaBean)
-* [UML图表示类方法](./day07/README.md#3-UML图表示类方法)
-* [关键字-package](./day07/README.md#3-关键字-package)
-* [关键字-import](./day07/README.md#4-关键字-import)
-* [JDK主要的包介绍](./day07/README.md#5-JDK主要的包介绍)
-* [面向对象特征之二：继承](./day07/README.md#6-面向对象特征之二继承)
-* [方法的重写(overrides)](./day07/README.md#7-重写)
-* [重写与重载的区别](./day07/README.md#8-方法重写与方法重载的区别)
+## [day05 面向对象 - 封装](./day05/README.md "day05")
 
   
 
-## [day08 高级类特性](./day08/README.md "day08")
+## [day06 构造器](./day06/README.md "day06")
 
-* [四种访问权限修饰符](./day08/README.md#1-四种访问权限修饰符)
-* [super关键字](./day08/README.md#2-super关键字)
-* [this和super的区别](./day08/README.md#3-this和super的区别)
-* [面向对象特征之三：多态性](./day08/README.md#4-面向对象特征之三多态性)
-* [instanceof操作符](./day08/README.md#5-instanceof操作符)
-* [对象类型转换(Casting)](./day08/README.md#6-对象类型转换Casting)
-* [Object类](./day08/README.md#7-Object类)
+
+
+## [day07 面向对象 -继承](./day07/README.md "day07")
+
+
+
+## [day08 高级类特性](./day08/README.md "day08")
 
 
 

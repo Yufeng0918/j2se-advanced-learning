@@ -24,6 +24,12 @@ public class TestAnimal {
         t.call(an2);
         t.hobby(an1);
         t.hobby(an2);
+
+//        Animal an3 = new Dog("haha");
+//        System.out.println(an3.name);
+//        an3.name = "an3";
+//        System.out.println(an3.name);
+//        System.out.println(an3.getName());
     }
 
     // 利用instanceof判断实例所属类，再强制转换
@@ -50,7 +56,7 @@ public class TestAnimal {
 }
 
 class Animal {
-    protected String name;
+    public String name;
 
     // constructor
     public Animal() {
@@ -81,6 +87,16 @@ class Animal {
 
 class Dog extends Animal {
 
+    public String name;
+
+
+//    public Dog() {
+//        super();
+//    }
+//
+//    public Dog(String name) {
+//        this.name = name;
+//    }
 
     public void eat() {
         System.out.println("狗吃肉");
@@ -93,6 +109,11 @@ class Dog extends Animal {
     public void call() {
         // 狗吠叫
         System.out.println("汪汪汪...");
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }
 
