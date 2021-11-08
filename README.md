@@ -35,28 +35,15 @@
 
 ## [day09 高级类特性](./day09/README.md "day09")
 
-* [toString()方法](./day09/README.md#1-toString方法)
-* [包装类(Wrapper)](./day09/README.md#2-包装类Wrapper)
-* [static关键字](./day09/README.md#3-static关键字)
-
 
 
 ## [day10 高级类特性](./day10/README.md "day10")
-
-* [main方法](./day10/README.md#1-main方法)
-* [初始化块](./day10/README.md#2-初始化块)
-* [final关键字](./day10/README.md#3-final关键字)
-* [抽象类(abstract class)](./day10/README.md#4-抽象类abstract-class)
-* [interfacer接口](./day10/README.md#5-interfacer接口)
 
 
 
 ## [day11 高级类特性](./day11/README.md "day11")
 
-* [接口和抽象类的关系](./day11/README.md#1-接口和抽象类的关系)
-* [类的成员之五：内部类](./day11/README.md#2-类的成员之五内部类)
-
-    
+  
 
 ## [day12 异常处理](./day12/README.md "day12")
 
@@ -74,10 +61,6 @@
 
 
 ## [day14 高级类特性](./day14/README.md "泛型")
-
-* [泛型](./day14/README.md#1-泛型)
-* [枚举类](./day14/README.md#2-泛型 "enmu枚举类")
-* [注解](./day14/README.md#3-注解 "注解")
 
 
 

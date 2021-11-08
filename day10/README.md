@@ -530,7 +530,6 @@ public class InterfacePolymorphicTest {
         InterfacePolymorphicTest.ru(d1); // 相当于 runner r = new Duck();
         InterfacePolymorphicTest.sw(d1); // 相当于 swimer r = new Duck();
         System.out.println(InterfacePolymorphicTest.fl(d1)); // 相当于 flier r = new Duck();
-
     }
 
     // 多态
