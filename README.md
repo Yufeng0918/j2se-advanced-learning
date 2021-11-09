@@ -63,18 +63,6 @@
 
 ## [NIO](./NIO/README.md)
 
-* [NIO概述](./NIO/README.md#NIO概述)
-* [NIO与IO的区别](./NIO/README.md#[NIO与IO的区别])
-* [Channel通道与Buffer缓冲区](./NIO/README.md#Channel通道与Buffer缓冲区)
-* [Buffer缓冲区](./NIO/README.md#Buffer缓冲区)
-* [Channel通道](./NIO/README.md#Channel通道)
-* [FileChannel常用方法](./NIO/README.md#FileChannel常用方法)
-* [NIO vs 阻塞式IO](./NIO/README.md#非阻塞式NIO阻塞式NIO与阻塞式IO)
-* [字符集编码与解码](./NIO/README.md#字符集编码与解码)
-* [Pipe管道](./NIO/README.md#Pipe管道)
-* [NIO2 Path, Paths, Files](./NIO/README.md#NIO2PathPathsFiles)
-* [自动资源管理](./NIO/README.md#自动资源管理)
-
 
 
 ## [day16 多线程练习](./day16/README.md "")
@@ -83,59 +71,17 @@
 
 ## [day17 多线程](./day17/README.md "多线程")
 
-* [程序、进程、线程概念](./day17/README.md#程序进程线程概念)
-* [多线程使用场景](./day17/README.md#多线程使用场景)
-* [Thread类](./day17/README.md#Thread类)
-* [线程的调度](./day17/README.md#线程的调度)
-* [线程的优先级](./day17/README.md#线程的优先级)
-* [使用多线程的优点](./day17/README.md#使用多线程的优点)
-* [线程的分类](./day17/README.md#线程的分类)
-* [线程的生命周期](./day17/README.md#线程的生命周期)
-* [线程的同步](./day17/README.md#线程的同步)
-* [synchronized线程同步使用方法](./day17/README.md#synchronized线程同步使用方法)
-* [互斥锁](./day17/README.md#互斥锁)
-* [释放锁的操作](./day17/README.md#释放锁的操作)
-* [不会释放锁的操作](./day17/README.md#不会释放锁的操作)
-* [线程的死锁问题](./day17/README.md#线程的死锁问题)
-* [线程通信](./day17/README.md#线程通信)
-
-    
+  
 
 ## [day18 常用类](./day18/README.md "java常用类")
-
-* [String类](./day18/README.md#String类)
-* [StringBuffer类](./day18/README.md#StringBuffer类)
-* [StringBuilder类](./day18/README.md#StringBuilder类)
-* [时间相关的类](./day18/README.md#4-时间相关的类)
-* [Date类](./day18/README.md#Date类)
-* [SimpleDateFormat类](./day18/README.md#SimpleDateFormat类)
-* [Calendar类](./day18/README.md#Calendar类)
-* [Math类](./day18/README.md#Math类)
-* [BigInteger类](./day18/README.md#BigInteger类)
-* [BigDecimal类](./day18/README.md#BigDecimal类)
-* [Scanner类](./day18/README.md#Scanner类)
 
 
 
 ## [day19 反射机制](./day19/README.md "java反射机制")
 
-* [java reflection](./day19/README.md#java-reflection)
-* [JAVA类加载过程](./day19/README.md#JAVA类加载过程)
-* [通过反射调用类的完整结构](./day19/README.md#通过反射调用类的完整结构)
-* [JAVA动态代理](./day19/README.md#JAVA动态代理)
-* [动态代理与AOP](./day19/README.md#动态代理与aopaspect-orient-programming面向切面编程)
 
-    
 
 ## [day20 网络编程](./day20/README.md "网络编程")
-
-* [网络编程概述](./day20/README.md#网络编程概述)
-* [IP和端口](./day20/README.md#网络基础)
-* [TCP网络通信](./day20/README.md#网络基础)
-* [基于Socket的TCP编程](./day20/README.md#基于Socket的TCP编程)
-* [UDP网络通信](./day20/README.md#基于socket的UDP编程)
-* [基于socket的UDP编程](./day20/README.md#URL编程)
-* [URL编程](./day20/README.md#小结)
 
 
 
