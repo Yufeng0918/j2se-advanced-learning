@@ -5,7 +5,7 @@ day19 反射机制
 
 ## 1. 反射
 
-reflection(反射)被视为动态语言的关键，反射机制允许程序员在执行期间借助于reflection API。取得任何类的内部信息，并能直接操作任意对象的内部属性、方法
+reflection被视为动态语言的关键，反射机制允许程序员在执行期间借助于reflection API。取得任何类的内部信息，并能直接操作任意对象的内部属性, 方法
 
 
 
@@ -53,7 +53,7 @@ Class类是java反射的源头
 
 Class也是一个类, Class对象只能有系统创建对象
 
-一个类在JVM中有且只有一个Class实例
+**一个类在JVM中有且只有一个Class实例**
 
 一个Class对象对应的是一个加载到JVM中的一个.class文件
 
@@ -160,14 +160,14 @@ public Constructor<T>[] getConstructors()
 public Constructor<T>[] getDeclaredConstructors()
 // 返回此Class对象表示的类中声明的所有构造器，包括私有的
   
-  //取得修饰符
-  public int getModifiers()
+//取得修饰符
+public int getModifiers()
 
-  //取得方法名称
-  public String getName()
+//取得方法名称
+public String getName()
 
-  //取得参数的类型
-  public Class<?>[] getParameterTypes()
+//取得参数的类型
+public Class<?>[] getParameterTypes()
 ```
 
 
@@ -308,58 +308,45 @@ static Object newProxyInstance(ClassLoader loader, Class<?>[] interfaces, Invoca
 
 ### 动态代理步骤
 
-创建一个实现接口**InvocationHandler**的类，它必须实现invoke方法，以完成代理的具体操作
+**创建一个实现接口InvocationHandler的类**，它必须实现invoke方法，以完成代理的具体操作
 
 ```JAVA
-@Override
-public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    // 当通过代理类的对象发起对被重写方法的调用时，都会转为对invoke方法的调用
+class MyInvocationHandler implements InvocationHandler 
 
-    Object returnVal = method.invoke(obj, args);
-    System.out.println("实现的invoke方法被调用了");
-    return returnVal;
+  @Override
+  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+      // 当通过代理类的对象发起对被重写方法的调用时，都会转为对invoke方法的调用
+
+      Object returnVal = method.invoke(obj, args);
+      System.out.println("实现的invoke方法被调用了");
+      return returnVal;
+  }
 }
-    
-/*
-proxy: 被代理的对象
-method：要调用的方法
-args: 方法调用时需要的参数
-**/    
-
 ```
-创建被代理的类以及接口
+**创建接口**
 
 ```JAVA
 // 示例
 interface Factory {
     void make();
 }
+```
+**创建代理类**
 
+```java
 class HuaweiFactory implements Factory {
 
-    // 构造器
-    public HuaweiFactory() {
-        super();
-    }
-
-    // 方法
     @Override
     public void make() {
         System.out.println("华为松山湖生产基地生产了100000 部手机");
     }
 }
 ```
-通过Proxy的静态方法 public Object newProxyInstance(ClassLoader loader, Class[] interfaces, InvocationHandler h)创建相应的接口代理
+
+**通过Proxy的静态方法创建相应的接口代理**
 
 ```JAVA
-// 示例
 public Object getProxyInstance(Object obj) {
-    /*
-    本方法作用：
-    1. 给被代理的对象实例化
-    2. 返回一个代理类的对象
-
-    * */
 
     this.obj = obj;
     // 使用反射，根据被代理类动态生成代理对象
@@ -371,7 +358,6 @@ public Object getProxyInstance(Object obj) {
 通过代理调用被代理类的方法
 
 ```JAVA
-// 示例
 // 1. 创建被代理类对象
 HuaweiFactory huawei = new HuaweiFactory();
 // 2. 创建一个 实现了 InvocationHandler接口的对象
@@ -383,17 +369,4 @@ Factory haproxy = (Factory) obj;
 haproxy.make(); // 转到对动态代理类对象的invoke()方法的调用
 System.out.println();
 ```
-
-
-
-## 5. 动态代理与AOP
-
-AOP动态代理功能类似于python中的装饰器
-* 使用Proxy生成一个动态代理时，往往并不会凭空产生一个动态代理。通常都是为指定的目标对象生成动态代理
-
-* 这种动态代理在AOP中称为AOP代理，AOP代理可代替目标对象，AOP代理包含了目标对象的全部方法。但AOP代理中的方法与目标对象的方法存在差异：AOP代理中的方法可以在执行目标方法之前、之后插入一些通用处理
-
-  
-
-![](./images/AOP动态代理.png "AOP动态代理")
 
