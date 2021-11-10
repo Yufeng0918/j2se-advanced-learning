@@ -7,30 +7,20 @@ day20 网络编程
 ## 1. 网络编程概述
 Java提供的网络类库，可以实现无痛的网络连接，联网的底层细节被隐藏在 Java 的本机安装系统里，由 JVM 进行控制。并且 Java 实现了一个跨平台的网络库，程序员面对的是一个统一的网络编程环境。
 
++ 把分布在不同地理区域的计算机与专门的外部设备用通信线路互连成一个规模大、功能强的网络系统，从而共享硬件, 软件, 数据信息等资源。
 
-
-### 计算机网络
-
-把分布在不同地理区域的计算机与专门的外部设备用通信线路互连成一个规模大、功能强的网络系统，从而使众多的计算机可以方便地互相传递信息、共享硬件、软件、数据信息等资源。
-
-
-
-### 目的
-
-直接或间接地通过网络协议与其他计算机进行通讯
++ 直接或间接地通过网络协议与其他计算机进行通讯
 
 
 
-### 主要的两个问题
+### 两个问题
 
-* 如何准确地定位网络上的一台或多台主机
-* 找到主机后如何可靠高效地进行数据传输
+* 定位主机
+* 高效数据传输
 
 
 
-### 互相通信的机制
-
-通信双方地址
+### 通信机制
 
 一定的规则(主要有两套参考模型)
 * OSI 7层参考模型：模型过于理想或，未能在互联网上进行广泛推广
@@ -70,20 +60,17 @@ InetAddress类主表示IP地址
   * Inet4Address
   * Inet6Address
 
-InetAddress对象含有一个Internet主机的域名和IP地址. 域名易于记忆，通信前需要把域名解析成IP地址
-
 **InetSocketAddress，表示IP、端口的组合，即一个socket地址**
 
 ```JAVA
 protected InetAddress() {
-        holder = new InetAddressHolder();
+   holder = new InetAddressHolder();
 }
 
 static InetAddress getByName(String host)
 static InetAddress getByAddress(byte[] addr)
 static InetAddress getByAddress(String host, byte[] addr)
 static InetAddress[] getAllByName(String host) //获取到域名解析出来的多个IP
-
 String getHostName()
 String getHostAddress()
 byte[] getAddress()
@@ -91,8 +78,6 @@ String getCanonicalHostName()
 static InetAddress getLocalHost()
 static InetAddress getLoopbackAddress()
 ```
-
-
 
 
 
@@ -111,12 +96,15 @@ static InetAddress getLoopbackAddress()
 
 TCP/IP 以其两个主要协议
 
-+ 传输控制协议(TCP)和网络互联协议(IP)而得名，实际上是一组协议，包括多个具有不同功能且互为关联的协议。  
++ 传输控制协议(TCP)和网络互联协议(IP)而得名，是一组协议，包括多个具有不同功能且互为关联的协议。  
 + **IP(Internet Protocol)协议是网络层的主要协议**，支持网间互连的数据通信
 
 TCP/IP协议模型从更使用的角度出发，形成了高效地四层体系， 即 物理链路层、IP层(网络层)、传输层、应用层
 
+
+
 ### TCP和UDP
+
 TCP协议
 * 使用TCP协议签，必须建立TCP连接，形成传输的通道
 * 传输前，采用"三次握手"方式，是可靠的
@@ -211,9 +199,9 @@ void sendUrgentData(int data) // 发送一个字节的紧急数据到此socket
 void setKeepAlive(boolean on) // 设置此suocket的SO_KEEPALIVE值，即socket TCP的超时时间
 void setOOBInline(boolean on) //
 void setPerformancePreferences(int connectionTime, int latency, int bandwidth) // 设置此Socket性能偏好：
-                //connectionTime：连接保持时间，对于短链接来说此参数相对重要
-                //latency：延迟时间，对于要求低延迟的连接，此参数相对重要
-                //bandwidth：带宽，如要求带宽比较高的，此参数比较重要
+//connectionTime：连接保持时间，对于短链接来说此参数相对重要
+//latency：延迟时间，对于要求低延迟的连接，此参数相对重要
+//bandwidth：带宽，如要求带宽比较高的，此参数比较重要
 void setReceiveBufferSize(int size) // 设置此socket的SO_RCVBUF值
 void setReuseAddress(boolean on) // 设置address是否可重用
 void setSendBufferSize(int size) // 设置SO_SNDBUF值
@@ -264,9 +252,9 @@ protected void implAccept(Socket s) //重写accept()方法
 boolean isBound() //返回ServerSocket是否已经绑定
 oolean isClosed() //返回ServerSocket是否已关闭
 void setPerformancePreferences(int connectionTime, int latency, int bandwidth) //设置此ServerSocket性能偏好：
-               // connectionTime：连接保持时间，对于短链接来说此参数相对重要
-                //latency：延迟时间，对于要求低延迟的连接，此参数相对重要
-               // bandwidth：带宽，如要求带宽比较高的，此参数比较重要
+// connectionTime：连接保持时间，对于短链接来说此参数相对重要
+// latency：延迟时间，对于要求低延迟的连接，此参数相对重要
+// bandwidth：带宽，如要求带宽比较高的，此参数比较重要
 void setReceiveBufferSize(int size)  //重置socket接收缓存的大小，默认的大小将被修改
 void setReuseAddress(boolean on) //开启/关闭 SO_REUSEADDR socket 选项，当需要使用多进程时，需要开启address重用
 static void	setSocketFactory(SocketImplFactory fac)
@@ -329,37 +317,34 @@ InputStream.read(byte[] b)方法也会发生阻塞，等待读取内容，需要
 
 #### 示例
 
-客户端发送内容给服务端，服务端将内容打印到控制台上  
-[TCPSocketTest1](./src/com/java/www/TCPSocketTest1.java) 
+客户端发送内容给服务端，服务端将内容打印到控制台上
+[TCPSocketTest1](./src/main/java/com/java/www/TCPSocketTest1.java) 
 
-客户端发送内容给服务端，服务端给予反馈  
-[TCPSocketTest2](./src/com/java/www/TCPSocketTest2.java)  
+客户端发送内容给服务端，服务端给予反馈
+[TCPSocketTest2](./src/main/java/com/java/www/TCPSocketTest2.java)  
 
-从客户端发送文件给服务端，服务端保存到本地。并返回“发送成功”给客户端。并关闭相应的连接  
-[TCPSocketTest3](./src/com/java/www/TCPSocketTest3.java)  
+从客户端发送文件给服务端，服务端保存到本地。并返回“发送成功”给客户端。并关闭相应的连接 
+[TCPSocketTest3](./src/main/java/com/java/www/TCPSocketTest3.java)  
 
-客户端持续发送内容给服务端，输入q或exit是退出，服务端将内容打印到控制台上  
-[TCPServer](./src/com/java/socket/TCPServer.java)  
-[TCPClient](./src/com/java/socket/TCPClient.java)  
+客户端持续发送内容给服务端，输入q或exit是退出，服务端将内容打印到控制台上
+[TCPServer](./src/main/java/com/java/socket/TCPServer.java) 
+[TCPClient](./src/main/java/com/java/socket/TCPClient.java)  
 
 服务端、客户端互相收发信息，类似聊天，即一对一通信
-[TCPServer](./src/com/java/socket2/TCPServer.java)  
-[TCPClient](./src/com/java/socket2/TCPClient.java)  
+[TCPServer](./src/main/java/com/java/socket2/TCPServer.java) 
+[TCPClient](./src/main/java/com/java/socket2/TCPClient.java)  
 
-java socket TCP 模拟 简单的WEB Server  
-[WebServer](./src/com/java/www/WebServer.java)  
+java socket TCP 模拟 简单的WEB Server
+[WebServer](./src/main/java/com/java/www/WebServer.java)  
 
-Web server:先启动一个线程来等待用户的请求连接，当有一个客户请求连接进来时，新开启一个线程等待下一个客户端请求连接。  
-线程响应完客户请求后，关闭当前socket及相关的IO流，当前线程就退出了。  
+Web server:先启动一个线程来等待用户的请求连接，当有一个客户请求连接进来时，新开启一个线程等待下一个客户端请求连接。  线程响应完客户请求后，关闭当前socket及相关的IO流，当前线程就退出了。 
 
-[http request请求 /response响应数据格式](https://github.com/cucker0/JavaWeb/blob/master/readme/servlet.md#http%E5%8D%8F%E8%AE%AE)
+[WebServer2](./src/main/java/com/java/www/WebServer2.java) 
+[WebServer3](./src/main/java/com/java/www/WebServer3.java) 
+[WebServer4](./src/main/java/com/java/www/WebServer4.java)  
 
-[WebServer2](./src/com/java/www/WebServer2.java)  
-[WebServer3](./src/com/java/www/WebServer3.java)  
-[WebServer4](./src/com/java/www/WebServer4.java)  
-
-Web server:利用线程池，让服务端一直保持开启n个线程  
-[WebServer5](./src/com/java/www/WebServer5.java)
+Web server:利用线程池，让服务端一直保持开启n个线程 
+[WebServer5](./src/main/java/com/java/www/WebServer5.java)
 
 
 
@@ -367,9 +352,7 @@ Web server:利用线程池，让服务端一直保持开启n个线程
 
 DatagramSocket类和DatagramPacket类实现了基于UDP协议的网络程序。UDP数据报通过数据报socket DatagramSocket发送和接收，系统不保证UDP数据报一定能够安全送到目的地，也不能确定什么时候送达
 
-DatagramPacket对象封装了UDP数据报，在数据报中包含了发送端的IP、发送端的端口、接收端的IP、接收端的端口、数据信息
-
-UDP协议中每个数据报都包含了完整的地址信息，因此无须建立发送方和接收方的连接
+DatagramPacket对象封装了UDP数据报，在数据报中包含了发送端的IP、发送端的端口、接收端的IP、接收端的端口、数据信息。UDP协议中每个数据报都包含了完整的地址信息，因此无须建立发送方和接收方的连接
 
 
 
@@ -459,25 +442,21 @@ void setSocketAddress(SocketAddress address)
 
 创建DatagramSocket对象和DatagramPacket对象，数据放在数据报包，在数据报包中为数据报指定接收端IP、接收方端口、发送端(即本端)IP和端口不需要显式指定，由系统自动添加
 
-建立发送商、接收端
-
-建立数据包
-
-调用Socket的send、receive方法，DatagramSocket.receive()方法会阻塞，直接接收到数据
-
-关闭Socket 
++ 建立发送商、接收端
++ 建立数据包
++ 调用Socket的send、receive方法，DatagramSocket.receive()方法会阻塞，直接接收到数据
++ 关闭Socket 
 
 发送端与接收端是两个独立的运行程序
 
-**示例**  
-客户端发信息到服务端，服务器端接收信息  
-[UDPSocketTest1](./src/com/java/www/UDPSocketTest1.java)  
+客户端发信息到服务端，服务器端接收信息 
+[UDPSocketTest1](./src/main/java/com/java/www/UDPSocketTest1.java)  
 
-客户端信息到服务端，服务端接收信息并打印到控制台，然后回复客户端信息：你发送过来的信息接收到了  
-[UDPSocketTest2](./src/com/java/www/UDPSocketTest2.java)  
+客户端信息到服务端，服务端接收信息并打印到控制台，然后回复客户端信息：你发送过来的信息接收到了 
+[UDPSocketTest2](./src/main/java/com/java/www/UDPSocketTest2.java)  
 
-客户端、服务端你一条、我一条依次发收数据。先从客户端开始发送信息，输入q退出  
-[UDPSocketTest3](./src/com/java/www/UDPSocketTest3.java)  
+客户端、服务端你一条、我一条依次发收数据。先从客户端开始发送信息，输入q退出 
+[UDPSocketTest3](./src/main/java/com/java/www/UDPSocketTest3.java)  
 
 
 
@@ -485,7 +464,6 @@ void setSocketAddress(SocketAddress address)
 
 Uniform Resource Locator, 统一资源定位符，它表示 Internet 上某一资源的地址。通过 URL 我们可以访问 Internet 上的各种网络资源，比如最常见的 www，ftp 站点。浏览器通过解析给定的 URL 可以在网络上查找相应的文件或其他资源
 
-结构
 * <传输协议>://<主机名>:<端口号>/<文件名>
 * 如：http://192.168.1.100:8080/helloworld/index.jsp
 
@@ -1025,18 +1003,17 @@ abstract boolean usingProxy()
 URL url = new URL("http://127.0.0.1/");
 
 URLConnection urlConnection = url.openConnection();
-urlConnection.setDoOutput(true); // 设置doOutput值为true，允许向OutputStream写入数据，默认是不允许的
+// 设置doOutput值为true，允许向OutputStream写入数据，默认是不允许的
+urlConnection.setDoOutput(true); 
 
 InputStream inputStream = urlConnection.getInputStream()
 OutputStream outputStream = urlConnection.getOutputStream()
-
-
 //如果URL的scheme为 http或https，则可以把URLConnection转为HttpURLConnection
 HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
 ```
 
 * 从网络上下载一个文件  
-[URLTest](./src/com/java/www/URLTest.java)  
+[URLTest](./src/main/java/com/java/www/URLTest.java)  
 * 本地上传信息到服务器  
-[URLTest2](./src/com/java/www/URLTest2.java)
+[URLTest2](./src/main/java/com/java/www/URLTest2.java)
 
