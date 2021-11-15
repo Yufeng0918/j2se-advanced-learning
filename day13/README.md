@@ -853,3 +853,58 @@ public class Main {
 ```
 
 扫描结束后，没有更多的计算了，弹出栈的唯一一个元素，得到计算结果9
+
+
+
+## 12. ArrayList 源码解析
+
+### 添加/删除
+
+**add** 将index至末尾的元素向后一位复制
+
+```java
+public void add(int index, E element) {
+  rangeCheckForAdd(index);
+  ensureCapacityInternal(size + 1);  // Increments modCount!!
+  System.arraycopy(elementData, index, elementData, index + 1, size - index);
+  elementData[index] = element;
+  size++;
+}
+```
+
+**remove** 将index至末尾的元素想前一位复制
+
+```java
+public E remove(int index) {
+  rangeCheck(index);
+
+  modCount++;
+  E oldValue = elementData(index);
+  int numMoved = size - index - 1;
+  if (numMoved > 0)
+  System.arraycopy(elementData, index+1, elementData, index,
+  numMoved);
+  elementData[--size] = null; // clear to let GC do its work
+
+  return oldValue;
+}
+```
+
+### 扩容
+
+获取原来的容量，新增的容量是原来的0.5倍。 比如原来是10，扩容以后是15
+
+```JAVA
+private void grow(int minCapacity) {
+  // overflow-conscious code
+  int oldCapacity = elementData.length;
+  int newCapacity = oldCapacity + (oldCapacity >> 1);
+  if (newCapacity - minCapacity < 0)
+  newCapacity = minCapacity;
+  if (newCapacity - MAX_ARRAY_SIZE > 0)
+  newCapacity = hugeCapacity(minCapacity);
+  // minCapacity is usually close to size, so this is a win:
+  elementData = Arrays.copyOf(elementData, newCapacity);
+}
+```
+
