@@ -908,3 +908,50 @@ private void grow(int minCapacity) {
 }
 ```
 
+
+
+## 13. LinkedList 源码解析
+
++ 获取到当前在需要插入元素的位置的上元素
+  + 如果index小于size的1/2, 就从前面开始循环查找
+  + 如果index大于size的1/2, 就从后面开始循环查找
++ 
+
+```java
+public void add(int index, E element) {
+  checkPositionIndex(index);
+
+  if (index == size)
+  	linkLast(element);
+  else
+		linkBefore(element, node(index));
+}
+
+void linkBefore(E e, Node<E> succ) {
+  // assert succ != null;
+  final Node<E> pred = succ.prev;
+  final Node<E> newNode = new Node<>(pred, e, succ);
+  succ.prev = newNode;
+  if (pred == null)
+  first = newNode;
+  else
+  pred.next = newNode;
+  size++;
+  modCount++;
+}
+
+Node<E> node(int index) {
+    if (index < (size >> 1)) {
+    Node<E> x = first;
+    for (int i = 0; i < index; i++)
+    	x = x.next;
+    return x;
+  } else {
+    Node<E> x = last;
+    for (int i = size - 1; i > index; i--)
+    	x = x.prev;
+    return x;
+  }
+}
+```
+
