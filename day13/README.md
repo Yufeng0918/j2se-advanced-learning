@@ -912,10 +912,14 @@ private void grow(int minCapacity) {
 
 ## 13. LinkedList 源码解析
 
+### 添加
+
 + 获取到当前在需要插入元素的位置的上元素
   + 如果index小于size的1/2, 就从前面开始循环查找
   + 如果index大于size的1/2, 就从后面开始循环查找
-+ 
++ 通过当前元素获取前一个元素
++ 创建新的节点
++ 调整prev 和 next 的指针
 
 ```java
 public void add(int index, E element) {
@@ -953,5 +957,164 @@ Node<E> node(int index) {
     return x;
   }
 }
+```
+
+### 删除
+
++ 找出在index位置的节点
++ 调整prev 和 next 的指针
+
+```java
+public E remove(int index) {
+  checkElementIndex(index);
+  return unlink(node(index));
+}
+
+E unlink(Node<E> x) {
+  // assert x != null;
+  final E element = x.item;
+  final Node<E> next = x.next;
+  final Node<E> prev = x.prev;
+
+  if (prev == null) {
+  	first = next;
+  } else {
+    prev.next = next;
+    x.prev = null;
+  }
+
+  if (next == null) {
+  	last = prev;
+  } else {
+    next.prev = prev;
+    x.next = null;
+  }
+
+  x.item = null;
+  size--;
+  modCount++;
+  return element;
+}
+```
+
+
+
+## 14. HashMap 源码解析
+
+数据结构： 数组 + 链表 + 红黑树
+
+### 关键参数
+
++ 默认的容量是16
++ 负载因子是0.75
++ threashold 是 capactiy * DEFAULT_LOAD_FACTOR, **16 * 0.75 = 12**。 如果capacity大于threashold，就会发生扩容
+
+```java
+static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16
+static final float DEFAULT_LOAD_FACTOR = 0.75f;
+int threshold;
+static final int TREEIFY_THRESHOLD = 8;
+```
+
+
+
+### Hash计算
+
++ Hash 不等于key的hashcode
++ 把hashcode向右移动16位，在和原来的hashcode 做一个异或运算。**等于把低16位 和 高16位 做异或运算。在hash值的低16位里面，可以同时保留他的高16位和低16位的特征**
+
+> -> h >>> 16
+>
+> 1111 1111 1111 1111 1111 1010 0111 1100
+>
+> 0000 0000 0000 0000 1111 1111 1111 1111
+>
+> 
+>
+> -> h ^ (h >>> 16)
+>
+> 1111 1111 1111 1111 1111 1010 0111 1100
+>
+> 0000 0000 0000 0000 1111 1111 1111 1111
+>
+> 1111 1111 1111 1111 0000 0101 1000 0011
+
+```java
+static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+}
+```
+
+
+
+### Hash寻址
+
+把计算出来的hash和**当前数组的最大index做与运算**，相比取模，位运算的效率更高
+
+```java
+p = tab[i = (n - 1) & hash]
+```
+
+
+
+
+
+
+
+### 添加
+
++ 寻址出来改节点需要插入的位置
++ 如果该位置是空，直接插入
++ 如果该位置非空，则比较key
+  + 如果key相同，那么则覆盖
+  + 如果key不相同，而且列表数量小于8， 那么插入尾部
+  + 如果key不相同，而且列表数量等于8， 那么则需要把链表转成红黑树
+
+![](./images/03_hashmap数据结构-2.png)
+
+```java
+    final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                   boolean evict) {
+        Node<K,V>[] tab; Node<K,V> p; int n, i;
+        if ((tab = table) == null || (n = tab.length) == 0)
+            n = (tab = resize()).length;
+        if ((p = tab[i = (n - 1) & hash]) == null)
+            tab[i] = newNode(hash, key, value, null);
+        else {
+            Node<K,V> e; K k;
+            if (p.hash == hash &&
+                ((k = p.key) == key || (key != null && key.equals(k))))
+                e = p;
+            else if (p instanceof TreeNode)
+                e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+            else {
+                for (int binCount = 0; ; ++binCount) {
+                    if ((e = p.next) == null) {
+                        p.next = newNode(hash, key, value, null);
+                        if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                            treeifyBin(tab, hash);
+                        break;
+                    }
+                    if (e.hash == hash &&
+                        ((k = e.key) == key || (key != null && key.equals(k))))
+                        break;
+                    p = e;
+                }
+            }
+            if (e != null) { // existing mapping for key
+                V oldValue = e.value;
+                if (!onlyIfAbsent || oldValue == null)
+                    e.value = value;
+                afterNodeAccess(e);
+                return oldValue;
+            }
+        }
+        ++modCount;
+        if (++size > threshold)
+            resize();
+        afterNodeInsertion(evict);
+        return null;
+    }
 ```
 
