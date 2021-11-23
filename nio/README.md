@@ -5,7 +5,9 @@ NIO
 
 
 ## 1. NIO概述
-Java NIO(New IO, Non-blocking IO)是从java 1.4开始加入。可以替代原来的java IO接口。IO是面向流，**NIO是面向缓冲区，基于通道的IO操作。NIO效率更高。**
+1.4开始加入, IO是面向流，**NIO是面向缓冲区，基于通道的IO操作。NIO效率更高。**
+
+**主要概念是Buffer, Channel, Selector**
 
 
 ```java
@@ -14,7 +16,6 @@ java.nio.channels.Channel
     |--SocketChannel  TCP网络编程中客户端的Channel
     |--ServerSocketChannel  TCP网络编程中服务器的Channel
     |--DatagramChannel  UDP网络编程中发送端和接受端的Channel
-    
     |--Pipe管道
         |--SinkChannel 
         |--SourceChannel
@@ -32,45 +33,23 @@ IO是否阻塞 |阻塞IO(Blocking IO) |非阻塞IO(Non Blocking IO)
 
 
 
-## 3. Channel通道与Buffer缓冲区
-
-java NIO系统的核心在于:Channel通道与Buffer缓冲区。通道表示打开到IO设备的连接(如文件、socket)。使用NIO系统，需要分配用于读写数据的缓冲区。
-
-+ Channel：负责连接传输
-+ Buffer：负责存储
-
-
-
-# 4. Buffer缓冲区
+## 3. Buffer
 
 一个用于特定基本数据类型的容器。由 java.nio 包定义的，所有缓冲区都是 Buffer 抽象类的子类
 
-Java NIO 中的 Buffer 主要用于与NIO通道进行交互，
-+ 从in通道读取数据是写入缓冲区，
-+ 从缓冲区读取数据到out通道中
+支持ByteBuffer， CharBuffer， ShortBuffer， IntBuffer，LongBuffer， FloatBuffer， DoubleBuffer
 
-Buffer存储数据的是一个数组
+### 基本属性
 
-Buffer子类: 根据数据类型不同(boolean 除外) ，有以下 Buffer 常用子类static。XxxBuffer allocate(int capacity) : 创建一个容量为 capacity 的 XxxBuffer 对象
+| 名字         | 属性 | 描述                                                         |
+| ------------ | ---- | ------------------------------------------------------------ |
+| **capacity** | 容量 | 是缓冲区的容量大小，就是里面包含的数据的大小                 |
+| **limit**    | 限制 | 对Buffer缓冲区使用的一个限制，说从这个index开始就不能读写数据了 |
+| position     | 位置 | 数组中可以开始读写的index，不能大于limit                     |
+| remaining    | 剩余 | position到limit之间的距离                                    |
+| mark         | 标记 | 在某个position的时候，设置一下mark，此时就可以设置一个标记，后续调用reset方法可以把position复位到当时设置的那个mark上去 |
 
-* ByteBuffer
-* CharBuffer
-* ShortBuffer
-* IntBuffer
-* LongBuffer
-* FloatBuffer
-* DoubleBuffer
 
-### 缓冲区的基本属性
-capacity容量： 表示Buffer能存放的数据个数，即存放数据的数组长度，不能为负数，并且创建后不能更改
-
-limit限制： 第一个不应该读取或写入的数据的索引，即位于 limit 后的数据不可读写。缓冲区的限制不能为负，并且不能大于其容量
-
-position位置： 下一个要读取或写入的数据的索引。缓冲区的位置不能为负，并且不能大于其限制
-
-mark标记：用于标记当前偏移位置的变量，-1表示还未标记过
-
-**不变式: mark <= position <= limit <= capacity**
 
 
 
