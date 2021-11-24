@@ -5,7 +5,7 @@ TCP Client端
 
 * */
 
-package com.java.socket;
+package com.java.socket.bio;
 
 import java.io.IOException;
 import java.io.InputStream;
