@@ -148,7 +148,7 @@ put(int index, byte b) //将指定字节写入缓冲区的索引位置(不会移
 
 **底层的数据其实是维护在操作系统的内存中，而不是jvm里**，DirectByteBuffer里维护了一个引用address指向了数据，从而操作数据
 
-**优点**: 跟外设打交道时会快很多，因为**外设读取jvm堆里的数据时，先读取到内存， 再读取到jvm的buffer里面**，**如果使用DirectByteBuffer，则可以省去这一步，实现zero copy（零拷贝）**
+**优点**: 跟外设打交道时会快很多，因为**外设读取jvm堆里的数据时，先读取到内存， 再读取到jvm的buffer里面**，**如果使用DirectByteBuffer，则可以省去这一步，实现zero copy**
 
 **创建方式**：ByteBuffer.allocateDirect(int capacity)
 
